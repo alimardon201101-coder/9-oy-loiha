@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingliz Tili Darslari | NextStep</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar for Lessons List */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Subtle Glass Effect */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo & Back Button -->
+      <div class="flex items-center gap-4">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
+          <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
+          <span>Bosh sahifaga</span>
+        </a>
+        <a href="./ing.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
+          <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
+          <span>ingiliz tili sahifaga</span>
+        </a>
+        <div class="h-5 w-px bg-slate-200 hidden sm:block"></div>
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-extrabold text-lg shadow-md shadow-brand-500/20">N</div>
+          <span class="font-bold text-xl tracking-tight text-slate-900 hidden sm:inline">Next<span class="text-brand-600">Step</span></span>
+        </div>
+      </div>
+
+      <!-- Course Info Header Badge -->
+      <div class="hidden md:flex items-center gap-2 bg-brand-50 border border-brand-100 text-brand-700 px-4 py-1.5 rounded-full text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+        Ingliz Tili Videodarslari
+      </div>
+
+      <!-- Right Controls: Profile -->
+      <a href="../profil.html" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm px-4 py-2 rounded-xl transition-all duration-200 shadow-md shadow-brand-500/20 hover:shadow-lg hover:shadow-brand-500/30">
+        <i class="fa-regular fa-user"></i>
+        <span>Profil</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN MAIN CONTENT SECTION -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
+    
+    <!-- Title and Subtitle -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 border-b border-slate-200 pb-4">
+      <div>
+        <h1 id="currentLessonTitle" class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+          Ingliz Tili Video Darsliklari
+        </h1>
+        <p class="text-sm text-slate-500 mt-1">Noldan mukammal darajagacha bosqichma-bosqich o'rganing.</p>
+      </div>
+      <div class="flex items-center gap-2 self-start md:self-auto">
+        <span id="lessonProgressBadge" class="text-xs font-semibold text-slate-600 bg-slate-200/70 px-3 py-1 rounded-lg">
+          0 / 0 Dars
+        </span>
+      </div>
+    </div>
+
+    <!-- MAIN TWO COLUMN GRID (Left: Video Player | Right: Controls & Playlist) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+
+      <!-- LEFT COLUMN: VIDEO PLAYER SECTION (7 or 8 Columns) -->
+      <section class="lg:col-span-7 xl:col-span-8 flex flex-col gap-4">
+        
+        <!-- Video Container -->
+        <div class="relative w-full aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-900/10 group">
+          <iframe id="videoPlayer" class="w-full h-full border-0" src=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Video Bottom Quick Info Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+          <div class="flex items-center gap-3">
+            <button id="watchedBtn" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm active:scale-95 text-white bg-slate-500 hover:bg-slate-600">
+              <i class="fa-regular fa-circle-check"></i>
+              <span>Darsni ko'rdim deb belgilash</span>
+            </button>
+          </div>
+
+          <a id="youtubeLink" href="#" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 font-semibold text-sm rounded-xl transition-all duration-200 hover:shadow-sm">
+            <i class="fa-brands fa-youtube text-lg"></i>
+            <span>YouTubedan ko'rish</span>
+          </a>
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: CONTROLS & PLAYLIST SECTION (5 or 4 Columns) -->
+      <section class="lg:col-span-5 xl:col-span-4 flex flex-col gap-4">
+        
+        <!-- Quick Navigation Controls (Orqaga / Keyingisi) -->
+        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between gap-3">
+          <button id="prevBtn" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed text-slate-700 font-semibold text-sm rounded-xl transition-all duration-200">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+            <span>Orqaga</span>
+          </button>
+
+          <button id="nextBtn" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-brand-600 hover:bg-brand-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-md shadow-brand-500/20">
+            <span>Keyingisi</span>
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Quick Select Box (Drop-down alternative) -->
+        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col gap-2">
+          <label for="lessonSelect" class="text-xs font-bold uppercase tracking-wider text-slate-400">Tezkor tanlash</label>
+          <div class="relative">
+            <select id="lessonSelect" class="w-full appearance-none bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 pr-10 text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all cursor-pointer">
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-400">
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Playlist Container -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col">
+          <div class="p-4 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-list-ul text-brand-600"></i>
+              <h3 class="font-bold text-slate-800 text-sm">Darslar Ro'yxati</h3>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">Barcha bo'limlar</span>
+          </div>
+
+          <!-- Dynamic Playlist Items Wrapper -->
+          <div id="playlistContainer" class="max-h-[380px] overflow-y-auto custom-scrollbar p-2 flex flex-col gap-1.5">
+            <!-- Dynamic JavaScript Content Here -->
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- DATA & APP LOGIC -->
+  <script src="./data.js"></script>
+  <script src="../main.js"></script>
+
+  <script>
+    let currentIndex = 0;
+    const courseType = 'english';
+
+    const selectEl = document.getElementById('lessonSelect');
+    const iframeEl = document.getElementById('videoPlayer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const watchedBtn = document.getElementById('watchedBtn');
+    const ytLink = document.getElementById('youtubeLink');
+    const lessonTitleEl = document.getElementById('currentLessonTitle');
+    const progressBadgeEl = document.getElementById('lessonProgressBadge');
+    const playlistContainer = document.getElementById('playlistContainer');
+
+    function getYouTubeId(url) {
+      if (!url) return '';
+      const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+      return (match && match[2].length === 11) ? match[2] : null;
+    }
+
+    function isWatched(index) {
+      if (typeof isLessonWatched === 'function') {
+        return isLessonWatched(courseType, index);
+      }
+      return false;
+    }
+
+    function toggleWatched(index) {
+      if (typeof toggleLessonWatched === 'function') {
+        toggleLessonWatched(courseType, index);
+      }
+    }
+
+    function updateWatchedBtnUI() {
+      const watched = isWatched(currentIndex);
+      if (watched) {
+        watchedBtn.className = "inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm active:scale-95 text-white bg-emerald-600 hover:bg-emerald-700 shadow-emerald-500/20";
+        watchedBtn.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>Ko'rib bo'lindi</span>`;
+      } else {
+        watchedBtn.className = "inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm active:scale-95 text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200";
+        watchedBtn.innerHTML = `<i class="fa-regular fa-circle"></i> <span>Darsni ko'rdim deb belgilash</span>`;
+      }
+    }
+
+    function renderPlaylist() {
+      if (!playlistContainer || !Array.isArray(darslar)) return;
+      playlistContainer.innerHTML = '';
+
+      darslar.forEach((dars, index) => {
+        const watched = isWatched(index);
+        const isActive = index === currentIndex;
+
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.onclick = () => loadLesson(index);
+        
+        let baseClass = "w-full text-left p-3 rounded-xl flex items-center justify-between gap-3 transition-all duration-200 text-sm ";
+        if (isActive) {
+          baseClass += "bg-brand-50 border border-brand-200 text-brand-700 font-semibold shadow-sm";
+        } else {
+          baseClass += "hover:bg-slate-50 text-slate-700 font-medium border border-transparent";
+        }
+        item.className = baseClass;
+
+        item.innerHTML = `
+          <div class="flex items-center gap-3 overflow-hidden">
+            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs shrink-0 ${isActive ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-500'}">
+              ${dars.dars}
+            </span>
+            <span class="truncate">${dars.title}</span>
+          </div>
+          <span class="shrink-0 text-xs">
+            ${watched ? '<i class="fa-solid fa-circle-check text-emerald-500 text-base"></i>' : '<i class="fa-regular fa-circle text-slate-300"></i>'}
+          </span>
+        `;
+
+        playlistContainer.appendChild(item);
+      });
+    }
+
+    if (typeof darslar !== 'undefined' && Array.isArray(darslar)) {
+      
+      // Populate select options
+      darslar.forEach((dars, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = `${dars.dars}-dars: ${dars.title}`;
+        selectEl.appendChild(option);
+      });
+
+      function loadLesson(index) {
+        if (index < 0 || index >= darslar.length) return;
+        currentIndex = index;
+        selectEl.value = currentIndex;
+        
+        const videoId = getYouTubeId(darslar[currentIndex].link);
+        iframeEl.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+        ytLink.href = darslar[currentIndex].link;
+        
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === darslar.length - 1;
+        
+        if (lessonTitleEl) {
+          lessonTitleEl.textContent = `${darslar[currentIndex].dars}-dars: ${darslar[currentIndex].title}`;
+        }
+
+        if (progressBadgeEl) {
+          progressBadgeEl.textContent = `${currentIndex + 1} / ${darslar.length} Dars`;
+        }
+
+        updateWatchedBtnUI();
+        renderPlaylist();
+      }
+
+      selectEl.addEventListener('change', (e) => loadLesson(parseInt(e.target.value)));
+      prevBtn.addEventListener('click', () => { if (currentIndex > 0) loadLesson(currentIndex - 1); });
+      nextBtn.addEventListener('click', () => { if (currentIndex < darslar.length - 1) loadLesson(currentIndex + 1); });
+      
+      watchedBtn.addEventListener('click', () => {
+        toggleWatched(currentIndex);
+        updateWatchedBtnUI();
+        renderPlaylist();
+      });
+
+      // Init load first lesson
+      loadLesson(0);
+    }
+  </script>
+
+</body>
+
+</html>
