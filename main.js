@@ -2,32 +2,20 @@
 // 1. RO'YXATDAN O'TISH VA USER PROFILE
 // ==========================================
 
-// Sahifa yuklanganda foydalanuvchi ismini chiqarish
 function loadUserProfile() {
   const savedUser = JSON.parse(localStorage.getItem('user_profile'));
-  
-  // Header va Bannerdagi ism ko'rinadigan joylar
   const nameElements = document.querySelectorAll('.user-name-display');
   const avatarElements = document.querySelectorAll('.user-avatar-initial');
-  
+
   if (savedUser && savedUser.name) {
-    nameElements.forEach(el => {
-      el.textContent = savedUser.name;
-    });
-    avatarElements.forEach(el => {
-      el.textContent = savedUser.name.charAt(0).toUpperCase();
-    });
+    nameElements.forEach(el => { el.textContent = savedUser.name; });
+    avatarElements.forEach(el => { el.textContent = savedUser.name.charAt(0).toUpperCase(); });
   } else {
-    nameElements.forEach(el => {
-      el.textContent = "Mehmon";
-    });
-    avatarElements.forEach(el => {
-      el.textContent = "M";
-    });
+    nameElements.forEach(el => { el.textContent = "Mehmon"; });
+    avatarElements.forEach(el => { el.textContent = "M"; });
   }
 }
 
-// Ro'yxatdan o'tish / Profilni yangilash
 function registerUser(name, email) {
   if (!name.trim()) {
     alert("Iltimos, ismingizni kiriting!");
@@ -47,14 +35,12 @@ function registerUser(name, email) {
   return true;
 }
 
-// Modal oynani ochish va yopish
 function openRegisterModal() {
   const modal = document.getElementById('registerModal');
   if (modal) {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
-    
-    // Agar foydalanuvchi avval saqlangan bo'lsa, formani to'ldirib qo'yish
+
     const savedUser = JSON.parse(localStorage.getItem('user_profile'));
     if (savedUser) {
       const nameInput = document.getElementById('userNameInput');
@@ -73,7 +59,6 @@ function closeRegisterModal() {
   }
 }
 
-// Profil va barcha ma'lumotlarni tozalash
 function clearAllData() {
   if (confirm("Haqiqatdan ham barcha ma'lumotlarni, test natijalarini va ko'rilgan darslarni o'chirmoqchimisiz?")) {
     localStorage.clear();
@@ -93,33 +78,21 @@ const TOTAL_LESSONS = {
   german: 100
 };
 
-// Saqlangan darslarni olish
 function getWatchedLessons() {
   const data = localStorage.getItem('watched_lessons');
   return data ? JSON.parse(data) : { english: [], korean: [], russian: [], german: [] };
 }
 
-// Dars ko'rilganligini tekshirish
-function isLessonWatched(courseType, lessonIndex) {
-  const watched = getWatchedLessons();
-  return watched[courseType] ? watched[courseType].includes(lessonIndex) : false;
-}
-
-// Darsni ko'rildi / ko'rilmadi deb belgilash (MUAMMO SHU YERDA EDI VA TUZATILDI)
 function toggleLessonWatched(courseType, lessonIndex) {
   let watched = getWatchedLessons();
-  
   if (!watched[courseType]) {
     watched[courseType] = [];
   }
 
   const indexInArray = watched[courseType].indexOf(lessonIndex);
-  
   if (indexInArray > -1) {
-    // Agar bor bo'lsa, olib tashlaymiz
     watched[courseType].splice(indexInArray, 1);
   } else {
-    // Yo'q bo'lsa, qo'shamiz
     watched[courseType].push(lessonIndex);
   }
 
@@ -127,14 +100,13 @@ function toggleLessonWatched(courseType, lessonIndex) {
   updateProgressUI();
 }
 
-// Profil sahifasidagi progress bar va ko'rsatkichlarni yangilash UI
 function updateProgressUI() {
   const watched = getWatchedLessons();
 
   Object.keys(TOTAL_LESSONS).forEach(course => {
     const watchedCount = watched[course] ? watched[course].length : 0;
     const totalCount = TOTAL_LESSONS[course];
-    
+
     const countEl = document.getElementById(`${course}-progress-count`);
     const percentEl = document.getElementById(`${course}-progress-percent`);
     const progressBarEl = document.getElementById(`${course}-progress-bar`);
@@ -142,7 +114,7 @@ function updateProgressUI() {
     if (countEl) countEl.textContent = `${watchedCount} / ${totalCount} dars`;
 
     const percentage = Math.round((watchedCount / totalCount) * 100);
-    
+
     if (percentEl) percentEl.textContent = `${percentage}%`;
     if (progressBarEl) progressBarEl.style.width = `${percentage}%`;
   });
@@ -155,7 +127,7 @@ function updateProgressUI() {
 function displayTestResults() {
   const testResults = JSON.parse(localStorage.getItem('test_results')) || {};
   const container = document.getElementById('test-results-container');
-  
+
   if (!container) return;
 
   const resultKeys = Object.keys(testResults);
@@ -170,7 +142,7 @@ function displayTestResults() {
   }
 
   container.innerHTML = '';
-  
+
   const testNames = {
     english: { title: "Ingliz tili testi", flag: "🇬🇧" },
     korean: { title: "Koreys tili testi", flag: "🇰🇷" }
@@ -205,13 +177,87 @@ function displayTestResults() {
   });
 }
 
+// ==========================================
+// 4. TALAFFUZ MASHQLARI NATIJALARI
+// ==========================================
+
+function displayPronunciationResults() {
+  const container = document.getElementById('pronunciation-results-container');
+  if (!container) return;
+
+  const englishStats = JSON.parse(localStorage.getItem('english_pronunciation_stats_v2'));
+  const koreanStats = JSON.parse(localStorage.getItem('korean_pronunciation_stats_v2'));
+
+  if (!englishStats && !koreanStats) {
+    container.innerHTML = `
+      <div class="col-span-full text-center py-6 text-slate-400 bg-white rounded-3xl border border-slate-200/80">
+        <i class="fa-solid fa-microphone-lines-slash text-3xl mb-2 text-slate-300"></i>
+        <p class="text-sm font-medium">Hozircha talaffuz mashqlari bajarilmagan.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = '';
+
+  if (englishStats && englishStats.totalPracticed > 0) {
+    const avgAcc = Math.round(englishStats.totalAccuracySum / englishStats.totalPracticed);
+    const card = document.createElement('div');
+    card.className = "bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-3";
+    card.innerHTML = `
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🇬🇧</span>
+          <div>
+            <h4 class="font-bold text-slate-900 text-base">Ingliz tili talaffuzi</h4>
+            <span class="text-xs text-slate-400">Jami mashqlar: ${englishStats.totalPracticed} ta</span>
+          </div>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-100">
+          ${avgAcc}% Aniqlik
+        </span>
+      </div>
+      <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs font-semibold text-slate-600">
+        <span>A'lo darajada: <strong class="text-emerald-600">${englishStats.excellentCount} ta</strong></span>
+        <span>Streak: <strong class="text-amber-500">${englishStats.streak} 🔥</strong></span>
+      </div>
+    `;
+    container.appendChild(card);
+  }
+
+  if (koreanStats && koreanStats.totalPracticed > 0) {
+    const avgAcc = Math.round(koreanStats.totalAccuracySum / koreanStats.totalPracticed);
+    const card = document.createElement('div');
+    card.className = "bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-3";
+    card.innerHTML = `
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🇰🇷</span>
+          <div>
+            <h4 class="font-bold text-slate-900 text-base">Koreys tili talaffuzi</h4>
+            <span class="text-xs text-slate-400">Jami mashqlar: ${koreanStats.totalPracticed} ta</span>
+          </div>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-600 border border-blue-100">
+          ${avgAcc}% Aniqlik
+        </span>
+      </div>
+      <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs font-semibold text-slate-600">
+        <span>A'lo darajada: <strong class="text-emerald-600">${koreanStats.excellentCount} ta</strong></span>
+        <span>Streak: <strong class="text-amber-500">${koreanStats.streak} 🔥</strong></span>
+      </div>
+    `;
+    container.appendChild(card);
+  }
+}
+
 // DOM Yuklanganda bajariladigan hodisalar
 document.addEventListener('DOMContentLoaded', () => {
   loadUserProfile();
   updateProgressUI();
   displayTestResults();
+  displayPronunciationResults(); // <-- Bu yerga qo'shildi
 
-  // Ro'yxatdan o'tish formasi
   const registerForm = document.getElementById('registerForm');
   if (registerForm) {
     registerForm.addEventListener('submit', (e) => {
@@ -222,7 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Tozalash tugmasi
   const clearBtn = document.getElementById('clearDataBtn');
   if (clearBtn) {
     clearBtn.addEventListener('click', clearAllData);

@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-      <script>
+    <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -44,32 +44,29 @@
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
       background: #94a3b8;
     }
-  
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f8fafc;
-        }
-        .kr-text {
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-        .pulse-ring-blue {
-            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
-            animation: pulse-blue 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
-        }
-        @keyframes pulse-blue {
-            to { box-shadow: 0 0 0 20px rgba(37, 99, 235, 0); }
-        }
-        .progress-bar-fill {
-            transition: width 0.5s ease-in-out;
-        }
-    </style>
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f8fafc;
+    }
+    .kr-text {
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+    .pulse-ring-blue {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
+        animation: pulse-blue 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+    @keyframes pulse-blue {
+        to { box-shadow: 0 0 0 20px rgba(37, 99, 235, 0); }
+    }
+    .progress-bar-fill {
+        transition: width 0.5s ease-in-out;
+    }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
 
-     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Logo & Back Button -->
       <div class="flex items-center gap-4">
         <a href="../index.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
           <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
@@ -86,13 +83,11 @@
         </div>
       </div>
 
-      <!-- Course Info Header Badge -->
       <div class="hidden md:flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-semibold">
         <span class="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
-        Koreys Tili Talafuz Mashiqlari
+        Koreys Tili Talaffuz Mashqlari
       </div>
 
-      <!-- Right Controls: Profile -->
       <a href="../profil.html" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm px-4 py-2 rounded-xl transition-all duration-200 shadow-md shadow-brand-500/20 hover:shadow-lg">
         <i class="fa-regular fa-user"></i>
         <span>Profil</span>
@@ -100,10 +95,7 @@
     </div>
   </header>
 
-    <!-- Main Content -->
     <main class="max-w-4xl mx-auto w-full px-4 py-8 flex-grow space-y-6">
-        
-        <!-- Controls & Statistics Bar -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
                 <span class="text-xs font-semibold text-slate-500 flex items-center gap-1.5"><i class="fa-solid fa-bullseye text-blue-600"></i> Jami Mashq</span>
@@ -123,9 +115,7 @@
             </div>
         </div>
 
-        <!-- Filters & Selectors -->
         <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4">
-            <!-- Level Filter -->
             <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 w-full md:w-auto">
                 <span class="text-xs text-slate-500 font-bold mr-1">Daraja:</span>
                 <button onclick="setFilterLevel('ALL')" class="level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow-sm shadow-blue-500/20" data-level="ALL">Barchasi</button>
@@ -136,32 +126,27 @@
                 <button onclick="setFilterLevel('C1')" class="level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60" data-level="C1">C1</button>
             </div>
 
-            <!-- Mode Selector (Word / Sentence) -->
             <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs w-full md:w-auto justify-center">
                 <button onclick="setMode('word')" id="mode-word-btn" class="px-4 py-1.5 rounded-lg font-bold text-blue-600 bg-white shadow-sm">So'zlar</button>
                 <button onclick="setMode('sentence')" id="mode-sentence-btn" class="px-4 py-1.5 rounded-lg font-bold text-slate-500 hover:text-slate-800">Gaplar</button>
             </div>
         </div>
 
-        <!-- Pronunciation Card -->
         <div class="bg-white border border-slate-200/80 rounded-3xl p-6 md:p-10 shadow-xl shadow-slate-200/50 relative overflow-hidden text-center space-y-6">
-            <!-- Level badge -->
             <div class="flex items-center justify-between border-b border-slate-100 pb-4">
                 <span id="card-level-badge" class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-blue-50 text-blue-600 border border-blue-100">LEVEL A1</span>
-                <span id="card-index" class="text-xs text-slate-400 font-mono font-bold">1 / 30</span>
+                <span id="card-index" class="text-xs text-slate-400 font-mono font-bold">1 / 10</span>
             </div>
 
-            <!-- Target Korean Text Display -->
             <div class="space-y-3 py-4">
                 <h2 id="target-korean-text" class="kr-text text-4xl md:text-6xl font-black text-slate-900 tracking-tight drop-shadow-sm">
                     안녕하세요
                 </h2>
                 <p id="target-uzbek-text" class="text-slate-600 text-lg md:text-xl font-medium">
-                    Salom, qalaysiz?
+                    Salom
                 </p>
             </div>
 
-            <!-- Audio Playback Controls -->
             <div class="flex items-center justify-center gap-4">
                 <button onclick="speakText(0.75)" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-2 border border-slate-200 transition">
                     <i class="fa-solid fa-turtle text-amber-500"></i> Sekin (0.75x)
@@ -171,7 +156,6 @@
                 </button>
             </div>
 
-            <!-- Speech Recording Area -->
             <div class="pt-6 border-t border-slate-100 space-y-4">
                 <div class="flex flex-col items-center justify-center gap-3">
                     <button id="record-btn" onclick="toggleRecording()" class="w-20 h-20 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center text-2xl shadow-xl shadow-blue-500/30 transition transform hover:scale-105 active:scale-95">
@@ -180,7 +164,6 @@
                     <span id="record-status" class="text-xs font-bold text-slate-500">Gapirish uchun tugmani bosing</span>
                 </div>
 
-                <!-- Recognition Result & Feedback Box -->
                 <div id="result-box" class="hidden p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 text-left">
                     <div class="flex items-center justify-between text-xs font-bold">
                         <span class="text-slate-500">Eshitilgan talaffuz:</span>
@@ -194,7 +177,6 @@
                 </div>
             </div>
 
-            <!-- Navigation Buttons -->
             <div class="flex items-center justify-between pt-4 border-t border-slate-100">
                 <button onclick="prevCard()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-2 border border-slate-200 transition">
                     <i class="fa-solid fa-arrow-left"></i> Oldingisi
@@ -208,21 +190,17 @@
             </div>
         </div>
 
-        <!-- Instructions & Reset -->
         <div class="bg-white border border-slate-200/80 rounded-2xl p-4 flex items-center justify-between text-xs text-slate-500 shadow-sm">
-            <p><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> Natijalaringiz brauzeringizda avtomatsiz saqlanadi.</p>
+            <p><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> Natijalaringiz brauzeringizda avtomatik saqlanadi.</p>
             <button onclick="resetStats()" class="text-rose-500 hover:text-rose-600 font-bold underline">Natijalarni tozalash</button>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="border-t border-slate-200/80 bg-white py-4 text-center text-xs text-slate-500">
         <p>NextStep & Talaffuz Mashqlari Tizimi © 2026</p>
     </footer>
 
-    <!-- JavaScript Logic -->
     <script>
-        // Database state
         let fullDatabase = [];
         let filteredItems = [];
         let currentIndex = 0;
@@ -231,7 +209,6 @@
         let isRecording = false;
         let recognition = null;
 
-        // Statistics state
         let stats = {
             totalPracticed: 0,
             excellentCount: 0,
@@ -240,13 +217,10 @@
             history: {}
         };
 
-        // Load saved statistics
         function loadSavedStats() {
             const saved = localStorage.getItem('korean_pronunciation_stats_v2');
             if (saved) {
-                try {
-                    stats = JSON.parse(saved);
-                } catch(e) { console.error(e); }
+                try { stats = JSON.parse(saved); } catch(e) { console.error(e); }
             }
             updateStatsUI();
         }
@@ -271,7 +245,6 @@
             }
         }
 
-        // Fetch JSON data
         async function loadDatabase() {
             try {
                 const response = await fetch('./talafuz.json');
@@ -279,19 +252,7 @@
                 const data = await response.json();
                 fullDatabase = data.vocabulary_database;
             } catch (err) {
-                console.warn("JSON fetch muammosi, zaxira ma'lumotlar ishlatilmoqda:", err);
-                fullDatabase = [
-                    {
-                        level: "A1",
-                        items: [
-                            { id: 1, uzbek: { word: "Salom", sentence: "Salom, qalaysiz?" }, korean: { word: "안녕하세요", sentence: "안녕하세요, 어떻게 지내세요?" } },
-                            { id: 2, uzbek: { word: "Rahmat", sentence: "Yordamingiz uchun rahmat." }, korean: { word: "감사합니다", sentence: "도와주셔서 감사합니다." } },
-                            { id: 3, uzbek: { word: "Ism", sentence: "Mening ismim Alimardon." }, korean: { word: "이름", sentence: "제 이름은 알리마르돈입니다." } },
-                            { id: 4, uzbek: { word: "Kitob", sentence: "Men kitob o'qiyapman." }, korean: { word: "책", sentence: "저는 책을 읽고 있습니다." } },
-                            { id: 5, uzbek: { word: "Suv", sentence: "Bir stakan suv bering." }, korean: { word: "물", sentence: "물 한 잔 주세요." } }
-                        ]
-                    }
-                ];
+                console.warn("JSON fetch muammosi:", err);
             }
             applyFilters();
         }
@@ -301,18 +262,12 @@
             fullDatabase.forEach(lvlGroup => {
                 if (currentLevel === 'ALL' || lvlGroup.level === currentLevel) {
                     lvlGroup.items.forEach(item => {
-                        filteredItems.push({
-                            level: lvlGroup.level,
-                            ...item
-                        });
+                        if (item.korean) {
+                            filteredItems.push({ level: lvlGroup.level, ...item });
+                        }
                     });
                 }
             });
-
-            if (filteredItems.length === 0) {
-                alert("Ushbu darajada ma'lumot topilmadi!");
-                return;
-            }
             currentIndex = 0;
             renderCard();
         }
@@ -344,7 +299,7 @@
         }
 
         function renderCard() {
-            if (!filteredItems[currentIndex]) return;
+            if (!filteredItems.length || !filteredItems[currentIndex]) return;
             const item = filteredItems[currentIndex];
             
             document.getElementById('card-level-badge').innerText = `LEVEL ${item.level}`;
@@ -355,25 +310,18 @@
 
             document.getElementById('target-korean-text').innerText = targetKr;
             document.getElementById('target-uzbek-text').innerText = targetUz;
-
             document.getElementById('result-box').classList.add('hidden');
         }
 
         function nextCard() {
-            if (currentIndex < filteredItems.length - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
-            }
+            if (currentIndex < filteredItems.length - 1) currentIndex++;
+            else currentIndex = 0;
             renderCard();
         }
 
         function prevCard() {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = filteredItems.length - 1;
-            }
+            if (currentIndex > 0) currentIndex--;
+            else currentIndex = filteredItems.length - 1;
             renderCard();
         }
 
@@ -387,12 +335,8 @@
             renderCard();
         }
 
-        // Text-to-Speech (Korean)
         function speakText(rate = 1.0) {
-            if (!('speechSynthesis' in window)) {
-                alert("Brauzeringiz ovozli o'qishni qo'llab-quvvatlamaydi.");
-                return;
-            }
+            if (!('speechSynthesis' in window)) return;
             window.speechSynthesis.cancel();
             const text = document.getElementById('target-korean-text').innerText;
             const utterance = new SpeechSynthesisUtterance(text);
@@ -401,14 +345,9 @@
             window.speechSynthesis.speak(utterance);
         }
 
-        // Speech Recognition Setup
         function setupSpeechRecognition() {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if (!SpeechRecognition) {
-                console.warn("Speech Recognition brauzeringizda mavjud emas.");
-                document.getElementById('record-status').innerText = "Mikrofon funksiyasi bu brauzerda ishlamaydi (Chrome ishlatib ko'ring).";
-                return;
-            }
+            if (!SpeechRecognition) return;
 
             recognition = new SpeechRecognition();
             recognition.lang = 'ko-KR';
@@ -429,15 +368,8 @@
                 processPronunciationResult(spokenText);
             };
 
-            recognition.onerror = (event) => {
-                console.error("Speech recognition error:", event.error);
-                document.getElementById('record-status').innerText = "Ovozni tushunib bo'lmadi. Qayta urinib ko'ring.";
-                stopRecordingState();
-            };
-
-            recognition.onend = () => {
-                stopRecordingState();
-            };
+            recognition.onerror = () => { stopRecordingState(); };
+            recognition.onend = () => { stopRecordingState(); };
         }
 
         function stopRecordingState() {
@@ -452,19 +384,10 @@
         function toggleRecording() {
             if (!recognition) setupSpeechRecognition();
             if (!recognition) return;
-
-            if (isRecording) {
-                recognition.stop();
-            } else {
-                try {
-                    recognition.start();
-                } catch (e) {
-                    recognition.stop();
-                }
-            }
+            if (isRecording) recognition.stop();
+            else { try { recognition.start(); } catch (e) { recognition.stop(); } }
         }
 
-        // Calculate Similarity Score
         function cleanText(str) {
             return str.replace(/[.,?!~\s]/g, '').toLowerCase();
         }
@@ -472,29 +395,22 @@
         function calculateSimilarity(s1, s2) {
             const str1 = cleanText(s1);
             const str2 = cleanText(s2);
-
             if (str1 === str2) return 100;
             if (!str1.length || !str2.length) return 0;
 
-            const track = Array(str2.length + 1).fill(null).map(() =>
-                Array(str1.length + 1).fill(null));
+            const track = Array(str2.length + 1).fill(null).map(() => Array(str1.length + 1).fill(null));
             for (let i = 0; i <= str1.length; i += 1) track[0][i] = i;
             for (let j = 0; j <= str2.length; j += 1) track[j][0] = j;
 
             for (let j = 1; j <= str2.length; j += 1) {
                 for (let i = 1; i <= str1.length; i += 1) {
                     const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
-                    track[j][i] = Math.min(
-                        track[j][i - 1] + 1,
-                        track[j - 1][i] + 1,
-                        track[j - 1][i - 1] + indicator
-                    );
+                    track[j][i] = Math.min(track[j][i - 1] + 1, track[j - 1][i] + 1, track[j - 1][i - 1] + indicator);
                 }
             }
             const distance = track[str2.length][str1.length];
             const maxLength = Math.max(str1.length, str2.length);
-            const matchPercentage = Math.round(((maxLength - distance) / maxLength) * 100);
-            return Math.max(0, matchPercentage);
+            return Math.max(0, Math.round(((maxLength - distance) / maxLength) * 100));
         }
 
         function processPronunciationResult(spokenText) {
@@ -537,7 +453,6 @@
             saveStats();
         }
 
-        // Initialize on load
         window.addEventListener('DOMContentLoaded', () => {
             loadSavedStats();
             loadDatabase();
