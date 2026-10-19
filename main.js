@@ -67,9 +67,7 @@ function clearAllData() {
   }
 }
 
-// ==========================================
-// 2. VIDEO DARSLAR STATISTIKASI (LOCALSTORAGE)
-// ==========================================
+
 
 const TOTAL_LESSONS = {
   english: 180,
@@ -120,9 +118,6 @@ function updateProgressUI() {
   });
 }
 
-// ==========================================
-// 3. TEST NATIJALARINI PROFILDA CHIQARISH
-// ==========================================
 
 function displayTestResults() {
   const testResults = JSON.parse(localStorage.getItem('test_results')) || {};
@@ -177,9 +172,7 @@ function displayTestResults() {
   });
 }
 
-// ==========================================
-// 4. TALAFFUZ MASHQLARI NATIJALARI
-// ==========================================
+// =======
 
 function displayPronunciationResults() {
   const container = document.getElementById('pronunciation-results-container');
@@ -190,7 +183,7 @@ function displayPronunciationResults() {
 
   if (!englishStats && !koreanStats) {
     container.innerHTML = `
-      <div class="col-span-full text-center py-6 text-slate-400 bg-white rounded-3xl border border-slate-200/80">
+      <div class="col-span-full text-center py-8 text-slate-400 bg-white rounded-3xl border border-slate-200/80">
         <i class="fa-solid fa-microphone-lines-slash text-3xl mb-2 text-slate-300"></i>
         <p class="text-sm font-medium">Hozircha talaffuz mashqlari bajarilmagan.</p>
       </div>
