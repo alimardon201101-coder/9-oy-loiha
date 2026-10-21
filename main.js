@@ -1,6 +1,4 @@
-// ==========================================
-// 1. RO'YXATDAN O'TISH VA USER PROFILE
-// ==========================================
+
 
 function loadUserProfile() {
   const savedUser = JSON.parse(localStorage.getItem('user_profile'));
@@ -79,6 +77,11 @@ const TOTAL_LESSONS = {
 function getWatchedLessons() {
   const data = localStorage.getItem('watched_lessons');
   return data ? JSON.parse(data) : { english: [], korean: [], russian: [], german: [] };
+}
+
+function isLessonWatched(courseType, lessonIndex) {
+  const watched = getWatchedLessons();
+  return watched[courseType] && watched[courseType].includes(lessonIndex);
 }
 
 function toggleLessonWatched(courseType, lessonIndex) {

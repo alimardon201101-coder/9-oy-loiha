@@ -12,7 +12,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
           },
           colors: {
             brand: {
@@ -27,176 +27,209 @@
         }
       }
     }
-  </script>
+    </script>
 
-  <style>
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: #f1f5f9;
-      border-radius: 8px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 8px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-      background: #94a3b8;
-    }
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #f8fafc;
-    }
-    .kr-text {
-        font-family: 'Noto Sans KR', sans-serif;
-    }
-    .pulse-ring-blue {
-        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
-        animation: pulse-blue 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
-    }
-    @keyframes pulse-blue {
-        to { box-shadow: 0 0 0 20px rgba(37, 99, 235, 0); }
-    }
-    .progress-bar-fill {
-        transition: width 0.5s ease-in-out;
-    }
-  </style>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+        .kr-text {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .pulse-ring-blue {
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6);
+            animation: pulse-red 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+        }
+        @keyframes pulse-red {
+            to { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+        }
+        .progress-bar-fill {
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
 
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <a href="../index.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
-          <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
-          <span>Bosh sahifaga</span>
-        </a>
-         <a href="./kor.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
-          <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
-          <span>koreys tili sahifasiga</span>
-        </a>
-        <div class="h-5 w-px bg-slate-200 hidden sm:block"></div>
-        <div class="flex items-center gap-2">
-          <div class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-extrabold text-lg shadow-md shadow-brand-500/20">N</div>
-          <span class="font-bold text-xl tracking-tight text-slate-900 hidden sm:inline">Next<span class="text-brand-600">Step</span></span>
-        </div>
-      </div>
-
-      <div class="hidden md:flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-semibold">
-        <span class="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
-        Koreys Tili Talaffuz Mashqlari
-      </div>
-
-      <a href="../profil.html" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm px-4 py-2 rounded-xl transition-all duration-200 shadow-md shadow-brand-500/20 hover:shadow-lg">
-        <i class="fa-regular fa-user"></i>
-        <span>Profil</span>
-      </a>
-    </div>
-  </header>
-
-    <main class="max-w-4xl mx-auto w-full px-4 py-8 flex-grow space-y-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
-                <span class="text-xs font-semibold text-slate-500 flex items-center gap-1.5"><i class="fa-solid fa-bullseye text-blue-600"></i> Jami Mashq</span>
-                <span id="stat-total" class="text-2xl font-black text-slate-900 mt-1">0</span>
-            </div>
-            <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
-                <span class="text-xs font-semibold text-slate-500 flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> A'lo Talaffuz</span>
-                <span id="stat-excel" class="text-2xl font-black text-emerald-600 mt-1">0</span>
-            </div>
-            <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
-                <span class="text-xs font-semibold text-slate-500 flex items-center gap-1.5"><i class="fa-solid fa-chart-line text-cyan-600"></i> O'rtacha Aniqlik</span>
-                <span id="stat-accuracy" class="text-2xl font-black text-cyan-600 mt-1">0%</span>
-            </div>
-            <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
-                <span class="text-xs font-semibold text-slate-500 flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-500"></i> Streak</span>
-                <span id="stat-streak" class="text-2xl font-black text-amber-500 mt-1">0 🔥</span>
-            </div>
-        </div>
-
-        <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4">
-            <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 w-full md:w-auto">
-                <span class="text-xs text-slate-500 font-bold mr-1">Daraja:</span>
-                <button onclick="setFilterLevel('ALL')" class="level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow-sm shadow-blue-500/20" data-level="ALL">Barchasi</button>
-                <button onclick="setFilterLevel('A1')" class="level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60" data-level="A1">A1</button>
-                <button onclick="setFilterLevel('A2')" class="level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60" data-level="A2">A2</button>
-                <button onclick="setFilterLevel('B1')" class="level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60" data-level="B1">B1</button>
-                <button onclick="setFilterLevel('B2')" class="level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60" data-level="B2">B2</button>
-                <button onclick="setFilterLevel('C1')" class="level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60" data-level="C1">C1</button>
-            </div>
-
-            <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs w-full md:w-auto justify-center">
-                <button onclick="setMode('word')" id="mode-word-btn" class="px-4 py-1.5 rounded-lg font-bold text-blue-600 bg-white shadow-sm">So'zlar</button>
-                <button onclick="setMode('sentence')" id="mode-sentence-btn" class="px-4 py-1.5 rounded-lg font-bold text-slate-500 hover:text-slate-800">Gaplar</button>
-            </div>
-        </div>
-
-        <div class="bg-white border border-slate-200/80 rounded-3xl p-6 md:p-10 shadow-xl shadow-slate-200/50 relative overflow-hidden text-center space-y-6">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-                <span id="card-level-badge" class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-blue-50 text-blue-600 border border-blue-100">LEVEL A1</span>
-                <span id="card-index" class="text-xs text-slate-400 font-mono font-bold">1 / 10</span>
-            </div>
-
-            <div class="space-y-3 py-4">
-                <h2 id="target-korean-text" class="kr-text text-4xl md:text-6xl font-black text-slate-900 tracking-tight drop-shadow-sm">
-                    안녕하세요
-                </h2>
-                <p id="target-uzbek-text" class="text-slate-600 text-lg md:text-xl font-medium">
-                    Salom
-                </p>
-            </div>
-
-            <div class="flex items-center justify-center gap-4">
-                <button onclick="speakText(0.75)" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-2 border border-slate-200 transition">
-                    <i class="fa-solid fa-turtle text-amber-500"></i> Sekin (0.75x)
-                </button>
-                <button onclick="speakText(1.0)" class="px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-blue-500/25 transition transform hover:scale-[1.02] active:scale-95">
-                    <i class="fa-solid fa-volume-high text-lg"></i> Ovozni Eshitish
-                </button>
-            </div>
-
-            <div class="pt-6 border-t border-slate-100 space-y-4">
-                <div class="flex flex-col items-center justify-center gap-3">
-                    <button id="record-btn" onclick="toggleRecording()" class="w-20 h-20 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center text-2xl shadow-xl shadow-blue-500/30 transition transform hover:scale-105 active:scale-95">
-                        <i id="record-icon" class="fa-solid fa-microphone"></i>
-                    </button>
-                    <span id="record-status" class="text-xs font-bold text-slate-500">Gapirish uchun tugmani bosing</span>
-                </div>
-
-                <div id="result-box" class="hidden p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 text-left">
-                    <div class="flex items-center justify-between text-xs font-bold">
-                        <span class="text-slate-500">Eshitilgan talaffuz:</span>
-                        <span id="match-score-badge" class="px-2.5 py-0.5 rounded text-white bg-slate-700">0%</span>
-                    </div>
-                    <p id="recognized-text" class="kr-text text-slate-800 font-bold text-lg italic">"..."</p>
-                    <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
-                        <div id="match-progress" class="bg-emerald-500 h-2.5 progress-bar-fill w-0"></div>
-                    </div>
-                    <p id="feedback-msg" class="text-xs font-bold text-center mt-2"></p>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 sm:gap-3 overflow-x-auto custom-scrollbar py-1">
+                <a href="../index.html" class="inline-flex items-center gap-1 text-slate-600 hover:text-brand-600 text-xs font-semibold bg-slate-100 hover:bg-brand-50 px-2.5 py-1.5 rounded-lg transition shrink-0">
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                    <span class="hidden sm:inline">Bosh sahifa</span>
+                </a>
+                <a href="./kor.html" class="inline-flex items-center gap-1 text-slate-600 hover:text-brand-600 text-xs font-semibold bg-slate-100 hover:bg-brand-50 px-2.5 py-1.5 rounded-lg transition shrink-0">
+                    <i class="fa-solid fa-book-open text-xs"></i>
+                    <span>Koreys tili</span>
+                </a>
+                <div class="h-4 w-px bg-slate-200 shrink-0"></div>
+                <div class="flex items-center gap-1.5 shrink-0">
+                    <div class="w-7 h-7 bg-brand-600 text-white rounded-lg flex items-center justify-center font-black text-sm">N</div>
+                    <span class="font-bold text-base tracking-tight text-slate-900">Next<span class="text-brand-600">Step</span></span>
                 </div>
             </div>
 
-            <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-                <button onclick="prevCard()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-2 border border-slate-200 transition">
-                    <i class="fa-solid fa-arrow-left"></i> Oldingisi
-                </button>
-                <button onclick="randomCard()" class="px-5 py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-600 text-xs font-bold flex items-center gap-2 border border-indigo-100 transition">
-                    <i class="fa-solid fa-shuffle"></i> Tasodifiy
-                </button>
-                <button onclick="nextCard()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-2 border border-slate-200 transition">
-                    Keyingisi <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            </div>
+            <a href="../profil.html" class="inline-flex items-center gap-1.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition shadow-sm shrink-0">
+                <i class="fa-regular fa-user"></i>
+                <span class="hidden sm:inline">Profil</span>
+            </a>
         </div>
+    </header>
 
-        <div class="bg-white border border-slate-200/80 rounded-2xl p-4 flex items-center justify-between text-xs text-slate-500 shadow-sm">
-            <p><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> Natijalaringiz brauzeringizda avtomatik saqlanadi.</p>
-            <button onclick="resetStats()" class="text-rose-500 hover:text-rose-600 font-bold underline">Natijalarni tozalash</button>
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto w-full px-3 sm:px-6 py-4 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+
+            <!-- Chap Tomon: Statistikalar va So'nggi Natija (Chap tomonga ko'chirildi) -->
+            <div class="lg:col-span-4 space-y-4 order-2 lg:order-1">
+                <!-- Statistika Vidjetlari -->
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-brand-600"></i> Umumiy Statistika
+                    </h3>
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <div class="bg-slate-50 border border-slate-100 rounded-xl p-3">
+                            <span class="text-[11px] font-bold text-slate-500 block"><i class="fa-solid fa-bullseye text-blue-600 mr-1"></i> Mashqlar</span>
+                            <span id="stat-total" class="text-xl font-black text-slate-900 mt-0.5 block">0</span>
+                        </div>
+                        <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-3">
+                            <span class="text-[11px] font-bold text-emerald-700 block"><i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> A'lo</span>
+                            <span id="stat-excel" class="text-xl font-black text-emerald-600 mt-0.5 block">0</span>
+                        </div>
+                        <div class="bg-cyan-50/50 border border-cyan-100 rounded-xl p-3">
+                            <span class="text-[11px] font-bold text-cyan-700 block"><i class="fa-solid fa-chart-line text-cyan-600 mr-1"></i> Aniqlik</span>
+                            <span id="stat-accuracy" class="text-xl font-black text-cyan-600 mt-0.5 block">0%</span>
+                        </div>
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-3">
+                            <span class="text-[11px] font-bold text-amber-700 block"><i class="fa-solid fa-fire text-amber-500 mr-1"></i> Streak</span>
+                            <span id="stat-streak" class="text-xl font-black text-amber-500 mt-0.5 block">0 🔥</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Natija Oynasi (Tahlil) -->
+                <div id="result-box" class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                        <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-square-poll-vertical text-brand-600"></i> So'nggi Natija
+                        </span>
+                        <span id="match-score-badge" class="px-2 py-0.5 rounded text-xs font-bold text-white bg-slate-700">0%</span>
+                    </div>
+
+                    <div class="space-y-1">
+                        <span class="text-[11px] font-semibold text-slate-400 block">Eshitilgan so'z/gap:</span>
+                        <p id="recognized-text" class="kr-text text-slate-800 font-bold text-base italic bg-slate-50 p-2.5 rounded-xl border border-slate-100">"..."</p>
+                    </div>
+
+                    <div class="space-y-1">
+                        <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                            <div id="match-progress" class="bg-emerald-500 h-2 progress-bar-fill w-0"></div>
+                        </div>
+                        <p id="feedback-msg" class="text-xs font-bold text-center pt-1 text-slate-500">Mashqni boshlang</p>
+                    </div>
+                </div>
+
+                <!-- Sozlamalar va Tozalash -->
+                <div class="bg-white border border-slate-200/80 rounded-xl p-3 flex items-center justify-between text-xs text-slate-500 shadow-sm">
+                    <span class="truncate pr-2"><i class="fa-solid fa-rotate-left text-blue-600 mr-1"></i> Natijalar saqlanadi</span>
+                    <button onclick="resetStats()" class="text-rose-500 hover:text-rose-600 font-bold underline shrink-0">Tozalash</button>
+                </div>
+            </div>
+
+            <!-- O'ng Tomon: Mashq Kartochkasi va Filtrlar -->
+            <div class="lg:col-span-8 space-y-4 order-1 lg:order-2">
+
+                <!-- Filtrlar Bar -->
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-3 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <!-- Darajalar -->
+                    <div class="flex items-center gap-1 overflow-x-auto w-full sm:w-auto custom-scrollbar pb-1 sm:pb-0">
+                        <span class="text-xs text-slate-400 font-bold mr-1 shrink-0">Daraja:</span>
+                        <button onclick="setFilterLevel('ALL')" class="level-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-brand-600 text-white shrink-0" data-level="ALL">Barchasi</button>
+                        <button onclick="setFilterLevel('A1')" class="level-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-level="A1">A1</button>
+                        <button onclick="setFilterLevel('A2')" class="level-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-level="A2">A2</button>
+                        <button onclick="setFilterLevel('B1')" class="level-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-level="B1">B1</button>
+                        <button onclick="setFilterLevel('B2')" class="level-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-level="B2">B2</button>
+                        <button onclick="setFilterLevel('C1')" class="level-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-level="C1">C1</button>
+                    </div>
+
+                    <!-- Rejim: So'z / Gap -->
+                    <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200/60 text-xs w-full sm:w-auto justify-center shrink-0">
+                        <button onclick="setMode('word')" id="mode-word-btn" class="w-1/2 sm:w-auto px-3 py-1 rounded-lg font-bold text-brand-600 bg-white shadow-sm transition">So'zlar</button>
+                        <button onclick="setMode('sentence')" id="mode-sentence-btn" class="w-1/2 sm:w-auto px-3 py-1 rounded-lg font-bold text-slate-500 hover:text-slate-800 transition">Gaplar</button>
+                    </div>
+                </div>
+
+                <!-- Asosiy Kartochka -->
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-5 sm:p-8 shadow-md relative overflow-hidden text-center space-y-6">
+                    <!-- Kartochka Tepasi -->
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <span id="card-level-badge" class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-brand-50 text-brand-600 border border-brand-100">LEVEL A1</span>
+                        <span id="card-index" class="text-xs text-slate-400 font-mono font-bold">1 / 10</span>
+                    </div>
+
+                    <!-- Koreys va O'zbek Tili Matnlari -->
+                    <div class="space-y-2 py-2 sm:py-4">
+                        <h2 id="target-korean-text" class="kr-text text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                            안녕하세요
+                        </h2>
+                        <p id="target-uzbek-text" class="text-slate-500 text-base sm:text-lg font-medium">
+                            Salom
+                        </p>
+                    </div>
+
+                    <!-- Audio Eshitish Tugmalari -->
+                    <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+                        <button onclick="speakText(0.75)" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 border border-slate-200 transition">
+                            <i class="fa-solid fa-turtle text-amber-500"></i> Sekin (0.75x)
+                        </button>
+                        <button onclick="speakText(1.0)" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md shadow-brand-500/20 transition transform active:scale-95">
+                            <i class="fa-solid fa-volume-high"></i> Ovozni Eshitish
+                        </button>
+                    </div>
+
+                    <!-- Mikrofon (Yozish) Bo'limi -->
+                    <div class="pt-4 border-t border-slate-100">
+                        <div class="flex flex-col items-center justify-center gap-2">
+                            <button id="record-btn" onclick="toggleRecording()" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-brand-600 hover:bg-brand-700 text-white flex items-center justify-center text-xl sm:text-2xl shadow-lg shadow-brand-500/30 transition transform hover:scale-105 active:scale-95">
+                                <i id="record-icon" class="fa-solid fa-microphone"></i>
+                            </button>
+                            <span id="record-status" class="text-xs font-bold text-slate-400">Gapirish uchun tugmani bosing</span>
+                        </div>
+                    </div>
+
+                    <!-- Navigatsiya Tugmalari -->
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-100 gap-2">
+                        <button onclick="prevCard()" class="px-3 sm:px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Oldingisi</span>
+                        </button>
+                        <button onclick="randomCard()" class="px-3 sm:px-4 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-600 text-xs font-bold flex items-center gap-1.5 border border-indigo-100 transition">
+                            <i class="fa-solid fa-shuffle"></i> <span>Tasodifiy</span>
+                        </button>
+                        <button onclick="nextCard()" class="px-3 sm:px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition">
+                            <span class="hidden sm:inline">Keyingisi</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </main>
 
-    <footer class="border-t border-slate-200/80 bg-white py-4 text-center text-xs text-slate-500">
+    <!-- Footer -->
+    <footer class="border-t border-slate-200/80 bg-white py-3 text-center text-xs text-slate-400 mt-6">
         <p>NextStep & Talaffuz Mashqlari Tizimi © 2026</p>
     </footer>
 
@@ -242,6 +275,10 @@
             if (confirm("Barcha saqlangan natijalarni o'chirmoqchimisiz?")) {
                 stats = { totalPracticed: 0, excellentCount: 0, totalAccuracySum: 0, streak: 0, history: {} };
                 saveStats();
+                document.getElementById('recognized-text').innerText = '"..."';
+                document.getElementById('match-score-badge').innerText = '0%';
+                document.getElementById('match-progress').style.width = '0%';
+                document.getElementById('feedback-msg').innerText = 'Mashqni boshlang';
             }
         }
 
@@ -276,9 +313,9 @@
             currentLevel = level;
             document.querySelectorAll('.level-btn').forEach(btn => {
                 if (btn.getAttribute('data-level') === level) {
-                    btn.className = "level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow-sm shadow-blue-500/20";
+                    btn.className = "level-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-brand-600 text-white shrink-0";
                 } else {
-                    btn.className = "level-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60";
+                    btn.className = "level-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0";
                 }
             });
             applyFilters();
@@ -289,11 +326,11 @@
             const wordBtn = document.getElementById('mode-word-btn');
             const sentenceBtn = document.getElementById('mode-sentence-btn');
             if (mode === 'word') {
-                wordBtn.className = "px-4 py-1.5 rounded-lg font-bold text-blue-600 bg-white shadow-sm";
-                sentenceBtn.className = "px-4 py-1.5 rounded-lg font-bold text-slate-500 hover:text-slate-800";
+                wordBtn.className = "w-1/2 sm:w-auto px-3 py-1 rounded-lg font-bold text-brand-600 bg-white shadow-sm transition";
+                sentenceBtn.className = "w-1/2 sm:w-auto px-3 py-1 rounded-lg font-bold text-slate-500 hover:text-slate-800 transition";
             } else {
-                sentenceBtn.className = "px-4 py-1.5 rounded-lg font-bold text-blue-600 bg-white shadow-sm";
-                wordBtn.className = "px-4 py-1.5 rounded-lg font-bold text-slate-500 hover:text-slate-800";
+                sentenceBtn.className = "w-1/2 sm:w-auto px-3 py-1 rounded-lg font-bold text-brand-600 bg-white shadow-sm transition";
+                wordBtn.className = "w-1/2 sm:w-auto px-3 py-1 rounded-lg font-bold text-slate-500 hover:text-slate-800 transition";
             }
             renderCard();
         }
@@ -310,7 +347,6 @@
 
             document.getElementById('target-korean-text').innerText = targetKr;
             document.getElementById('target-uzbek-text').innerText = targetUz;
-            document.getElementById('result-box').classList.add('hidden');
         }
 
         function nextCard() {
@@ -358,9 +394,9 @@
                 isRecording = true;
                 const recordBtn = document.getElementById('record-btn');
                 recordBtn.classList.add('pulse-ring-blue', 'bg-red-500');
-                recordBtn.classList.remove('bg-blue-600');
+                recordBtn.classList.remove('bg-brand-600');
                 document.getElementById('record-icon').className = "fa-solid fa-square";
-                document.getElementById('record-status').innerText = "Eshitilmoqda... Koreyscha gapiring!";
+                document.getElementById('record-status').innerText = "Eshitilmoqda... Gapiring!";
             };
 
             recognition.onresult = (event) => {
@@ -376,7 +412,7 @@
             isRecording = false;
             const recordBtn = document.getElementById('record-btn');
             recordBtn.classList.remove('pulse-ring-blue', 'bg-red-500');
-            recordBtn.classList.add('bg-blue-600');
+            recordBtn.classList.add('bg-brand-600');
             document.getElementById('record-icon').className = "fa-solid fa-microphone";
             document.getElementById('record-status').innerText = "Gapirish uchun tugmani bosing";
         }
@@ -417,7 +453,6 @@
             const targetText = document.getElementById('target-korean-text').innerText;
             const score = calculateSimilarity(targetText, spokenText);
 
-            document.getElementById('result-box').classList.remove('hidden');
             document.getElementById('recognized-text').innerText = `"${spokenText}"`;
             
             const badge = document.getElementById('match-score-badge');
@@ -428,23 +463,23 @@
             progress.style.width = score + '%';
 
             if (score >= 85) {
-                badge.className = "px-2.5 py-0.5 rounded text-white bg-emerald-600 font-bold";
-                progress.className = "bg-emerald-500 h-2.5 progress-bar-fill";
-                feedback.className = "text-xs font-bold text-emerald-600 text-center mt-2";
-                feedback.innerText = "🌟 A'lo talaffuz! Mukammal aytdingiz!";
+                badge.className = "px-2 py-0.5 rounded text-xs font-bold text-white bg-emerald-600";
+                progress.className = "bg-emerald-500 h-2 progress-bar-fill";
+                feedback.className = "text-xs font-bold text-emerald-600 text-center pt-1";
+                feedback.innerText = "🌟 A'lo talaffuz! Mukammal!";
                 stats.excellentCount++;
                 stats.streak++;
             } else if (score >= 60) {
-                badge.className = "px-2.5 py-0.5 rounded text-white bg-amber-500 font-bold";
-                progress.className = "bg-amber-500 h-2.5 progress-bar-fill";
-                feedback.className = "text-xs font-bold text-amber-600 text-center mt-2";
-                feedback.innerText = "👍 Yaxshi! Biroq yana ham aniqroq aytishga harakat qiling.";
+                badge.className = "px-2 py-0.5 rounded text-xs font-bold text-white bg-amber-500";
+                progress.className = "bg-amber-500 h-2 progress-bar-fill";
+                feedback.className = "text-xs font-bold text-amber-600 text-center pt-1";
+                feedback.innerText = "👍 Yaxshi! Yana harakat qiling.";
                 stats.streak++;
             } else {
-                badge.className = "px-2.5 py-0.5 rounded text-white bg-rose-600 font-bold";
-                progress.className = "bg-rose-500 h-2.5 progress-bar-fill";
-                feedback.className = "text-xs font-bold text-rose-600 text-center mt-2";
-                feedback.innerText = "🔄 Qaytadan eshitib, qayta mashq qiling.";
+                badge.className = "px-2 py-0.5 rounded text-xs font-bold text-white bg-rose-600";
+                progress.className = "bg-rose-500 h-2 progress-bar-fill";
+                feedback.className = "text-xs font-bold text-rose-600 text-center pt-1";
+                feedback.innerText = "🔄 Qaytadan eshitib ko'ring.";
                 stats.streak = 0;
             }
 
