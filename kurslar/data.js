@@ -927,7 +927,7 @@ let koreysDarslar = [
   },
   {
     "link": "https://www.youtube.com/watch?v=ADYGA4nSn_o",
-    "title": "Koreys tilida qo'sh undoshlar  | 5-dars | Koreys tilini 0 dan o'rganish",
+    "title": "Koreys tilida qo'sh undoshlar | 5-dars | Koreys tilini 0 dan o'rganish",
     "dars": 5
   },
   {
@@ -956,567 +956,567 @@ let koreysDarslar = [
     "dars": 10
   },
   {
-    "link": "https://www.youtube.com/watch?v=hO1G6iE-t9g",
+    "link": "https://www.youtube.com/watch?v=crbVVlRIvDI",
     "title": "이에요/예요 qo'shimchasi. Joy nomlariga oid so'zlar | 11-dars | Koreys tilini 0 dan o'rganish",
     "dars": 11
   },
   {
-    "link": "https://www.youtube.com/watch?v=VpY9gC190S4",
+    "link": "https://www.youtube.com/watch?v=LzM-tf4L_mU",
     "title": "을/를 va 의 qo’shimchasi. Vaqtni ifodalovchi so’zlar | 12-dars | Koreys tilini 0 dan o'rganish",
     "dars": 12
   },
   {
-    "link": "https://www.youtube.com/watch?v=5P2o9L9tUaA",
-    "title": "에 qo’shimchasi  Kun tartibiga oid so’zlar | 13-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=tQX740NofrY",
+    "title": "에 qo’shimchasi Kun tartibiga oid so’zlar | 13-dars | Koreys tilini 0 dan o'rganish",
     "dars": 13
   },
   {
-    "link": "https://www.youtube.com/watch?v=kYJt2x43iG8",
+    "link": "https://www.youtube.com/watch?v=1UNTcmB1AjY",
     "title": "Fe’l/sifat + 아요/어요 qo’shimchasi (hozirgi zamon) | 14-dars | Koreys tilini 0 dan o'rganish",
     "dars": 14
   },
   {
-    "link": "https://www.youtube.com/watch?v=yW63vX6p5h0",
+    "link": "https://www.youtube.com/watch?v=WeZVzq2j3EA",
     "title": "Koreys tilida suhbatlashamiz | 15-dars | Koreys tilini 0 dan o'rganish",
     "dars": 15
   },
   {
-    "link": "https://www.youtube.com/watch?v=J8n0q9pA8jI",
-    "title": "Koreys tilida sonlar (koreys sonlari) | 16-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=UTleuNu0e8w",
+    "title": "Koreys tilida oilamizni tanishtiramiz! | 16-dars | Koreys tilini 0 dan o'rganish",
     "dars": 16
   },
   {
-    "link": "https://www.youtube.com/watch?v=680_49-pG0k",
-    "title": "Xitoy-koreys sonlari | 17-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=5Dhe6KNxxZY",
+    "title": "Koreys tilida xitoy sanoq tizimi | 17-dars | Koreys tilini 0 dan o'rganish",
     "dars": 17
   },
   {
-    "link": "https://www.youtube.com/watch?v=480L3u9G6cQ",
-    "title": "Koreys tilida vaqtni aytish | 18-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=EjDj-fIQV94",
+    "title": "Koreys tilida koreys sanoq tizimi | 18-dars | Koreys tilini 0 dan o'rganish",
     "dars": 18
   },
   {
-    "link": "https://www.youtube.com/watch?v=Z_a_G5S5zUI",
-    "title": "Koreys tilida sana va haftalarni aytish | 19-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=iVfXi-EcPAE",
+    "title": "Sana va vaqt haqida suhbatlashamiz | 19-dars | Koreys tilini 0 dan o'rganish",
     "dars": 19
   },
   {
-    "link": "https://www.youtube.com/watch?v=vY3n5c697B8",
-    "title": "Suhbatdosh bilan muloqot va takrorlash | 20-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=W863_c3bWlA",
+    "title": "O’tgan zamon fe’li va 하고 qo’shimchasi | 20-dars | Koreys tilini 0 dan o'rganish",
     "dars": 20
   },
   {
-    "link": "https://www.youtube.com/watch?v=Yp8sB6R3q2k",
-    "title": "O'tgan zamon (-았/었어요) | 21-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=GugF4VpJC_Y",
+    "title": "Joylar va harakatlar. 에/에서 qo’shimchalari | 21-dars | Koreys tilini 0 dan o'rganish",
     "dars": 21
   },
   {
-    "link": "https://www.youtube.com/watch?v=M5L_G82hS6A",
-    "title": "Kelasi zamon (-(으)ㄹ 거예요) | 22-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=1o2Jopk6anI",
+    "title": "Xaridga oid suhbat va 아/어 주세요 qo’shimchasi | 22-dars | Koreys tilini 0 dan o'rganish",
     "dars": 22
   },
   {
-    "link": "https://www.youtube.com/watch?v=9L9jJ2y1a2I",
-    "title": "Sifat/Fe'l + ㅂ/습니까 va ㅂ/습니다 | 23-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=RsAedTfqHNk",
+    "title": "(으)로; 고 십다 qo’shimchalari | 23-dars | Koreys tilini 0 dan o'rganish",
     "dars": 23
   },
   {
-    "link": "https://www.youtube.com/watch?v=Qy3J5P596_c",
-    "title": "Sifat/Fe'l + 았/었습니까 va 았/었습니다 | 24-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=OQ2080fNWUI",
+    "title": "무슨/계속/이따가/네요 bilan tanishamiz | 24-dars | Koreys tilini 0 dan o'rganish",
     "dars": 24
   },
   {
-    "link": "https://www.youtube.com/watch?v=A8vG5o56O6I",
-    "title": "Sifat/Fe'l + (으)ㄹ 입니까 va (으)ㄹ 입니다 | 25-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=9gSQrbiXJaE",
+    "title": "아서/어서 qo’shimchasi, sevimli mashg’ulotlar bilan tanishamiz | 25-dars | Koreys tilini 0 dan o'rganish",
     "dars": 25
   },
   {
-    "link": "https://www.youtube.com/watch?v=1x3M6X4B3K8",
-    "title": "Joy ko'rsatkich qo'shimchasi 에서 | 26-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=tn-fd_Jvyd0",
+    "title": "ㄹ때; 하고 같이; (으)로 가다/ 오다 qo’shimchalari | 26-dars | Koreys tilini 0 dan o'rganish",
     "dars": 26
   },
   {
-    "link": "https://www.youtube.com/watch?v=7O2_m7G8P5k",
-    "title": "Yo'nalish ko'rsatkich qo'shimchasi (으)로 | 27-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=Z1IA23CYXDY",
+    "title": "아/어 보다; (으) ㄹ 거에요 qo’shimchalari va sayohatga oid so’zlar | 27-dars | Koreys tilini 0 dan o'rganish",
     "dars": 27
   },
   {
-    "link": "https://www.youtube.com/watch?v=3k_K205qH9I",
-    "title": "Chegara ko'rsatuvchi qo'shimchalar 부터/까지 | 28-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=HwLi2vde4NI",
+    "title": "(이) 나; 에서 까지 qo’shimchalari va transportga oid so’zlar | 28-dars | Koreys tilini 0 dan o'rganish",
     "dars": 28
   },
   {
-    "link": "https://www.youtube.com/watch?v=xZ_I8939sN8",
-    "title": "Chegara ko'rsatuvchi qo'shimchalar 에서/까지 | 29-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=RN5Fgxopqew",
+    "title": "지요, 고 qo’shimchalari; internet va qo’ng’iroqqa oid so’zlar | 29-dars | Koreys tilini 0 dan o'rganish",
     "dars": 29
   },
   {
-    "link": "https://www.youtube.com/watch?v=W8P_H52G3Y4",
-    "title": "Grammatikani mustahkamlash | 30-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=yfielI7koMg",
+    "title": "(으)ㄹ게요, - 는것tozalikka oid so'zlar | 30-dars | Koreys tilini 0 dan o'rganish",
     "dars": 30
   },
   {
-    "link": "https://www.youtube.com/watch?v=kYJ5v68R87A",
-    "title": "Oila a'zolari va hurmat ko'rsatish | 31-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=gPZbvWixcdM",
+    "title": "(으)면 안 되다, (으)니까 | 31-dars | Koreys tilini 0 dan o'rganish",
     "dars": 31
   },
   {
-    "link": "https://www.youtube.com/watch?v=aG4E89o2f4M",
-    "title": "Hurmat darajasini ko'rsatuvchi (으)시 qo'shimchasi | 32-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=mUiUuuhmQYY",
+    "title": "(으)ㄴ 후에, 지 마세요 va (으)면, ㅂ/습니까,ㅂ/습니다 qo’shimchalari | 32-dars | Koreys tilini 0 dan o'rganish",
     "dars": 32
   },
   {
-    "link": "https://www.youtube.com/watch?v=9gM_k60_x7A",
-    "title": "Koreys tilida inkor shakllari (안/못) | 33-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=-GOYUo_7r1k",
+    "title": "-(으)려고, (으)면 되다 qo’shimchalari va pochtaga oid so'zlar | 33-dars | Koreys tilini 0 dan o'rganish",
     "dars": 33
   },
   {
-    "link": "https://www.youtube.com/watch?v=O8m_P991J9k",
-    "title": "Koreys tilida inkor shakllari -지 않다 / -지 못하다 | 34-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=wU9Kijh_hYQ",
+    "title": "Koreys tilida yordamchi so'zlar va bog'lovchilar | 34-dars | Koreys tilini 0 dan o'rganish",
     "dars": 34
   },
   {
-    "link": "https://www.youtube.com/watch?v=X8_0q887q1A",
-    "title": "Koreys tilida bog'lovchilar (고, og'zaki nutqda) | 35-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=PhM95Gz9idc",
+    "title": "Koreys tilida ranglar va tana a'zolari bilan tanishamiz | 35-dars | Koreys tilini 0 dan o'rganish",
     "dars": 35
   },
   {
-    "link": "https://www.youtube.com/watch?v=G9P3-x8898o",
-    "title": "Koreys tilida bog'lovchilar (고, rasmiy nutqda) | 36-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=KQPIqjej0KQ",
+    "title": "Koreys tilida suhbatlashamiz | 36-dars | Koreys tilini 0 dan o'rganish",
     "dars": 36
   },
   {
-    "link": "https://www.youtube.com/watch?v=7_M9S8o0x8A",
-    "title": "Koreys tilida zidlovchi bog'lovchi -지만 | 37-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=lyFJ8ly1uDc",
+    "title": "Koreys tilida suhbatlashamiz | 37-dars | Koreys tilini 0 dan o'rganish",
     "dars": 37
   },
   {
-    "link": "https://www.youtube.com/watch?v=3v9S2_o8X7g",
-    "title": "Koreys tilida zidlovchi bog'lovchi -지만 (Rasmiy) | 38-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=5z07UzoxIRA",
+    "title": "Koreys tilida o’zimizni tanishtiramiz | 38-dars | Koreys tilini 0 dan o'rganish",
     "dars": 38
   },
   {
-    "link": "https://www.youtube.com/watch?v=H7P_j995c6Y",
-    "title": "Koreys tilida sabab ko'rsatuvchi -아/어서 | 39-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=iklAVu-X0Aw",
+    "title": "Koreys tilida chiroyli talaffuz qilamiz | 39-dars | Koreys tilini 0 dan o'rganish",
     "dars": 39
   },
   {
-    "link": "https://www.youtube.com/watch?v=48S83J2G8kM",
-    "title": "Koreys tilida sabab ko'rsatuvchi -(으)니까 | 40-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=cmNlywZdpwc",
+    "title": "Koreys tilida feʼl va sifatga doir ayrim qoidalar | 40-dars | Koreys tilini 0 dan o'rganish",
     "dars": 40
   },
   {
-    "link": "https://www.youtube.com/watch?v=yP3X5a8818o",
-    "title": "Koreys tilida maqsadni ifodalash -(으)러 가다/오다 | 41-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=KmZcVpp093Q",
+    "title": "고 있다;안, 지 않다 grammatikalari | 41-dars | Koreys tilini 0 dan o'rganish",
     "dars": 41
   },
   {
-    "link": "https://www.youtube.com/watch?v=M9K5x90s01A",
-    "title": "Koreys tilida maqsadni ifodalash -(으)려고 하다 | 42-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=SN4Z3WbGGGM",
+    "title": "(으)려고 하다-(으)ㄹ 줄 알다/모르다동사 + 기로 하다 qo’shimchalari | 42-dars | Koreys tilini 0 dan o'rganish",
     "dars": 42
   },
   {
-    "link": "https://www.youtube.com/watch?v=6K5o81K9a3g",
-    "title": "Koreys tilida istak va xohishni ifodalash -고 싶다 | 43-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=JriHDY7Bjno",
+    "title": "겠; -(으)ㄹ께요;-는/(으)ㄴ/(으)ㄹ 것 같다 ; -아/어/여지다 qo’shimchalari | 43-dars | Koreys tilini 0 dan o'rganish",
     "dars": 43
   },
   {
-    "link": "https://www.youtube.com/watch?v=L8j18_m8s2A",
-    "title": "Koreys tilida taklif bildirish -(으)ㄹ까요? | 44-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=dGLDI9V5CSc",
+    "title": "Koreyscha suhbatlarni o'rganamiz | 44-dars | Koreys tilini 0 dan o'rganish",
     "dars": 44
   },
   {
-    "link": "https://www.youtube.com/watch?v=Q9P8m84G2y8",
-    "title": "Koreys tilida taklif bildirish -(으)ㅂ시다 | 45-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=Tf9bJ4pYrns",
+    "title": "아/어/여도 되다; -다가; Sifat+ot, ㅂ va ㄹ qoidalari | 45-dars | Koreys tilini 0 dan o'rganish",
     "dars": 45
   },
   {
-    "link": "https://www.youtube.com/watch?v=3a9N8_3_m_c",
-    "title": "Koreys tilida buyruq va iltimos -(으)세요 | 46-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=X-wcpdOfxvU",
+    "title": "기 전에 grammatikasi va Sifat+ot, ㅂ va ㄹ qoidalari | 46-dars | Koreys tilini 0 dan o'rganish",
     "dars": 46
   },
   {
-    "link": "https://www.youtube.com/watch?v=9L9j2x_a7_A",
-    "title": "Koreys tilida buyruq va iltimos -(으)십시오 | 47-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=e7PkTRAnKzg",
+    "title": "(으)ㄴ 지-(으)ㄴ 적이 있다/없다-게 되다 | 47-dars | Koreys tilini 0 dan o'rganish",
     "dars": 47
   },
   {
-    "link": "https://www.youtube.com/watch?v=S9O3v881X_o",
-    "title": "Koreys tilida taqiq bildirish -지 마세요 | 48-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=gZaZOKcxY0o",
+    "title": "ㄴ/는다/다 qo’shimchalari | 48-dars | Koreys tilini 0 dan o'rganish",
     "dars": 48
   },
   {
-    "link": "https://www.youtube.com/watch?v=E8S82j_m_2o",
-    "title": "Koreys tilida taqiq bildirish -지 마십시오 | 49-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=nWaCRJLo-lE",
+    "title": "거든요; -건 -건;-건마는/건만 grammatikalari | 49-dars | Koreys tilini 0 dan o'rganish",
     "dars": 49
   },
   {
-    "link": "https://www.youtube.com/watch?v=L9X2a89_S_k",
-    "title": "Mavzularni mustahkamlash | 50-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=-PCZYw8ih4g",
+    "title": "결코/절대로-경-고 나면 qo’shimchalari | 50-dars | Koreys tilini 0 dan o'rganish",
     "dars": 50
   },
   {
-    "link": "https://www.youtube.com/watch?v=1O9J2a_S8_k",
-    "title": "Koreys tilida shart va gipoteza -(으)면 | 51-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=R3j4SXzozpU",
+    "title": "(으)ㄹ래요 qoʻshimchasi va telefonda qisqa muloqot | 51-dars | Koreys tilini 0 dan o'rganish",
     "dars": 51
   },
   {
-    "link": "https://www.youtube.com/watch?v=8K9j2_m_a_o",
-    "title": "Koreys tilida majburiyatni ifodalash -아/어야 하다 | 52-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=mJ6e14Oi0GY",
+    "title": "(으) 러 가다/오다;기/을/를 위해서 | 52-dars | Koreys tilini 0 dan o'rganish",
     "dars": 52
   },
   {
-    "link": "https://www.youtube.com/watch?v=9J2x_m_a_8_o",
-    "title": "Koreys tilida ruxsat so'rash -아/어도 되다 | 53-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=Lxk9vTFSxBI",
+    "title": "ㅂ 시다(으)시겠어요 qoʻshimchalari; Qayerdansiz? | 53-dars | Koreys tilini 0 dan o'rganish",
     "dars": 53
   },
   {
-    "link": "https://www.youtube.com/watch?v=2K9j2_S8_a_m",
-    "title": "Koreys tilida taqiqlash -(으)면 안 되다 | 54-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=TQXsCFGR9Cg",
+    "title": "Fe'l/sifat+거나 qo’shimchasi | 54-dars | Koreys tilini 0 dan o'rganish",
     "dars": 54
   },
   {
-    "link": "https://www.youtube.com/watch?v=3O9J2_m_a_o_k",
-    "title": "Koreys tilida imkoniyatni ifodalash -(으)ㄹ 수 있다/없다 | 55-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=WXy_D8xBAtE",
+    "title": "아/어 하다 qo’shimchasi; Telefon raqamingiz necha? | 55-dars | Koreys tilini 0 dan o'rganish",
     "dars": 55
   },
   {
-    "link": "https://www.youtube.com/watch?v=4K9j2_S8_a_o",
-    "title": "Koreys tilida ko'nikma va tajriba -(으)ㄴ 적이 있다/없다 | 56-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=gTLiRpw6ruc",
+    "title": "Fe'l/sifat +기 qo’shimchasi; So'zlashuvga oid iboralar | 56-dars | Koreys tilini 0 dan o'rganish",
     "dars": 56
   },
   {
-    "link": "https://www.youtube.com/watch?v=5J2x_m_a_8_o_s",
-    "title": "Koreys tilida harakat davomiyligi -고 있다 | 57-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=wrQKTCOxglw",
+    "title": "Sifat+게+fe'l qo’shimchasi | 57-dars | Koreys tilini 0 dan o'rganish",
     "dars": 57
   },
   {
-    "link": "https://www.youtube.com/watch?v=6O9J2_S8_a_o",
-    "title": "Koreys tilida harakat ketma-ketligi -아/어서 | 58-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=OTkaUVrb8dQ",
+    "title": "-는 대 걸리다/들다 grammatikasi | 58-dars | Koreys tilini 0 dan o'rganish",
     "dars": 58
   },
   {
-    "link": "https://www.youtube.com/watch?v=7K9j2_m_a_o_k",
-    "title": "Koreys tilida harakat davomida -면서 | 59-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=iSxiWpwH0g0",
+    "title": "Sifat+군요; Fe'l+는군요.Hayratni ifodalaydi(Bu qanday bo'ladi?) | 59-dars | Koreys tilini 0 dan o'rganish",
     "dars": 59
   },
   {
-    "link": "https://www.youtube.com/watch?v=8J2x_m_a_8_o_m",
-    "title": "Mavzularni mustahkamlash (2-qism) | 60-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=zJkXdpHEY8A",
+    "title": "Sifat+(으) ㄴ 가요?Fe'l+나요Savol berish uslubi | 60-dars | Koreys tilini 0 dan o'rganish",
     "dars": 60
   },
   {
-    "link": "https://www.youtube.com/watch?v=9O9J2_S8_a_o",
-    "title": "Koreys tilida taqqoslash -보다 | 61-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=kZQ57QPXg5c",
+    "title": "Sifat/fe'l -(으)ㄴ/는데요 grammatikasi (Bormi? Marhamat) | 61-dars | Koreys tilini 0 dan o'rganish",
     "dars": 61
   },
   {
-    "link": "https://www.youtube.com/watch?v=1K9j2_m_a_o_s",
-    "title": "Koreys tilida o'xshashlik -처럼 / -같이 | 62-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=0_2vb-qWQQY",
+    "title": "Bog'lovchilar | 62-dars | Koreys tilini 0 dan o'rganish",
     "dars": 62
   },
   {
-    "link": "https://www.youtube.com/watch?v=2J2x_m_a_8_o_k",
-    "title": "Koreys tilida taxmin bildirish -(으)ㄹ 것 같다 | 63-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=wtwQHrq4cZ8",
+    "title": "Koreys tilida ko'chirma va o'zlashtirma gaplar | 63-dars | Koreys tilini 0 dan o'rganish",
     "dars": 63
   },
   {
-    "link": "https://www.youtube.com/watch?v=3O9J2_S8_a_o_m",
-    "title": "Koreys tilida sabab -때문에 | 64-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=EUpFVjEhMlM",
+    "title": "Koreyscha maqollarni o'rganamiz | 64-dars | Koreys tilini 0 dan o'rganish",
     "dars": 64
   },
   {
-    "link": "https://www.youtube.com/watch?v=4K9j2_m_a_o_k",
-    "title": "Koreys tilida fe'l bilan sabab -기 때문에 | 65-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=_Nf8T9P2Jg0",
+    "title": "Koreya madaniyati haqida suhbatlashamiz | 65-dars | Koreys tilini 0 dan o'rganish",
     "dars": 65
   },
   {
-    "link": "https://www.youtube.com/watch?v=5J2x_m_a_8_o_l",
-    "title": "Koreys tilida vaqt oralig'i -동안 | 66-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=P1gJpLAjRfc",
+    "title": "Koreys tilida sinonimlar | 66-dars | Koreys tilini 0 dan o'rganish",
     "dars": 66
   },
   {
-    "link": "https://www.youtube.com/watch?v=6O9J2_S8_a_o_s",
-    "title": "Koreys tilida fe'l bilan vaqt oralig'i -는 동안 | 67-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=fh5MLau-6io",
+    "title": "Koreys tilida antonimlar | 67-dars | Koreys tilini 0 dan o'rganish",
     "dars": 67
   },
   {
-    "link": "https://www.youtube.com/watch?v=7K9j2_m_a_o_x",
-    "title": "Koreys tilida oldin -전에 | 68-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=mv5cPp2r52k",
+    "title": "Koreys tilida Hanja (eski xitoy iyerogliflari) | 68-dars | Koreys tilini 0 dan o'rganish",
     "dars": 68
   },
   {
-    "link": "https://www.youtube.com/watch?v=8J2x_m_a_8_o_p",
-    "title": "Koreys tilida fe'l bilan oldin -기 전에 | 69-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=xECyH16S8js",
+    "title": "Koreys tilida Hanja (eski xitoy iyerogliflari) - 2 | 69-dars | Koreys tilini 0 dan o'rganish",
     "dars": 69
   },
   {
-    "link": "https://www.youtube.com/watch?v=9O9J2_S8_a_o_z",
-    "title": "Mavzularni mustahkamlash (3-qism) | 70-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=rVgftoT9rzY",
+    "title": "Koreys tilida sinonim/ antonimlar - 2 | 70-dars | Koreys tilini 0 dan o'rganish",
     "dars": 70
   },
   {
-    "link": "https://www.youtube.com/watch?v=1K9j2_m_a_o_y",
-    "title": "Koreys tilida keyin -후에 | 71-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=rvH1lkv1sjQ",
+    "title": "-아/어 보이다-(으)니는 모양이다 ko’rinmoq, o’xshamoq | 71-dars | Koreys tilini 0 dan o'rganish",
     "dars": 71
   },
   {
-    "link": "https://www.youtube.com/watch?v=2J2x_m_a_8_o_v",
-    "title": "Koreys tilida fe'l bilan keyin -(으)ㄴ 후에 | 72-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=XdHBuQ_QEUA",
+    "title": "-(으)ㄹ 텐데 -(으)ㄹ 테니까 grammatikalari | 72-dars | Koreys tilini 0 dan o'rganish",
     "dars": 72
   },
   {
-    "link": "https://www.youtube.com/watch?v=3O9J2_S8_a_o_w",
-    "title": "Koreys tilida sinab ko'rish -아/어 보다 | 73-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=Hcm8mEPD_PE",
+    "title": "-(으)ㄹ걸요-(으)ㄹ지도 모르다 grammatikalari | 73-dars | Koreys tilini 0 dan o'rganish",
     "dars": 73
   },
   {
-    "link": "https://www.youtube.com/watch?v=4K9j2_m_a_o_q",
-    "title": "Koreys tilida yordam berish -아/어 주다 | 74-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=RonNsvKx_so",
+    "title": "(으)ㄴ/는 반면에-(으)ㄴ/는데도 grammatikalari | 74-dars | Koreys tilini 0 dan o'rganish",
     "dars": 74
   },
   {
-    "link": "https://www.youtube.com/watch?v=5J2x_m_a_8_o_r",
-    "title": "Koreys tilida holat va natija -아/어 있다 | 75-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=piMweptHXuc",
+    "title": "Hanja ishtirokidagiso'zlar (3) | 75-dars | Koreys tilini 0 dan o'rganish",
     "dars": 75
   },
   {
-    "link": "https://www.youtube.com/watch?v=6O9J2_S8_a_o_t",
-    "title": "Koreys tilida tayyorgarlik -아/어 두다 | 76-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=dNHEJVvchGk",
+    "title": "서술데;반말제 grammatikalari | 76-dars | Koreys tilini 0 dan o'rganish",
     "dars": 76
   },
   {
-    "link": "https://www.youtube.com/watch?v=7K9j2_m_a_o_u",
-    "title": "Koreys tilida o'zgarish -아/어 gida | 77-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=vV8ut6oxDp8",
+    "title": "Hanja ishtirokidagi so'zlar (4) | 77-dars | Koreys tilini 0 dan o'rganish",
     "dars": 77
   },
   {
-    "link": "https://www.youtube.com/watch?v=8J2x_m_a_8_o_i",
-    "title": "Koreys tilida bilish -(으)ㄹ 줄 알고 있다/없다 | 78-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=Jp3AMJXTo7Y",
+    "title": "-잖아요 qo’shimchasi; koreyscha idiomalar | 78-dars | Koreys tilini 0 dan o'rganish",
     "dars": 78
   },
   {
-    "link": "https://www.youtube.com/watch?v=9O9J2_S8_a_o_o",
-    "title": "Koreys tilida maqsad -(으)러 | 79-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=17-LTazcXPI",
+    "title": "Hanja ishtirokidagi so'zlar | 79-dars | Koreys tilini 0 dan o'rganish",
     "dars": 79
   },
   {
-    "link": "https://www.youtube.com/watch?v=1K9j2_m_a_o_p",
-    "title": "Mavzularni mustahkamlash (4-qism) | 80-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=kiZEF1jQMj0",
+    "title": "-는 바람에; -느라고 qo’shimchalari | 80-dars | Koreys tilini 0 dan o'rganish",
     "dars": 80
   },
   {
-    "link": "https://www.youtube.com/watch?v=2J2x_m_a_8_o_a",
-    "title": "Koreys tilida nomlash -라고 하다 | 81-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=7xJqI84uccI",
+    "title": "ㄴ/는 탓에 va 고 해서 qo’shimchalari | 81-dars | Koreys tilini 0 dan o'rganish",
     "dars": 81
   },
   {
-    "link": "https://www.youtube.com/watch?v=3O9J2_S8_a_o_b",
-    "title": "Koreys tilida o'zgalar gapini yetkazish (Darak) -다고 하다 | 82-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=pUVXz0r6bAA",
+    "title": "Idiomalar bilan tanishamiz | 82-dars | Koreys tilini 0 dan o'rganish",
     "dars": 82
   },
   {
-    "link": "https://www.youtube.com/watch?v=4K9j2_m_a_o_c",
-    "title": "Koreys tilida o'zgalar gapini yetkazish (So'roq) -냐고 하다 | 83-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=xwoQmt-kvfU",
+    "title": "Idiomalar bilan tanishamiz | 83-dars | Koreys tilini 0 dan o'rganish",
     "dars": 83
   },
   {
-    "link": "https://www.youtube.com/watch?v=5J2x_m_a_8_o_d",
-    "title": "Koreys tilida o'zgalar gapini yetkazish (Buyruq) -(으)라고 하다 | 84-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=lwSt8kb7tYk",
+    "title": "Hanjaga oid so'zlar | 84-dars | Koreys tilini 0 dan o'rganish",
     "dars": 84
   },
   {
-    "link": "https://www.youtube.com/watch?v=6O9J2_S8_a_o_e",
-    "title": "Koreys tilida o'zgalar gapini yetkazish (Taklif) -자고 하다 | 85-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=LgieGyqoowY",
+    "title": "Idiomalarni o'rganamiz | 85-dars | Koreys tilini 0 dan o'rganish",
     "dars": 85
   },
   {
-    "link": "https://www.youtube.com/watch?v=7K9j2_m_a_o_f",
-    "title": "Koreys tilida bilish/bilmaslik -는지 알다/모르다 | 86-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=8SKyHl4EMpE",
+    "title": "Idiomalarni o'rganamiz | 86-dars | Koreys tilini 0 dan o'rganish",
     "dars": 86
   },
   {
-    "link": "https://www.youtube.com/watch?v=8J2x_m_a_8_o_g",
-    "title": "Koreys tilida qaror qilish -기로 하다 | 87-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=x-vStBziZVE",
+    "title": "Hanjaga oid so'zlar | 87-dars | Koreys tilini 0 dan o'rganish",
     "dars": 87
   },
   {
-    "link": "https://www.youtube.com/watch?v=9O9J2_S8_a_o_h",
-    "title": "Koreys tilida sabab -(으)므로 | 88-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=-E8ogcqAiu4",
+    "title": "Idiomalarni o'rganamiz | 88-dars | Koreys tilini 0 dan o'rganish",
     "dars": 88
   },
   {
-    "link": "https://www.youtube.com/watch?v=1K9j2_m_a_o_j",
-    "title": "Koreys tilida shart va faraz -거든 | 89-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=RFRylUzZM4w",
+    "title": "(으)ㄹ까 하다-고자 qo’shimchalari | 89-dars | Koreys tilini 0 dan o'rganish",
     "dars": 89
   },
   {
-    "link": "https://www.youtube.com/watch?v=2J2x_m_a_8_o_k",
-    "title": "Mavzularni mustahkamlash (5-qism) | 90-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=apGwi7hOe7Y",
+    "title": "Hanjaga oid so'zlar | 90-dars | Koreys tilini 0 dan o'rganish",
     "dars": 90
   },
   {
-    "link": "https://www.youtube.com/watch?v=3O9J2_S8_a_o_l",
-    "title": "Koreys tilida taqqoslash -вa solishtirish - deyni | 91-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=HSXmMagTdsE",
+    "title": "Bankdagi suhbat | 91-dars | Koreys tilini 0 dan o'rganish",
     "dars": 91
   },
   {
-    "link": "https://www.youtube.com/watch?v=4K9j2_m_a_o_z",
-    "title": "Grammatik sinonimlar (1-qism) | 92-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=bJObJrDmha0",
+    "title": "Shifoxonadagi suhbat | 92-dars | Koreys tilini 0 dan o'rganish",
     "dars": 92
   },
   {
-    "link": "https://www.youtube.com/watch?v=5J2x_m_a_8_o_x",
-    "title": "Grammatik sinonimlar (2-qism) | 93-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=pfYayhdRMQY",
+    "title": "Koreys tilida meva va sabzavotlar | 93-dars | Koreys tilini 0 dan o'rganish",
     "dars": 93
   },
   {
-    "link": "https://www.youtube.com/watch?v=6O9J2_S8_a_o_c",
-    "title": "Grammatik sinonimlar (3-qism) | 94-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=5t0LrhZdoxU",
+    "title": "(으)려던 참이다 va -(으)ㄹ 겸 -(으)ㄹ 겸 grammatikalari | 94-dars | Koreys tilini 0 dan o'rganish",
     "dars": 94
   },
   {
-    "link": "https://www.youtube.com/watch?v=7K9j2_m_a_o_v",
-    "title": "Grammatik sinonimlar (4-qism) | 95-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=BlzNQjYxtGo",
+    "title": "Idiomalar | 95-dars | Koreys tilini 0 dan o'rganish",
     "dars": 95
   },
   {
-    "link": "https://www.youtube.com/watch?v=8J2x_m_a_8_o_b",
-    "title": "Grammatik sinonimlar (5-qism) | 96-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=w8tdcwCeeyg",
+    "title": "아/어야 지요 ; ㄹ 만하다 qo’shimchalari | 96-dars | Koreys tilini 0 dan o'rganish",
     "dars": 96
   },
   {
-    "link": "https://www.youtube.com/watch?v=9O9J2_S8_a_o_n",
-    "title": "Koreys tilida iboralar va ma'nodosh so'zlar | 97-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=OChBf2k2mcI",
+    "title": "도록 하다; 지 그래요? qo’shimchalari | 97-dars | Koreys tilini 0 dan o'rganish",
     "dars": 97
   },
   {
-    "link": "https://www.youtube.com/watch?v=1K9j2_m_a_o_m",
-    "title": "TOPIK I imtihoniga tayyorgarlik | 98-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=AXTUB0XV_Y8",
+    "title": "So'zlashuv darsi | 98-dars | Koreys tilini 0 dan o'rganish",
     "dars": 98
   },
   {
-    "link": "https://www.youtube.com/watch?v=2J2x_m_a_8_o_q",
-    "title": "TOPIK I eshitish bo'limi tahlili | 99-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=Gkt9anWPcAU",
+    "title": "Tozalikka oid iboralar | 99-dars | Koreys tilini 0 dan o'rganish",
     "dars": 99
   },
   {
-    "link": "https://www.youtube.com/watch?v=3O9J2_S8_a_o_w",
-    "title": "TOPIK I o'qish bo'limi tahlili | 100-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=SND10IMpy24",
+    "title": "So'zlashuv darsi | 100-dars | Koreys tilini 0 dan o'rganish",
     "dars": 100
   },
   {
-    "link": "https://www.youtube.com/watch?v=4K9j2_m_a_o_e",
-    "title": "Grammatik qoidalarni takrorlash | 101-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=m4BSnGkX_Qs",
+    "title": "Tinglab tushunamiz | 101-dars | Koreys tilini 0 dan o'rganish",
     "dars": 101
   },
   {
-    "link": "https://www.youtube.com/watch?v=5J2x_m_a_8_o_r",
-    "title": "Murakkab gap qurilishi | 102-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=43UAY-vXoq0",
+    "title": "Tinglab tushunamiz(2-qism) | 102-dars | Koreys tilini 0 dan o'rganish",
     "dars": 102
   },
   {
-    "link": "https://www.youtube.com/watch?v=6O9J2_S8_a_o_t",
-    "title": "Koreys tilida matn bilan ishlash | 103-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=Wm_E-XNVDEU",
+    "title": "Tinglab tushunamiz(3-qism) | 103-dars | Koreys tilini 0 dan o'rganish",
     "dars": 103
   },
   {
-    "link": "https://www.youtube.com/watch?v=7K9j2_m_a_o_y",
-    "title": "Audio tinglash mashqlari | 104-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=hWq_xVBk0pc",
+    "title": "O’qish mashqi va -기 바라다 | 104-dars | Koreys tilini 0 dan o'rganish",
     "dars": 104
   },
   {
-    "link": "https://www.youtube.com/watch?v=8J2x_m_a_8_o_u",
-    "title": "Lug'at boyligini oshirish mashqlari | 105-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=rBM6nCnBp74",
+    "title": "O’qish mashqi va -아/어 드리다 qo’shimchasi | 105-dars | Koreys tilini 0 dan o'rganish",
     "dars": 105
   },
   {
-    "link": "https://www.youtube.com/watch?v=9O9J2_S8_a_o_i",
-    "title": "Rasmiy va noformal uslub farqlari | 106-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=RH9lWuO7r8w",
+    "title": "O’qish mashqi va 바로바로 | 106-dars | Koreys tilini 0 dan o'rganish",
     "dars": 106
   },
   {
-    "link": "https://www.youtube.com/watch?v=1K9j2_m_a_o_o",
-    "title": "Koreys madaniyati va tili | 107-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=gm-1XhMiQZ8",
+    "title": "Grammatik sinonimlar | 107-dars | Koreys tilini 0 dan o'rganish",
     "dars": 107
   },
   {
-    "link": "https://www.youtube.com/watch?v=2J2x_m_a_8_o_p",
-    "title": "Muloqot strategiyalari | 108-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=qN66WUvrySY",
+    "title": "Grammatik sinonimlar(2-qism) | 108-dars | Koreys tilini 0 dan o'rganish",
     "dars": 108
   },
   {
-    "link": "https://www.youtube.com/watch?v=3O9J2_S8_a_o_a",
-    "title": "Xat va xabar yozish qoidalari | 109-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=OpSJWTxmM34",
+    "title": "Grammatik sinonimlar(3-qism) | 109-dars | Koreys tilini 0 dan o'rganish",
     "dars": 109
   },
   {
-    "link": "https://www.youtube.com/watch?v=4K9j2_m_a_o_s",
-    "title": "Grammatika bo'yicha yakuniy test | 110-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=CKwdTVtWxnA",
+    "title": "Grammatik sinonimlar(4-qism) | 110-dars | Koreys tilini 0 dan o'rganish",
     "dars": 110
   },
   {
-    "link": "https://www.youtube.com/watch?v=5J2x_m_a_8_o_d",
-    "title": "Grammatik sinonimlar (5-qism) | 111-dars | Koreys tilini 0 dan o'rganish",
+    "link": "https://www.youtube.com/watch?v=SdEVqMTfrjo",
+    "title": "Grammatik sinonimlar(5-qism) | 111-dars | Koreys tilini 0 dan o'rganish",
     "dars": 111
   },
   {
-    "link": "https://www.youtube.com/watch?v=6O9J2_S8_a_o_f",
+    "link": "https://www.youtube.com/watch?v=Z3vB2wXVHgk",
     "title": "Grammatik sinonimlar(6-qism) | 112-dars | Koreys tilini 0 dan o'rganish",
     "dars": 112
   },
   {
-    "link": "https://www.youtube.com/watch?v=7K9j2_m_a_o_g",
+    "link": "https://www.youtube.com/watch?v=rczigG_l19g",
     "title": "Grammatik sinonimlar(7-qism) | 113-dars | Koreys tilini 0 dan o'rganish",
     "dars": 113
   },
   {
-    "link": "https://www.youtube.com/watch?v=8J2x_m_a_8_o_h",
+    "link": "https://www.youtube.com/watch?v=WAVCpDL5ZFA",
     "title": "Grammatik sinonimlar(8-qism) | 114-dars | Koreys tilini 0 dan o'rganish",
     "dars": 114
   },
   {
-    "link": "https://www.youtube.com/watch?v=9O9J2_S8_a_o_j",
+    "link": "https://www.youtube.com/watch?v=Oqq5lP60wBM",
     "title": "Grammatik sinonimlar(9-qism) | 115-dars | Koreys tilini 0 dan o'rganish",
     "dars": 115
   },
   {
-    "link": "https://www.youtube.com/watch?v=1K9j2_m_a_o_k",
+    "link": "https://www.youtube.com/watch?v=VJqgTJQboLY",
     "title": "Koreys tilida sinonim so'zlar | 116-dars | Koreys tilini 0 dan o'rganish",
     "dars": 116
   },
   {
-    "link": "https://www.youtube.com/watch?v=2J2x_m_a_8_o_l",
+    "link": "https://www.youtube.com/watch?v=Q3d4yB68fVQ",
     "title": "Koreys tilida sinonim so'zlar (2-qism) | 117-dars | Koreys tilini 0 dan o'rganish",
     "dars": 117
   },
   {
-    "link": "https://www.youtube.com/watch?v=3O9J2_S8_a_o_z",
+    "link": "https://www.youtube.com/watch?v=wrIeNcn_Bxc",
     "title": "Koreys tilida sinonim so'zlar (3-qism) | 118-dars | Koreys tilini 0 dan o'rganish",
     "dars": 118
   },
   {
-    "link": "https://www.youtube.com/watch?v=4K9j2_m_a_o_x",
+    "link": "https://www.youtube.com/watch?v=JvWfvKTCC_w",
     "title": "Koreys tilida sinonim so'zlar (4-qism) | 119-dars | Koreys tilini 0 dan o'rganish",
     "dars": 119
   },
   {
-    "link": "https://www.youtube.com/watch?v=5J2x_m_a_8_o_c",
+    "link": "https://www.youtube.com/watch?v=S6Xo6G429dQ",
     "title": "Koreyscha iboralar (1-qism) | 120-dars | Koreys tilini 0 dan o'rganish",
     "dars": 120
   },
   {
-    "link": "https://www.youtube.com/watch?v=6O9J2_S8_a_o_v",
+    "link": "https://www.youtube.com/watch?v=aQd8SznAteI",
     "title": "Koreyscha iboralar (2-qism) | 121-dars | Koreys tilini 0 dan o'rganish",
     "dars": 121
   },
   {
-    "link": "https://www.youtube.com/watch?v=7K9j2_m_a_o_b",
+    "link": "https://www.youtube.com/watch?v=E5hwcEErxT0",
     "title": "Koreyscha qisqartmalar | 122-dars | Koreys tilini 0 dan o'rganish",
     "dars": 122
   },
   {
-    "link": "https://www.youtube.com/watch?v=8J2x_m_a_8_o_n",
+    "link": "https://www.youtube.com/watch?v=jCxyYBSF208",
     "title": "Koreyscha qisqartmalar (2-qism) | 123-dars | Koreys tilini 0 dan o'rganish",
     "dars": 123
   },
