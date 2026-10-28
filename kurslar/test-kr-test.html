@@ -7,7 +7,7 @@
   <title>NextStep - Koreys tili daraja testi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script>
+  <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -33,18 +33,21 @@
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
     }
+
     .custom-scrollbar::-webkit-scrollbar-track {
       background: #f1f5f9;
       border-radius: 8px;
     }
+
     .custom-scrollbar::-webkit-scrollbar-thumb {
       background: #cbd5e1;
       border-radius: 8px;
     }
+
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
       background: #94a3b8;
     }
- 
+
     body {
       font-family: 'Inter', sans-serif;
     }
@@ -54,34 +57,42 @@
 <body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
 
 
- <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
+  <header
+    class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
+
       <!-- Logo & Back Button -->
       <div class="flex items-center gap-4">
-        <a href="../index.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
+        <a href="../index.html"
+          class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
           <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
           <span>Bosh sahifaga</span>
         </a>
-         <a href="./kor.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
+        <a href="./kor.html"
+          class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
           <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
           <span>koreys tili sahifasiga</span>
         </a>
         <div class="h-5 w-px bg-slate-200 hidden sm:block"></div>
         <div class="flex items-center gap-2">
-          <div class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-extrabold text-lg shadow-md shadow-brand-500/20">N</div>
-          <span class="font-bold text-xl tracking-tight text-slate-900 hidden sm:inline">Next<span class="text-brand-600">Step</span></span>
+          <div
+            class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-extrabold text-lg shadow-md shadow-brand-500/20">
+            N</div>
+          <span class="font-bold text-xl tracking-tight text-slate-900 hidden sm:inline">Next<span
+              class="text-brand-600">Step</span></span>
         </div>
       </div>
 
       <!-- Course Info Header Badge -->
-      <div class="hidden md:flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-semibold">
+      <div
+        class="hidden md:flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-semibold">
         <span class="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
         Koreys Tili testlari
       </div>
 
       <!-- Right Controls: Profile -->
-      <a href="../profil.html" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm px-4 py-2 rounded-xl transition-all duration-200 shadow-md shadow-brand-500/20 hover:shadow-lg">
+      <a href="../profil.html"
+        class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm px-4 py-2 rounded-xl transition-all duration-200 shadow-md shadow-brand-500/20 hover:shadow-lg">
         <i class="fa-regular fa-user"></i>
         <span>Profil</span>
       </a>
@@ -182,7 +193,7 @@
 
     async function loadTestData() {
       try {
-        const res = await fetch('./test-kr.json');
+        const res = await fetch('https://raw.githubusercontent.com/alimardon201101-coder/NextStepBazaJSON/refs/heads/main/test-kr.json');
         const data = await res.json();
         testData = data.korean_proficiency_test || Object.values(data)[0];
         renderQuestion();
@@ -230,8 +241,8 @@
         const isSelected = userAnswers[currentIndex] === opt;
         const btn = document.createElement('button');
         btn.className = `w-full text-left p-4 rounded-xl border-2 font-medium text-sm transition-all flex justify-between items-center ${isSelected
-            ? 'border-blue-600 bg-blue-50/60 text-blue-700 shadow-sm'
-            : 'border-slate-100 bg-slate-50/50 hover:border-slate-300 hover:bg-white text-slate-700'
+          ? 'border-blue-600 bg-blue-50/60 text-blue-700 shadow-sm'
+          : 'border-slate-100 bg-slate-50/50 hover:border-slate-300 hover:bg-white text-slate-700'
           }`;
         btn.innerHTML = `<span>${opt}</span> <span class="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-xs ${isSelected ? 'border-blue-600 bg-blue-600 text-white' : ''}">${isSelected ? '✓' : ''}</span>`;
         btn.onclick = () => selectOption(opt);
@@ -290,6 +301,46 @@
         date: new Date().toISOString()
       };
       localStorage.setItem('test_results', JSON.stringify(existingResults));
+
+      document.getElementById('quiz-container').classList.add('hidden');
+      document.getElementById('result-container').classList.remove('hidden');
+      document.getElementById('score-text').innerText = score;
+    }
+    // Test tugaganda natijani GitHub'ga yuborish
+    function showResults() {
+      const questions = testData[currentLevel];
+      let score = 0;
+
+      questions.forEach((q, idx) => {
+        if (userAnswers[idx] === q.answer) {
+          score++;
+        }
+      });
+
+      // LocalStorage ga saqlash
+      const existingResults = JSON.parse(localStorage.getItem('test_results')) || {};
+      existingResults[currentLevel] = {
+        score: score,
+        total: questions.length,
+        level: currentLevel,
+        date: new Date().toISOString()
+      };
+      localStorage.setItem('test_results', JSON.stringify(existingResults));
+
+      // Foydalanuvchi ismini olish
+      const userProfile = JSON.parse(localStorage.getItem('user_profile')) || {};
+      const userName = userProfile.name || "Noma'lum foydalanuvchi";
+
+      // GitHub Bazasiga avtomatik sinxronlash (sync.js orqali)
+      if (typeof syncDataToGitHub === 'function') {
+        syncDataToGitHub('test', {
+          userName: userName,
+          subject: 'koreys tili', // (Koreys tili testida 'Koreys tili' deb yoziladi)
+          level: currentLevel,
+          score: score,
+          total: questions.length
+        });
+      }
 
       document.getElementById('quiz-container').classList.add('hidden');
       document.getElementById('result-container').classList.remove('hidden');

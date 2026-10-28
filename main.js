@@ -1,4 +1,133 @@
+// ==========================================
+// FIREBASE CONFIGURATION (Konfiguratsiya tayyor)
+// ==========================================
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  updateProfile
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDwb4toeX4PoN9ohgALvxh2y-QV-brQTcY",
+  authDomain: "nextstep-c412a.firebaseapp.com",
+  projectId: "nextstep-c412a",
+  storageBucket: "nextstep-c412a.firebasestorage.app",
+  messagingSenderId: "495834942368",
+  appId: "1:495834942368:web:e664520653a3f132be32c5"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const googleProvider = new GoogleAuthProvider();
+
+// ==========================================
+// USER PROFILE & AUTHENTICATION
+// ==========================================
+
+onAuthStateChanged(auth, async (user) => {
+  const nameElements = document.querySelectorAll('.user-name-display');
+  const avatarElements = document.querySelectorAll('.user-avatar-initial');
+
+  if (user) {
+    const userData = {
+      name: user.displayName || user.email.split('@')[0],
+      email: user.email,
+      uid: user.uid,
+      registeredAt: user.metadata.creationTime
+    };
+
+    localStorage.setItem('user_profile', JSON.stringify(userData));
+
+    nameElements.forEach(el => { el.textContent = userData.name; });
+    avatarElements.forEach(el => { el.textContent = userData.name.charAt(0).toUpperCase(); });
+
+    await syncUserDataToCloud(user);
+  } else {
+    const savedUser = JSON.parse(localStorage.getItem('user_profile'));
+    if (savedUser && savedUser.name) {
+      nameElements.forEach(el => { el.textContent = savedUser.name; });
+      avatarElements.forEach(el => { el.textContent = savedUser.name.charAt(0).toUpperCase(); });
+    } else {
+      nameElements.forEach(el => { el.textContent = "Mehmon"; });
+      avatarElements.forEach(el => { el.textContent = "M"; });
+    }
+  }
+});
+
+async function syncUserDataToCloud(user) {
+  try {
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
+
+    const localWatched = localStorage.getItem('watched_lessons');
+    const localTests = localStorage.getItem('test_results');
+
+    if (userSnap.exists()) {
+      const cloudData = userSnap.data();
+      if (cloudData.watched_lessons && !localWatched) {
+        localStorage.setItem('watched_lessons', JSON.stringify(cloudData.watched_lessons));
+      }
+      if (cloudData.test_results && !localTests) {
+        localStorage.setItem('test_results', JSON.stringify(cloudData.test_results));
+      }
+    } else {
+      await setDoc(userRef, {
+        name: user.displayName || user.email,
+        email: user.email,
+        watched_lessons: localWatched ? JSON.parse(localWatched) : {},
+        test_results: localTests ? JSON.parse(localTests) : {}
+      }, { merge: true });
+    }
+    updateProgressUI();
+    if (typeof displayTestResults === 'function') displayTestResults();
+  } catch (error) {
+    console.error("Cloud sinxronizatsiya xatoligi:", error);
+  }
+}
+
+// Google orqali ro'yxatdan o'tish / kirish
+async function registerWithGoogle() {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    alert(`Xush kelibsiz, ${result.user.displayName}!`);
+    closeRegisterModal();
+    window.location.reload();
+  } catch (error) {
+    alert("Google orqali kirishda xatolik: " + error.message);
+  }
+}
+window.registerWithGoogle = registerWithGoogle;
+
+// Email va Parol orqali ro'yxatdan o'tish / Kirish
+async function registerOrLoginWithEmail(email, password, name) {
+  try {
+    if (name) {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, { displayName: name });
+    } else {
+      await signInWithEmailAndPassword(auth, email, password);
+    }
+    alert("Muvaffaqiyatli bajarildi!");
+    closeRegisterModal();
+    window.location.reload();
+  } catch (error) {
+    alert("Xatolik yuz berdi: " + error.message);
+  }
+}
+window.registerOrLoginWithEmail = registerOrLoginWithEmail;
 
 function loadUserProfile() {
   const savedUser = JSON.parse(localStorage.getItem('user_profile'));
@@ -14,40 +143,14 @@ function loadUserProfile() {
   }
 }
 
-function registerUser(name, email) {
-  if (!name.trim()) {
-    alert("Iltimos, ismingizni kiriting!");
-    return false;
-  }
-
-  const newUser = {
-    name: name.trim(),
-    email: email ? email.trim() : '',
-    registeredAt: new Date().toISOString()
-  };
-
-  localStorage.setItem('user_profile', JSON.stringify(newUser));
-  loadUserProfile();
-  closeRegisterModal();
-  alert("Profil muvaffaqiyatli saqlandi!");
-  return true;
-}
-
 function openRegisterModal() {
   const modal = document.getElementById('registerModal');
   if (modal) {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
-
-    const savedUser = JSON.parse(localStorage.getItem('user_profile'));
-    if (savedUser) {
-      const nameInput = document.getElementById('userNameInput');
-      const emailInput = document.getElementById('userEmailInput');
-      if (nameInput) nameInput.value = savedUser.name || '';
-      if (emailInput) emailInput.value = savedUser.email || '';
-    }
   }
 }
+window.openRegisterModal = openRegisterModal;
 
 function closeRegisterModal() {
   const modal = document.getElementById('registerModal');
@@ -56,16 +159,22 @@ function closeRegisterModal() {
     modal.classList.remove('flex');
   }
 }
+window.closeRegisterModal = closeRegisterModal;
 
 function clearAllData() {
   if (confirm("Haqiqatdan ham barcha ma'lumotlarni, test natijalarini va ko'rilgan darslarni o'chirmoqchimisiz?")) {
     localStorage.clear();
-    alert("Barcha ma'lumotlar tozalandi!");
-    window.location.reload();
+    signOut(auth).then(() => {
+      alert("Barcha ma'lumotlar tozalandi va hisobdan chiqildi!");
+      window.location.reload();
+    });
   }
 }
+window.clearAllData = clearAllData;
 
-
+// ==========================================
+// COURSE PROGRESS & LESSONS (Darslar va taraqqiyot)
+// ==========================================
 
 const TOTAL_LESSONS = {
   english: 180,
@@ -78,11 +187,13 @@ function getWatchedLessons() {
   const data = localStorage.getItem('watched_lessons');
   return data ? JSON.parse(data) : { english: [], korean: [], russian: [], german: [] };
 }
+window.getWatchedLessons = getWatchedLessons;
 
 function isLessonWatched(courseType, lessonIndex) {
   const watched = getWatchedLessons();
   return watched[courseType] && watched[courseType].includes(lessonIndex);
 }
+window.isLessonWatched = isLessonWatched;
 
 function toggleLessonWatched(courseType, lessonIndex) {
   let watched = getWatchedLessons();
@@ -98,8 +209,16 @@ function toggleLessonWatched(courseType, lessonIndex) {
   }
 
   localStorage.setItem('watched_lessons', JSON.stringify(watched));
+
+  const user = auth.currentUser;
+  if (user) {
+    const userRef = doc(db, "users", user.uid);
+    setDoc(userRef, { watched_lessons: watched }, { merge: true });
+  }
+
   updateProgressUI();
 }
+window.toggleLessonWatched = toggleLessonWatched;
 
 function updateProgressUI() {
   const watched = getWatchedLessons();
@@ -120,7 +239,11 @@ function updateProgressUI() {
     if (progressBarEl) progressBarEl.style.width = `${percentage}%`;
   });
 }
+window.updateProgressUI = updateProgressUI;
 
+// ==========================================
+// TEST & PRONUNCIATION RESULTS
+// ==========================================
 
 function displayTestResults() {
   const testResults = JSON.parse(localStorage.getItem('test_results')) || {};
@@ -174,8 +297,7 @@ function displayTestResults() {
     container.appendChild(card);
   });
 }
-
-// =======
+window.displayTestResults = displayTestResults;
 
 function displayPronunciationResults() {
   const container = document.getElementById('pronunciation-results-container');
@@ -246,21 +368,24 @@ function displayPronunciationResults() {
     container.appendChild(card);
   }
 }
+window.displayPronunciationResults = displayPronunciationResults;
 
-// DOM Yuklanganda bajariladigan hodisalar
+// DOM Yuklanganda
 document.addEventListener('DOMContentLoaded', () => {
   loadUserProfile();
   updateProgressUI();
   displayTestResults();
-  displayPronunciationResults(); // <-- Bu yerga qo'shildi
+  displayPronunciationResults();
 
   const registerForm = document.getElementById('registerForm');
   if (registerForm) {
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const nameInput = document.getElementById('userNameInput').value;
+      const nameInput = document.getElementById('userNameInput')?.value || '';
       const emailInput = document.getElementById('userEmailInput').value;
-      registerUser(nameInput, emailInput);
+      const passwordInput = document.getElementById('userPasswordInput')?.value || '12345678';
+
+      registerOrLoginWithEmail(emailInput, passwordInput, nameInput);
     });
   }
 

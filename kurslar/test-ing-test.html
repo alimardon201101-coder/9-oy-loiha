@@ -194,7 +194,7 @@
 
     async function loadTestData() {
       try {
-        const res = await fetch('./test-ing.json');
+        const res = await fetch('https://raw.githubusercontent.com/alimardon201101-coder/NextStepBazaJSON/refs/heads/main/test-ing.json');
         const data = await res.json();
         testData = data.english_proficiency_test || Object.values(data)[0];
         renderQuestion();
@@ -306,6 +306,46 @@
       document.getElementById('result-container').classList.remove('hidden');
       document.getElementById('score-text').innerText = score;
     }
+    // Test tugaganda natijani GitHub'ga yuborish
+function showResults() {
+  const questions = testData[currentLevel];
+  let score = 0;
+
+  questions.forEach((q, idx) => {
+    if (userAnswers[idx] === q.answer) {
+      score++;
+    }
+  });
+
+  // LocalStorage ga saqlash
+  const existingResults = JSON.parse(localStorage.getItem('test_results')) || {};
+  existingResults[currentLevel] = {
+    score: score,
+    total: questions.length,
+    level: currentLevel,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem('test_results', JSON.stringify(existingResults));
+
+  // Foydalanuvchi ismini olish
+  const userProfile = JSON.parse(localStorage.getItem('user_profile')) || {};
+  const userName = userProfile.name || "Noma'lum foydalanuvchi";
+
+  // GitHub Bazasiga avtomatik sinxronlash (sync.js orqali)
+  if (typeof syncDataToGitHub === 'function') {
+    syncDataToGitHub('test', {
+      userName: userName,
+      subject: 'Ingliz tili', // (Koreys tili testida 'Koreys tili' deb yoziladi)
+      level: currentLevel,
+      score: score,
+      total: questions.length
+    });
+  }
+
+  document.getElementById('quiz-container').classList.add('hidden');
+  document.getElementById('result-container').classList.remove('hidden');
+  document.getElementById('score-text').innerText = score;
+}
     function restartQuiz() {
       switchLevel(currentLevel);
     }
