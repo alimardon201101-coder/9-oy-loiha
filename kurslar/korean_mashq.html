@@ -260,6 +260,7 @@
 
         function saveStats() {
             localStorage.setItem('korean_pronunciation_stats_v2', JSON.stringify(stats));
+            if (window.cloudSync) window.cloudSync();
             updateStatsUI();
         }
 
@@ -494,5 +495,6 @@
             setupSpeechRecognition();
         });
     </script>
+  <script type="module" src="../cloud-sync.js"></script>
 </body>
 </html>

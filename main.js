@@ -1,11 +1,9 @@
 // ==========================================
 // FIREBASE CONFIGURATION (Konfiguratsiya tayyor)
 // ==========================================
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { auth, db, googleProvider, mergeAndSync } from "./cloud-sync.js";
 import {
-  getAuth,
   signInWithPopup,
-  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -13,25 +11,9 @@ import {
   updateProfile
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import {
-  getFirestore,
   doc,
-  setDoc,
-  getDoc
+  setDoc
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDwb4toeX4PoN9ohgALvxh2y-QV-brQTcY",
-  authDomain: "nextstep-c412a.firebaseapp.com",
-  projectId: "nextstep-c412a",
-  storageBucket: "nextstep-c412a.firebasestorage.app",
-  messagingSenderId: "495834942368",
-  appId: "1:495834942368:web:e664520653a3f132be32c5"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const googleProvider = new GoogleAuthProvider();
 
 // ==========================================
 // USER PROFILE & AUTHENTICATION
@@ -68,42 +50,8 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 async function syncUserDataToCloud(user) {
-  try {
-    const userRef = doc(db, "users", user.uid);
-    const userSnap = await getDoc(userRef);
-
-    const localWatched = localStorage.getItem('watched_lessons');
-    const localTests = localStorage.getItem('test_results');
-    const localHistory = localStorage.getItem('test_history');
-
-    if (userSnap.exists()) {
-      const cloudData = userSnap.data();
-      if (cloudData.watched_lessons && !localWatched) {
-        localStorage.setItem('watched_lessons', JSON.stringify(cloudData.watched_lessons));
-      }
-      if (cloudData.test_results && !localTests) {
-        localStorage.setItem('test_results', JSON.stringify(cloudData.test_results));
-      }
-      if (cloudData.test_history && !localHistory) {
-        localStorage.setItem('test_history', JSON.stringify(cloudData.test_history));
-      } else if (localHistory) {
-        // Mahalliy tarixni bulutga yuborish
-        await setDoc(userRef, { test_history: JSON.parse(localHistory), test_results: localTests ? JSON.parse(localTests) : {} }, { merge: true });
-      }
-    } else {
-      await setDoc(userRef, {
-        name: user.displayName || user.email,
-        email: user.email,
-        watched_lessons: localWatched ? JSON.parse(localWatched) : {},
-        test_results: localTests ? JSON.parse(localTests) : {},
-        test_history: localHistory ? JSON.parse(localHistory) : []
-      }, { merge: true });
-    }
-    updateProgressUI();
-    if (typeof displayTestResults === 'function') displayTestResults();
-  } catch (error) {
-    console.error("Cloud sinxronizatsiya xatoligi:", error);
-  }
+  await mergeAndSync(user);
+  updateProgressUI();
 }
 
 // Google orqali ro'yxatdan o'tish / kirish

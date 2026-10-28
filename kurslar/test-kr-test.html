@@ -307,6 +307,7 @@
       const history = JSON.parse(localStorage.getItem('test_history') || '[]');
       history.push(entry);
       localStorage.setItem('test_history', JSON.stringify(history));
+      if (window.cloudSync) window.cloudSync();
 
       // Foydalanuvchi ismini olish
       const userProfile = JSON.parse(localStorage.getItem('user_profile')) || {};
@@ -334,6 +335,7 @@
 
     window.onload = loadTestData;
   </script>
+  <script type="module" src="../cloud-sync.js"></script>
 </body>
 
 </html>
