@@ -292,40 +292,21 @@
         }
       });
 
-      // Test natijasini localStorage ga saqlash
+      // LocalStorage ga saqlash (oxirgi natija + to'liq tarix)
       const existingResults = JSON.parse(localStorage.getItem('test_results')) || {};
-      existingResults['korean'] = {
+      const entry = {
         score: score,
         total: questions.length,
         level: currentLevel,
+        subject: 'korean',
         date: new Date().toISOString()
       };
+      existingResults['korean_' + currentLevel] = entry;
       localStorage.setItem('test_results', JSON.stringify(existingResults));
 
-      document.getElementById('quiz-container').classList.add('hidden');
-      document.getElementById('result-container').classList.remove('hidden');
-      document.getElementById('score-text').innerText = score;
-    }
-    // Test tugaganda natijani GitHub'ga yuborish
-    function showResults() {
-      const questions = testData[currentLevel];
-      let score = 0;
-
-      questions.forEach((q, idx) => {
-        if (userAnswers[idx] === q.answer) {
-          score++;
-        }
-      });
-
-      // LocalStorage ga saqlash
-      const existingResults = JSON.parse(localStorage.getItem('test_results')) || {};
-      existingResults[currentLevel] = {
-        score: score,
-        total: questions.length,
-        level: currentLevel,
-        date: new Date().toISOString()
-      };
-      localStorage.setItem('test_results', JSON.stringify(existingResults));
+      const history = JSON.parse(localStorage.getItem('test_history') || '[]');
+      history.push(entry);
+      localStorage.setItem('test_history', JSON.stringify(history));
 
       // Foydalanuvchi ismini olish
       const userProfile = JSON.parse(localStorage.getItem('user_profile')) || {};
