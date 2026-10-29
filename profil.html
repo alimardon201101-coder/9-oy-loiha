@@ -5,10 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mening Profilim | NextStep</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -30,126 +34,142 @@
       }
     }
   </script>
+
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+  </style>
 </head>
 
-<body
-  class="font-sans bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+<body class="font-sans bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
 
+  <!-- Header / Navbar -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
+        
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-3 group">
-          <div
-            class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-blue-400 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform duration-300">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-blue-400 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform duration-300">
             N
           </div>
-          <span class="text-2xl font-extrabold text-slate-900 tracking-tight">Next<span
-              class="text-brand-600">Step</span></span>
+          <span class="text-2xl font-extrabold text-slate-900 tracking-tight">Next<span class="text-brand-600">Step</span></span>
         </a>
 
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="./index.html#kurslar"
-            class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Kurslar</a>
-          <a href="./index.html#haqimizda"
-            class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Biz haqimizda</a>
-          <a href="./index.html#boglanish"
-            class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Bog'lanish</a>
+          <a href="./index.html#kurslar" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Kurslar</a>
+          <a href="./index.html#haqimizda" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Biz haqimizda</a>
+          <a href="./index.html#faq" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Savollar</a>
+          <a href="./index.html#boglanish" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Bog'lanish</a>
         </nav>
 
-        <a href="./profil.html" class="hidden lg:flex items-center gap-2 pl-3 border-l border-slate-200 ml-2">
-          <div
-            class="user-avatar-initial w-9 h-9 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm border border-brand-200 shadow-inner">
+        <!-- Profile Button (Mobil va Desktopda ko'rinadigan) -->
+        <a href="./profil.html" class="flex items-center gap-2.5 px-3 py-1.5 rounded-full hover:bg-slate-100 transition-colors border border-slate-200/60 sm:border-transparent">
+          <div class="user-avatar-initial w-9 h-9 rounded-full bg-gradient-to-tr from-brand-600 to-blue-500 text-white font-bold flex items-center justify-center text-sm shadow-md shadow-brand-500/20 ring-2 ring-white">
             M
           </div>
-          <span class="user-name-display text-sm font-medium text-slate-700">Mehmon</span>
+          <span class="user-name-display text-sm font-semibold text-slate-700 hidden sm:inline-block">Mehmon</span>
+          <i class="fa-solid fa-chevron-right text-xs text-slate-400 hidden sm:inline-block"></i>
         </a>
+
       </div>
     </div>
   </header>
 
   <!-- Main Profile Content -->
-  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 space-y-8">
 
     <!-- User Profile Banner Card -->
-    <div
-      class="bg-gradient-to-r from-brand-600 to-blue-700 rounded-2xl p-5 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-4 text-center sm:text-left">
-        <div
-          class="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-2xl font-extrabold text-white shrink-0 shadow-inner">
+    <div class="bg-gradient-to-r from-brand-600 via-blue-600 to-indigo-700 rounded-3xl p-6 sm:p-8 text-white shadow-xl shadow-brand-500/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden">
+      <!-- Background Glow Circle -->
+      <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="flex items-center gap-5 text-center sm:text-left z-10">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-3xl font-extrabold text-white shrink-0 shadow-inner">
           <i class="fa-solid fa-user-graduate"></i>
         </div>
         <div>
-          <h1 class="text-xl sm:text-2xl font-bold tracking-tight">
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
             Xush kelibsiz, <span class="user-name-display text-yellow-300">Mehmon</span>!
           </h1>
-          <p class="text-brand-100 text-xs mt-0.5">Shaxsiy ta'lim kabinetingiz va ko'rsatkichlaringiz</p>
+          <p class="text-brand-100 text-xs sm:text-sm mt-1 font-medium">Shaxsiy ta'lim kabinetingiz va ko'rsatkichlaringiz</p>
         </div>
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-center">
-        <button onclick="openRegisterModal()"
-          class="px-4 py-2.5 rounded-xl font-semibold text-xs bg-white text-brand-600 hover:bg-brand-50 border border-white/80 shadow transition-all duration-200 active:scale-95 flex items-center gap-2">
+      <div class="flex items-center gap-3 shrink-0 w-full sm:w-auto justify-center z-10">
+        <button onclick="openRegisterModal()" class="px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-white text-brand-600 hover:bg-brand-50 shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 flex items-center gap-2">
           <i class="fa-solid fa-user-pen"></i>
           <span>Ro'yxatdan o'tish / Tahrirlash</span>
         </button>
 
-        <button id="clearDataBtn"
-          class="px-4 py-2.5 rounded-xl font-semibold text-xs bg-red-500/90 hover:bg-red-600 text-white border border-red-400 shadow hover:shadow-red-500/20 transition-all duration-200 active:scale-95 flex items-center gap-2">
+        <button id="clearDataBtn" class="px-4 py-3 rounded-xl font-bold text-xs sm:text-sm bg-red-500/90 hover:bg-red-600 text-white border border-red-400 shadow hover:shadow-red-500/20 transition-all duration-200 active:scale-95 flex items-center gap-2">
           <i class="fa-solid fa-trash-can"></i>
-          <span>Tozalash</span>
+          <span class="hidden sm:inline">Tozalash</span>
         </button>
       </div>
     </div>
 
-    <!-- Test va Talaffuz natijalari (Ustiga bosganda tarix chiqadigan qilib sozlangan) -->
+    <!-- Test va Talaffuz natijalari -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
       <!-- Test Results Section -->
-      <section class="space-y-3">
-        <div class="min-h-[46px] flex flex-col justify-end">
-          <h2 class="text-lg font-bold text-slate-900 tracking-tight">Test Natijalari <span class="text-xs text-brand-600 font-normal">(Batafsil ko'rish uchun bosing)</span></h2>
-          <p class="text-xs text-slate-500">Topshirilgan testlar statistikasi</p>
+      <section class="space-y-4">
+        <div class="flex flex-col justify-end">
+          <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+            <i class="fa-solid fa-square-poll-vertical text-brand-600"></i>
+            <span>Test Natijalari</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Topshirilgan testlar va foizlar statistikasi (batafsil ko'rish uchun bosing)</p>
         </div>
-        <div id="test-results-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3"></div>
+        <div id="test-results-container" class="grid grid-cols-1 gap-3 min-h-[100px]"></div>
       </section>
 
       <!-- Pronunciation Results Section -->
-      <section class="space-y-3">
-        <div class="min-h-[46px] flex flex-col justify-end">
-          <h2 class="text-lg font-bold text-slate-900 tracking-tight">Talaffuz Mashqlari <span class="text-xs text-brand-600 font-normal">(Batafsil ko'rish uchun bosing)</span></h2>
-          <p class="text-xs text-slate-500">Ovozli mashqlar statistikasi</p>
+      <section class="space-y-4">
+        <div class="flex flex-col justify-end">
+          <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+            <i class="fa-solid fa-microphone-lines text-brand-600"></i>
+            <span>Talaffuz Mashqlari</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Ovozli mashqlar va aniqlik darajasi (batafsil ko'rish uchun bosing)</p>
         </div>
-        <div id="pronunciation-results-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3"></div>
+        <div id="pronunciation-results-container" class="grid grid-cols-1 gap-3 min-h-[100px]"></div>
       </section>
     </div>
 
     <!-- Course Progress Section -->
-    <section class="space-y-4">
+    <section class="space-y-5 pt-4">
       <div>
-        <h2 class="text-lg font-bold text-slate-900 tracking-tight">O'zlashtirish statistikasi</h2>
-        <p class="text-xs text-slate-500">Har bir til bo'yicha ko'rilgan darslar</p>
+        <h2 class="text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+          <i class="fa-solid fa-chart-line text-brand-600"></i>
+          <span>O'zlashtirish statistikasi</span>
+        </h2>
+        <p class="text-xs text-slate-500 mt-0.5">Har bir til bo'yicha ko'rilgan darslar darajasi</p>
       </div>
 
       <!-- Progress Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
         <!-- 1. Ingliz Tili -->
-        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm space-y-3 hover:shadow-md transition-shadow">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-all space-y-4">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <span class="text-2xl">🇬🇧</span>
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🇬🇧</span>
               <div>
                 <h3 class="font-bold text-slate-900 text-sm">Ingliz tili</h3>
-                <span id="english-progress-count" class="text-[11px] font-semibold text-slate-500">0 / 180 dars</span>
+                <span id="english-progress-count" class="text-xs font-semibold text-slate-500">0 / 180 dars</span>
               </div>
             </div>
           </div>
-          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-            <div id="english-progress-bar" class="bg-brand-600 h-full rounded-full transition-all duration-500 w-0"></div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div id="english-progress-bar" class="bg-gradient-to-r from-brand-600 to-blue-500 h-full rounded-full transition-all duration-500 w-0"></div>
           </div>
           <div class="pt-1">
-            <a href="./kurslar/ing.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700">
+            <a href="./kurslar/ing.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 transition-colors">
               <span>Davom ettirish</span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
@@ -157,21 +177,21 @@
         </div>
 
         <!-- 2. Koreys Tili -->
-        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm space-y-3 hover:shadow-md transition-shadow">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-all space-y-4">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <span class="text-2xl">🇰🇷</span>
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🇰🇷</span>
               <div>
                 <h3 class="font-bold text-slate-900 text-sm">Koreys tili</h3>
-                <span id="korean-progress-count" class="text-[11px] font-semibold text-slate-500">0 / 126 dars</span>
+                <span id="korean-progress-count" class="text-xs font-semibold text-slate-500">0 / 126 dars</span>
               </div>
             </div>
           </div>
-          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-            <div id="korean-progress-bar" class="bg-brand-600 h-full rounded-full transition-all duration-500 w-0"></div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div id="korean-progress-bar" class="bg-gradient-to-r from-brand-600 to-blue-500 h-full rounded-full transition-all duration-500 w-0"></div>
           </div>
           <div class="pt-1">
-            <a href="./kurslar/kor.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700">
+            <a href="./kurslar/kor.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 transition-colors">
               <span>Davom ettirish</span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
@@ -179,21 +199,21 @@
         </div>
 
         <!-- 3. Rus Tili -->
-        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm space-y-3 hover:shadow-md transition-shadow">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-all space-y-4">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <span class="text-2xl">🇷🇺</span>
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🇷🇺</span>
               <div>
                 <h3 class="font-bold text-slate-900 text-sm">Rus tili</h3>
-                <span id="russian-progress-count" class="text-[11px] font-semibold text-slate-500">0 / 100 dars</span>
+                <span id="russian-progress-count" class="text-xs font-semibold text-slate-500">0 / 100 dars</span>
               </div>
             </div>
           </div>
-          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-            <div id="russian-progress-bar" class="bg-brand-600 h-full rounded-full transition-all duration-500 w-0"></div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div id="russian-progress-bar" class="bg-gradient-to-r from-brand-600 to-blue-500 h-full rounded-full transition-all duration-500 w-0"></div>
           </div>
           <div class="pt-1">
-            <a href="./kurslar/rus.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700">
+            <a href="./kurslar/rus.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 transition-colors">
               <span>Davom ettirish</span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
@@ -201,26 +221,27 @@
         </div>
 
         <!-- 4. Nemis Tili -->
-        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm space-y-3 hover:shadow-md transition-shadow">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-all space-y-4">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <span class="text-2xl">🇩🇪</span>
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🇩🇪</span>
               <div>
                 <h3 class="font-bold text-slate-900 text-sm">Nemis tili</h3>
-                <span id="german-progress-count" class="text-[11px] font-semibold text-slate-500">0 / 100 dars</span>
+                <span id="german-progress-count" class="text-xs font-semibold text-slate-500">0 / 100 dars</span>
               </div>
             </div>
           </div>
-          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-            <div id="german-progress-bar" class="bg-brand-600 h-full rounded-full transition-all duration-500 w-0"></div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div id="german-progress-bar" class="bg-gradient-to-r from-brand-600 to-blue-500 h-full rounded-full transition-all duration-500 w-0"></div>
           </div>
           <div class="pt-1">
-            <a href="./kurslar/nem.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700">
+            <a href="./kurslar/nem.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 transition-colors">
               <span>Davom ettirish</span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -257,12 +278,12 @@
 
         <div class="pt-2 flex flex-col gap-3">
           <button type="submit"
-            class="w-full py-3 rounded-xl font-bold text-xs bg-brand-600 text-white hover:bg-brand-700 shadow-md transition-all">
+            class="w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm bg-brand-600 text-white hover:bg-brand-700 shadow-md transition-all">
             Kirish / Ro'yxatdan o'tish
           </button>
 
           <button type="button" onclick="registerWithGoogle()"
-            class="w-full py-3 rounded-xl font-bold text-xs bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center justify-center gap-2 transition-all">
+            class="w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center justify-center gap-2 transition-all">
             <i class="fa-brands fa-google text-red-500"></i> Google orqali kirish
           </button>
         </div>
@@ -278,6 +299,11 @@
   </footer>
 
   <script type="module" src="./main.js"></script>
+  <script>
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
 </body>
 
 </html>
