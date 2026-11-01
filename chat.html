@@ -140,15 +140,10 @@
       <p>&copy; 2026 NextStep. Barcha huquqlar himoyalangan.</p>
     </div>
   </footer>
-
-  <!-- Firebase & Chat Logic Script -->
   <script type="module">
     import { auth, db } from "./main.js";
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-    import { collection, adddoc, query, where, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-    // Not: O'zingizning Firestore dagi to'g'ri funksiyangiz (addDoc ni to'g'ri import qilish)
-    import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    import { doc, setDoc, getDoc, updateDoc, arrayUnion, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
     const chatMessagesBox = document.getElementById('chatMessagesBox');
     const chatForm = document.getElementById('chatForm');
@@ -164,17 +159,16 @@
         authWarningBadge.classList.add('hidden');
         loadUserMessages(user.uid);
 
-        // Headerdagi ism va avatarni yangilash
         document.querySelectorAll('.user-name-display').forEach(el => el.textContent = user.displayName || user.email.split('@')[0]);
         document.querySelectorAll('.user-avatar-initial').forEach(el => el.textContent = (user.displayName || user.email)[0].toUpperCase());
       } else {
         authWarningBadge.classList.remove('hidden');
         chatMessagesBox.innerHTML = `
-          <div class="text-center text-slate-400 py-12 text-sm">
-            <i class="fa-solid fa-lock text-3xl mb-2 text-amber-500"></i>
-            <p>Xabarlarni ko'rish va yozish uchun iltimos <a href="./profil.html" class="text-brand-600 font-bold underline">ro'yxatdan o'ting</a>.</p>
-          </div>
-        `;
+        <div class="text-center text-slate-400 py-12 text-sm">
+          <i class="fa-solid fa-lock text-3xl mb-2 text-amber-500"></i>
+          <p>Xabarlarni ko'rish va yozish uchun iltimos <a href="./profil.html" class="text-brand-600 font-bold underline">ro'yxatdan o'ting</a>.</p>
+        </div>
+      `;
       }
     });
 
@@ -190,9 +184,6 @@
 
       try {
         const userRef = doc(db, "users", currentUser.uid);
-
-        // Firestore dagi foydalanuvchi hujjatiga messages massivini qo'shamiz
-        // Admin panel shu strukturadan o'qib oladi
         const newMessage = {
           id: 'msg_' + Date.now(),
           sender: 'user',
@@ -200,16 +191,19 @@
           timestamp: new Date().toISOString()
         };
 
-        await updateDoc(userRef, {
-          messages: arrayUnion(newMessage)
-        }, { merge: true }).catch(async () => {
-          // Agar hujjat hali to'liq yaratilmagan bo'lsa setDoc bilan ochamiz
+        // Avval hujjat bor-yo'qligini tekshiramiz yoki setDoc (merge bilan) ishlatamiz
+        const docSnap = await getDoc(userRef);
+        if (!docSnap.exists()) {
           await setDoc(userRef, {
             name: currentUser.displayName || currentUser.email,
             email: currentUser.email,
             messages: [newMessage]
-          }, { merge: true });
-        });
+          });
+        } else {
+          await updateDoc(userRef, {
+            messages: arrayUnion(newMessage)
+          });
+        }
 
         chatInput.value = '';
       } catch (err) {
@@ -218,7 +212,6 @@
       }
     });
 
-    // Foydalanuvchining o'z xabarlarini va admin javoblarini real vaqtda kuzatish
     function loadUserMessages(uid) {
       const userRef = doc(db, "users", uid);
       onSnapshot(userRef, (docSnap) => {
@@ -228,28 +221,28 @@
 
         if (messages.length === 0) {
           chatMessagesBox.innerHTML = `
-            <div class="text-center text-slate-400 py-12 text-sm">
-              <i class="fa-regular fa-comments text-3xl mb-2 text-slate-300"></i>
-              <p>Hozircha xabarlar yo'q. Savolingizni yozib yuboring!</p>
-            </div>
-          `;
+          <div class="text-center text-slate-400 py-12 text-sm">
+            <i class="fa-regular fa-comments text-3xl mb-2 text-slate-300"></i>
+            <p>Hozircha xabarlar yo'q. Savolingizni yozib yuboring!</p>
+          </div>
+        `;
           return;
         }
 
         chatMessagesBox.innerHTML = messages.map(msg => {
           const isUser = msg.sender === 'user';
           return `
-            <div class="flex flex-col ${isUser ? 'items-end' : 'items-start'} space-y-1">
-              <span class="text-[10px] text-slate-400 px-1">${isUser ? 'Siz' : 'Admin'}</span>
-              <div class="max-w-[80%] sm:max-w-[70%] px-4 py-3 rounded-2xl text-sm font-medium ${isUser
+          <div class="flex flex-col ${isUser ? 'items-end' : 'items-start'} space-y-1">
+            <span class="text-[10px] text-slate-400 px-1">${isUser ? 'Siz' : 'Admin'}</span>
+            <div class="max-w-[80%] sm:max-w-[70%] px-4 py-3 rounded-2xl text-sm font-medium ${isUser
               ? 'bg-brand-600 text-white rounded-br-xs shadow-sm'
               : 'bg-slate-100 text-slate-800 rounded-bl-xs border border-slate-200'
             }">
-                ${escapeHtml(msg.text)}
-              </div>
-              <span class="text-[9px] text-slate-300 px-1">${new Date(msg.timestamp || Date.now()).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+              ${escapeHtml(msg.text)}
             </div>
-          `;
+            <span class="text-[9px] text-slate-300 px-1">${new Date(msg.timestamp || Date.now()).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+          </div>
+        `;
         }).join('');
 
         chatMessagesBox.scrollTop = chatMessagesBox.scrollHeight;
