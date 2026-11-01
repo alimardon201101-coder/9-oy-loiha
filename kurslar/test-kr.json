@@ -6,10 +6,10 @@
         "type": "multiple_choice",
         "question": "저는 학생___.",
         "options": [
-          "이다",
-          "입니다",
           "입니까",
-          "이다가"
+          "입니다",
+          "이다가",
+          "이다"
         ],
         "answer": "입니다"
       },
@@ -18,9 +18,9 @@
         "type": "multiple_choice",
         "question": "어디___ 가십니까?",
         "options": [
-          "에",
           "에서",
           "과",
+          "에",
           "을"
         ],
         "answer": "에"
@@ -30,9 +30,9 @@
         "type": "multiple_choice",
         "question": "사과가 ___ 있어요.",
         "options": [
-          "많이",
           "많다",
           "많은",
+          "많이",
           "많아서"
         ],
         "answer": "많이"
@@ -42,10 +42,10 @@
         "type": "multiple_choice",
         "question": "오늘 ___이 몇 월 몇 일이에요?",
         "options": [
-          "날짜",
           "시간",
           "계절",
-          "날씨"
+          "날씨",
+          "날짜"
         ],
         "answer": "날짜"
       },
@@ -54,8 +54,8 @@
         "type": "multiple_choice",
         "question": "지하철을 ___ 학교에 가요.",
         "options": [
-          "타고",
           "타서",
+          "타고",
           "타면",
           "타니까"
         ],
@@ -66,8 +66,8 @@
         "type": "multiple_choice",
         "question": "도서관에서 책을 ___.",
         "options": [
-          "읽어요",
           "마셔요",
+          "읽어요",
           "입어요",
           "자요"
         ],
@@ -78,10 +78,10 @@
         "type": "multiple_choice",
         "question": "이름이 ___입니까?",
         "options": [
-          "무엇",
-          "어디",
+          "누구",
           "언제",
-          "누구"
+          "어디",
+          "무엇"
         ],
         "answer": "무엇"
       },
@@ -90,9 +90,9 @@
         "type": "multiple_choice",
         "question": "어제 영화를 ___.",
         "options": [
-          "봤어요",
           "봐요",
           "볼 거예요",
+          "봤어요",
           "봅니다"
         ],
         "answer": "봤어요"
@@ -102,8 +102,8 @@
         "type": "multiple_choice",
         "question": "물 좀 ___.",
         "options": [
-          "주세요",
           "하세요",
+          "주세요",
           "가세요",
           "오세요"
         ],
@@ -114,10 +114,10 @@
         "type": "multiple_choice",
         "question": "지금 몇 ___이에요?",
         "options": [
-          "시",
           "개",
           "명",
-          "살"
+          "살",
+          "시"
         ],
         "answer": "시"
       },
@@ -126,9 +126,9 @@
         "type": "multiple_choice",
         "question": "저는 비빔밥을 ___ 좋아해요.",
         "options": [
-          "아주",
           "안",
           "못",
+          "아주",
           "글쎄"
         ],
         "answer": "아주"
@@ -138,9 +138,9 @@
         "type": "multiple_choice",
         "question": "날씨가 ___ 비가 와요.",
         "options": [
-          "흐리고",
           "맑고",
           "더워서",
+          "흐리고",
           "따뜻해서"
         ],
         "answer": "흐리고"
@@ -150,10 +150,10 @@
         "type": "multiple_choice",
         "question": "선생님, ___ 계세요.",
         "options": [
-          "안녕히",
           "반갑게",
           "다시",
-          "어서"
+          "어서",
+          "안녕히"
         ],
         "answer": "안녕히"
       },
@@ -162,9 +162,9 @@
         "type": "multiple_choice",
         "question": "공원에서 ___를 탔어요.",
         "options": [
-          "자전거",
           "책",
           "밥",
+          "자전거",
           "옷"
         ],
         "answer": "자전거"
@@ -174,10 +174,10 @@
         "type": "multiple_choice",
         "question": "빵___ 우유를 먹었어요.",
         "options": [
-          "하고",
           "에서",
           "에게",
-          "으로"
+          "으로",
+          "하고"
         ],
         "answer": "하고"
       },
@@ -186,10 +186,10 @@
         "type": "multiple_choice",
         "question": "저는 매일 아침 7시에 ___.",
         "options": [
-          "일어나요",
           "자요",
           "퇴근해요",
-          "꿈꿔요"
+          "꿈꿔요",
+          "일어나요"
         ],
         "answer": "일어나요"
       },
@@ -198,9 +198,9 @@
         "type": "multiple_choice",
         "question": "이 옷은 너무 ___.",
         "options": [
-          "비싸요",
           "맛있어요",
           "친절해요",
+          "비싸요",
           "가까워요"
         ],
         "answer": "비싸요"
@@ -210,10 +210,10 @@
         "type": "multiple_choice",
         "question": "주말에 보통 무엇을 ___?",
         "options": [
-          "해요",
           "해요가",
           "하나요가",
-          "했습니까"
+          "했습니까",
+          "해요"
         ],
         "answer": "해요"
       },
@@ -236,6 +236,124 @@
           "False"
         ],
         "answer": "False"
+      },
+      {
+        "id": 21,
+        "type": "multiple_choice",
+        "question": "내일 친구를 ___ 만나요.",
+        "options": [
+          "에게",
+          "와",
+          "으로",
+          "에서"
+        ],
+        "answer": "와"
+      },
+      {
+        "id": 22,
+        "type": "multiple_choice",
+        "question": "한국 친구가 ___.",
+        "options": [
+          "계셔요",
+          "주세요",
+          "있어요",
+          "많아요"
+        ],
+        "answer": "있어요"
+      },
+      {
+        "id": 23,
+        "type": "multiple_choice",
+        "question": "커피를 ___ 마셔요?",
+        "options": [
+          "언제",
+          "어떻게",
+          "얼마나",
+          "왜"
+        ],
+        "answer": "언제"
+      },
+      {
+        "id": 24,
+        "type": "multiple_choice",
+        "question": "집 ___ 학교가 멀어요.",
+        "options": [
+          "에게",
+          "로",
+          "와",
+          "에서"
+        ],
+        "answer": "에서"
+      },
+      {
+        "id": 25,
+        "type": "multiple_choice",
+        "question": "저는 한국어를 ___.",
+        "options": [
+          "만나요",
+          "사요",
+          "배워요",
+          "타요"
+        ],
+        "answer": "배워요"
+      },
+      {
+        "id": 26,
+        "type": "multiple_choice",
+        "question": "오늘은 날씨가 참 ___.",
+        "options": [
+          "아파요",
+          "좋아요",
+          "바빠요",
+          "고파요"
+        ],
+        "answer": "좋아요"
+      },
+      {
+        "id": 27,
+        "type": "multiple_choice",
+        "question": "어제 저녁에 무엇을 ___?",
+        "options": [
+          "먹어요",
+          "먹을 거예요",
+          "먹습니다",
+          "먹었어요"
+        ],
+        "answer": "먹었어요"
+      },
+      {
+        "id": 28,
+        "type": "multiple_choice",
+        "question": "이 가방은 제 ___이에요.",
+        "options": [
+          "분",
+          "것",
+          "명",
+          "개"
+        ],
+        "answer": "것"
+      },
+      {
+        "id": 29,
+        "type": "multiple_choice",
+        "question": "방 안에 의자가 ___ 있어요.",
+        "options": [
+          "두",
+          "두명",
+          "둘",
+          "두개"
+        ],
+        "answer": "둘"
+      },
+      {
+        "id": 30,
+        "type": "true_false",
+        "question": "'안녕히 가세요'는 떠나는 사람에게 하는 인사입니다.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": "True"
       }
     ],
     "A2": [
@@ -474,6 +592,124 @@
           "False"
         ],
         "answer": "False"
+      },
+      {
+        "id": 21,
+        "type": "multiple_choice",
+        "question": "내일 숙제를 ___ 제출하세요.",
+        "options": [
+          "끝내고",
+          "끝내서",
+          "끝내면",
+          "끝내지만"
+        ],
+        "answer": "끝내고"
+      },
+      {
+        "id": 22,
+        "type": "multiple_choice",
+        "question": "한국에 ___ 지 3년이 되었습니다.",
+        "options": [
+          "온",
+          "오는",
+          "올",
+          "와서"
+        ],
+        "answer": "온"
+      },
+      {
+        "id": 23,
+        "type": "multiple_choice",
+        "question": "방학 때 제주도에 ___ 계획입니다.",
+        "options": [
+          "갈",
+          "가는",
+          "갔던",
+          "가는 중"
+        ],
+        "answer": "갈"
+      },
+      {
+        "id": 24,
+        "type": "multiple_choice",
+        "question": "이 가방은 무거워서 ___ 수 없어요.",
+        "options": [
+          "들",
+          "들 수",
+          "들기",
+          "든"
+        ],
+        "answer": "들 수"
+      },
+      {
+        "id": 25,
+        "type": "multiple_choice",
+        "question": "창문을 ___ 바람이 시원합니다.",
+        "options": [
+          "열면",
+          "열어서",
+          "열고",
+          "열지만"
+        ],
+        "answer": "열면"
+      },
+      {
+        "id": 26,
+        "type": "multiple_choice",
+        "question": "약을 먹었더니 머리가 ___.",
+        "options": [
+          "아파요",
+          "안 아파요",
+          "아팠어요",
+          "아프겠어요"
+        ],
+        "answer": "안 아파요"
+      },
+      {
+        "id": 27,
+        "type": "multiple_choice",
+        "question": "한국 음식을 ___ 수 있어요?",
+        "options": [
+          "만들",
+          "만들 수",
+          "만드는",
+          "만들기"
+        ],
+        "answer": "만들 수"
+      },
+      {
+        "id": 28,
+        "type": "multiple_choice",
+        "question": "친구가 조용히 ___ 부탁했어요.",
+        "options": [
+          "해 달라고",
+          "해 주라고",
+          "하자고",
+          "하라고"
+        ],
+        "answer": "해 달라고"
+      },
+      {
+        "id": 29,
+        "type": "multiple_choice",
+        "question": "이 영화는 정말 ___.",
+        "options": [
+          "재미있어요",
+          "재미있습니다",
+          "재미있어",
+          "모두 맞음"
+        ],
+        "answer": "모두 맞음"
+      },
+      {
+        "id": 30,
+        "type": "true_false",
+        "question": "'보다'는 비교를 나타낼 때 '～보다' 형태로 쓰입니다.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": "True"
       }
     ],
     "B1": [
@@ -712,6 +948,124 @@
           "False"
         ],
         "answer": "False"
+      },
+      {
+        "id": 21,
+        "type": "multiple_choice",
+        "question": "그 일을 ___ 끝마칠 수 있었다.",
+        "options": [
+          "가까스로",
+          "간신히",
+          "무사히",
+          "모두 맞음"
+        ],
+        "answer": "모두 맞음"
+      },
+      {
+        "id": 22,
+        "type": "multiple_choice",
+        "question": "내 뜻대로 ___ 않아서 속상하다.",
+        "options": [
+          "되지",
+          "할지",
+          "갈지",
+          "올지"
+        ],
+        "answer": "되지"
+      },
+      {
+        "id": 23,
+        "type": "multiple_choice",
+        "question": "거짓말을 한 사실이 ___ 곤란해졌다.",
+        "options": [
+          "들통나서",
+          "알려져서",
+          "드러나서",
+          "모두 맞음"
+        ],
+        "answer": "모두 맞음"
+      },
+      {
+        "id": 24,
+        "type": "multiple_choice",
+        "question": "모든 일을 마음먹기 ___이다.",
+        "options": [
+          "나름",
+          "마련",
+          "법",
+          "대로"
+        ],
+        "answer": "나름"
+      },
+      {
+        "id": 25,
+        "type": "multiple_choice",
+        "question": "실수를 반복하지 않도록 ___.",
+        "options": [
+          "주의해야 한다",
+          "조심한다",
+          "노력한다",
+          "모두 맞음"
+        ],
+        "answer": "모두 맞음"
+      },
+      {
+        "id": 26,
+        "type": "multiple_choice",
+        "question": "그 소식을 듣고 깜짝 ___.",
+        "options": [
+          "놀랐다",
+          "기뻤다",
+          "슬펐다",
+          "화났다"
+        ],
+        "answer": "놀랐다"
+      },
+      {
+        "id": 27,
+        "type": "multiple_choice",
+        "question": "진정한 친구는 어려울 때 ___ 준다.",
+        "options": [
+          "도와",
+          "믿어",
+          "알아",
+          "보아"
+        ],
+        "answer": "도와"
+      },
+      {
+        "id": 28,
+        "type": "multiple_choice",
+        "question": "그 회사는 직원 복지가 ___ 좋다.",
+        "options": [
+          "상당히",
+          "매우",
+          "꽤",
+          "모두 맞음"
+        ],
+        "answer": "모두 맞음"
+      },
+      {
+        "id": 29,
+        "type": "multiple_choice",
+        "question": "꾸준히 운동한 ___ 건강해졌다.",
+        "options": [
+          "덕분에",
+          "탓에",
+          "바람에",
+          "결과"
+        ],
+        "answer": "덕분에"
+      },
+      {
+        "id": 30,
+        "type": "true_false",
+        "question": "'-ㄹ 겸'은 두 가지 목적을 동시에 나타낼 때 쓴다.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": "True"
       }
     ],
     "B2": [
@@ -950,6 +1304,124 @@
           "False"
         ],
         "answer": "True"
+      },
+      {
+        "id": 21,
+        "type": "multiple_choice",
+        "question": "여론의 거센 반발에 부딪혀 정책이 ___.",
+        "options": [
+          "철회되었다",
+          "시행되었다",
+          "강화되었다",
+          "확대되었다"
+        ],
+        "answer": "철회되었다"
+      },
+      {
+        "id": 22,
+        "type": "multiple_choice",
+        "question": "그 사건은 기업의 이미지에 막대한 ___를 입혔다.",
+        "options": [
+          "타격",
+          "이익",
+          "도움",
+          "영광"
+        ],
+        "answer": "타격"
+      },
+      {
+        "id": 23,
+        "type": "multiple_choice",
+        "question": "급변하는 환경에 대처하기 위해서는 ___인 사고가 필요하다.",
+        "options": [
+          "유연",
+          "경직",
+          "보수",
+          "편협"
+        ],
+        "answer": "유연"
+      },
+      {
+        "id": 24,
+        "type": "multiple_choice",
+        "question": "그는 자신의 과오를 ___ 반성하고 있다.",
+        "options": [
+          "깊이",
+          "대충",
+          "살짝",
+          "잠시"
+        ],
+        "answer": "깊이"
+      },
+      {
+        "id": 25,
+        "type": "multiple_choice",
+        "question": "이번 프로젝트는 ___의 협조 없이는 불가능하다.",
+        "options": [
+          "팀원들",
+          "방관자들",
+          "경쟁자들",
+          "방해자들"
+        ],
+        "answer": "팀원들"
+      },
+      {
+        "id": 26,
+        "type": "multiple_choice",
+        "question": "그의 성공 뒤에는 남모를 ___이 있었다.",
+        "options": [
+          "노력",
+          "나태",
+          "방관",
+          "태만"
+        ],
+        "answer": "노력"
+      },
+      {
+        "id": 27,
+        "type": "multiple_choice",
+        "question": "진실을 ___려는 시도는 결국 실패할 것이다.",
+        "options": [
+          "은폐하",
+          "밝히",
+          "드러내",
+          "알리"
+        ],
+        "answer": "은폐하"
+      },
+      {
+        "id": 28,
+        "type": "multiple_choice",
+        "question": "사회적 합의를 ___ 위한 논의가 계속되고 있다.",
+        "options": [
+          "도출하기",
+          "방해하기",
+          "무시하기",
+          "거부하기"
+        ],
+        "answer": "도출하기"
+      },
+      {
+        "id": 29,
+        "type": "multiple_choice",
+        "question": "모든 국민은 법 앞애 ___ 평등하다.",
+        "options": [
+          "평등하게",
+          "예외 없이",
+          "상관없이",
+          "관계없이"
+        ],
+        "answer": "예외 없이"
+      },
+      {
+        "id": 30,
+        "type": "true_false",
+        "question": "'적반하장'은 잘못한 사람이 오히려 화를 낼 때 쓰는 표현이다.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": "True"
       }
     ],
     "C1": [
@@ -1183,6 +1655,124 @@
         "id": 20,
         "type": "true_false",
         "question": "'조삼모사'는 간사한 꾀로 남을 속여 둘러대는 것을 비유하는 사자성어이다.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": "True"
+      },
+      {
+        "id": 21,
+        "type": "multiple_choice",
+        "question": "그의 주장은 객관적 타당성을 결여하여 ___ 불과하다.",
+        "options": [
+          "어불성설에",
+          "금상첨화에",
+          "주경야독에",
+          "청천벽력에"
+        ],
+        "answer": "어불성설에"
+      },
+      {
+        "id": 22,
+        "type": "multiple_choice",
+        "question": "복잡하게 얽힌 이해관계를 ___ 조율하는 것이 급선무이다.",
+        "options": [
+          "원만히",
+          "난폭히",
+          "대충",
+          "설렁설렁"
+        ],
+        "answer": "원만히"
+      },
+      {
+        "id": 23,
+        "type": "multiple_choice",
+        "question": "이번 판결은 향후 유사한 사건들에 중요한 ___로 작용할 것이다.",
+        "options": [
+          "선례",
+          "오점",
+          "오보",
+          "편견"
+        ],
+        "answer": "선례"
+      },
+      {
+        "id": 24,
+        "type": "multiple_choice",
+        "question": "그의 헌신적인 노력은 주위의 귀감이 ___ 충분하다.",
+        "options": [
+          "되기에",
+          "되기에는",
+          "될",
+          "되는"
+        ],
+        "answer": "되기에"
+      },
+      {
+        "id": 25,
+        "type": "multiple_choice",
+        "question": "경제적 불평등 심화는 사회적 ___를 야기할 수 있다.",
+        "options": [
+          "통합",
+          "안정",
+          "분열",
+          "화합"
+        ],
+        "answer": "분열"
+      },
+      {
+        "id": 26,
+        "type": "multiple_choice",
+        "question": "사안의 시급성을 감안하여 조속한 ___이 요구된다.",
+        "options": [
+          "처리",
+          "방관",
+          "지연",
+          "연기"
+        ],
+        "answer": "처리"
+      },
+      {
+        "id": 27,
+        "type": "multiple_choice",
+        "question": "그의 말 속에는 숨겨진 ___가 내포되어 있다.",
+        "options": [
+          "진의",
+          "표면",
+          "거짓",
+          "농담"
+        ],
+        "answer": "진의"
+      },
+      {
+        "id": 28,
+        "type": "multiple_choice",
+        "question": "철저한 진상 조사를 통해 ___를 명백히 밝혀야 한다.",
+        "options": [
+          "진상",
+          "의혹",
+          "거짓",
+          "비밀"
+        ],
+        "answer": "진상"
+      },
+      {
+        "id": 29,
+        "type": "multiple_choice",
+        "question": "급변하는 국제 정세에 능동적으로 ___ 대처해야 한다.",
+        "options": [
+          "대응하여",
+          "방관하여",
+          "외면하여",
+          "거부하여"
+        ],
+        "answer": "대응하여"
+      },
+      {
+        "id": 30,
+        "type": "true_false",
+        "question": "'권모술수'는 목적 달성을 위해 수단과 방법을 가리지 않는 모략을 뜻한다.",
         "options": [
           "True",
           "False"

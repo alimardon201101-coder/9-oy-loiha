@@ -185,18 +185,39 @@
   <footer class="text-center py-6 text-slate-400 text-xs border-t border-slate-100 bg-white">
     © NextStep Ta'lim Platformasi. Barcha huquqlar himoyalangan.
   </footer>
-
   <script>
-    let testData = null;
+    let rawTestData = null;
+    let activeQuestions = []; // Tanlangan 10 ta random savol
     let currentLevel = 'A1';
     let currentIndex = 0;
     let userAnswers = {};
+
+    // Massivni tasodifiy aralashtirish (Fisher-Yates Shuffle)
+    function shuffleArray(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // 30 ta testdan tasodifiy 10 tasini ajratib olish
+    function getRandomQuestions(level, count = 10) {
+      if (!rawTestData || !rawTestData[level]) return [];
+      const allLevelQuestions = rawTestData[level];
+      const shuffled = shuffleArray(allLevelQuestions);
+      return shuffled.slice(0, count);
+    }
 
     async function loadTestData() {
       try {
         const res = await fetch('https://raw.githubusercontent.com/alimardon201101-coder/NextStepBazaJSON/refs/heads/main/test-ing.json');
         const data = await res.json();
-        testData = data.english_proficiency_test || Object.values(data)[0];
+        rawTestData = data.english_proficiency_test || Object.values(data)[0];
+
+        // Dastlabki A1 daraja uchun 10 ta random savol tanlash
+        activeQuestions = getRandomQuestions(currentLevel, 10);
         renderQuestion();
       } catch (err) {
         document.getElementById('question-text').innerText = "JSON ma'lumotlarini yuklashda xatolik! './test-ing.json' fayli mavjudligini tekshiring.";
@@ -207,6 +228,9 @@
       currentLevel = level;
       currentIndex = 0;
       userAnswers = {};
+
+      // Yangi darajaga o'tilganda ham 10 ta tasodifiy savol ajratiladi
+      activeQuestions = getRandomQuestions(currentLevel, 10);
 
       document.querySelectorAll('.level-btn').forEach(btn => {
         if (btn.dataset.level === level) {
@@ -222,17 +246,16 @@
     }
 
     function renderQuestion() {
-      if (!testData || !testData[currentLevel]) return;
+      if (!activeQuestions || activeQuestions.length === 0) return;
 
-      const questions = testData[currentLevel];
-      const q = questions[currentIndex];
+      const q = activeQuestions[currentIndex];
 
       document.getElementById('current-q-num').innerText = currentIndex + 1;
-      document.getElementById('total-q-num').innerText = questions.length;
+      document.getElementById('total-q-num').innerText = activeQuestions.length; // 10 ta
       document.getElementById('level-badge').innerText = currentLevel;
       document.getElementById('question-text').innerText = `${currentIndex + 1}. ${q.question}`;
 
-      const progressPercent = ((currentIndex + 1) / questions.length) * 100;
+      const progressPercent = ((currentIndex + 1) / activeQuestions.length) * 100;
       document.getElementById('progress-bar').style.width = `${progressPercent}%`;
 
       const optionsBox = document.getElementById('options-container');
@@ -252,7 +275,7 @@
 
       document.getElementById('prev-btn').disabled = currentIndex === 0;
       const nextBtn = document.getElementById('next-btn');
-      if (currentIndex === questions.length - 1) {
+      if (currentIndex === activeQuestions.length - 1) {
         nextBtn.innerText = "Natijani ko'rish";
         nextBtn.className = "px-6 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 shadow-md shadow-emerald-200 transition-all";
       } else {
@@ -274,29 +297,28 @@
     }
 
     function nextQuestion() {
-      const questions = testData[currentLevel];
-      if (currentIndex < questions.length - 1) {
+      if (currentIndex < activeQuestions.length - 1) {
         currentIndex++;
         renderQuestion();
       } else {
         showResults();
       }
     }
-function showResults() {
-  const questions = testData[currentLevel];
-  let score = 0;
 
-  questions.forEach((q, idx) => {
-    if (userAnswers[idx] === q.answer) {
-      score++;
-    }
-  });
+    function showResults() {
+      let score = 0;
 
-      // LocalStorage ga saqlash (oxirgi natija + to'liq tarix)
+      activeQuestions.forEach((q, idx) => {
+        if (userAnswers[idx] === q.answer) {
+          score++;
+        }
+      });
+
+      // LocalStorage ga saqlash
       const existingResults = JSON.parse(localStorage.getItem('test_results')) || {};
       const entry = {
         score: score,
-        total: questions.length,
+        total: activeQuestions.length, // 10 ta
         level: currentLevel,
         subject: 'english',
         date: new Date().toISOString()
@@ -309,25 +331,26 @@ function showResults() {
       localStorage.setItem('test_history', JSON.stringify(history));
       if (window.cloudSync) window.cloudSync();
 
-  // Foydalanuvchi ismini olish
-  const userProfile = JSON.parse(localStorage.getItem('user_profile')) || {};
-  const userName = userProfile.name || "Noma'lum foydalanuvchi";
+      // Foydalanuvchi ismini olish
+      const userProfile = JSON.parse(localStorage.getItem('user_profile')) || {};
+      const userName = userProfile.name || "Noma'lum foydalanuvchi";
 
-  // GitHub Bazasiga avtomatik sinxronlash (sync.js orqali)
-  if (typeof syncDataToGitHub === 'function') {
-    syncDataToGitHub('test', {
-      userName: userName,
-      subject: 'Ingliz tili', // (Koreys tili testida 'Koreys tili' deb yoziladi)
-      level: currentLevel,
-      score: score,
-      total: questions.length
-    });
-  }
+      // GitHub Bazasiga avtomatik sinxronlash
+      if (typeof syncDataToGitHub === 'function') {
+        syncDataToGitHub('test', {
+          userName: userName,
+          subject: 'Ingliz tili',
+          level: currentLevel,
+          score: score,
+          total: activeQuestions.length
+        });
+      }
 
-  document.getElementById('quiz-container').classList.add('hidden');
-  document.getElementById('result-container').classList.remove('hidden');
-  document.getElementById('score-text').innerText = score;
-}
+      document.getElementById('quiz-container').classList.add('hidden');
+      document.getElementById('result-container').classList.remove('hidden');
+      document.getElementById('score-text').innerText = score;
+    }
+
     function restartQuiz() {
       switchLevel(currentLevel);
     }
