@@ -1,11 +1,191 @@
-<script>
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextStep - Koreys tili daraja testi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
+  <!-- Header -->
+  <header
+    class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo & Back Buttons -->
+      <div class="flex items-center gap-4">
+        <a href="../index.html"
+          class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
+          <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
+          <span>Bosh sahifaga</span>
+        </a>
+        <a href="./korean.html"
+          class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-600 font-medium text-sm bg-slate-100 hover:bg-brand-50 px-3 py-2 rounded-xl transition-all duration-200 group">
+          <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
+          <span>Koreys tili sahifasi</span>
+        </a>
+        <div class="h-5 w-px bg-slate-200 hidden sm:block"></div>
+        <div class="flex items-center gap-2">
+          <div
+            class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-extrabold text-lg shadow-md shadow-brand-500/20">
+            N</div>
+          <span class="font-bold text-xl tracking-tight text-slate-900 hidden sm:inline">Next<span
+              class="text-brand-600">Step</span></span>
+        </div>
+      </div>
+
+      <!-- Course Badge -->
+      <div
+        class="hidden md:flex items-center gap-2 bg-brand-50 border border-brand-100 text-brand-700 px-4 py-1.5 rounded-full text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+        Koreys Tili Testi
+      </div>
+
+      <!-- Profile -->
+      <a href="../profil.html"
+        class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm px-4 py-2 rounded-xl transition-all duration-200 shadow-md shadow-brand-500/20">
+        <i class="fa-regular fa-user"></i>
+        <span>Profil</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto w-full px-4 py-8 flex-1">
+    <!-- Level Selector -->
+    <div class="mb-8 bg-white p-2 rounded-2xl border border-slate-100 shadow-sm flex flex-wrap gap-2 justify-center">
+      <button onclick="switchLevel('A1')"
+        class="level-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-blue-600 text-white shadow-md shadow-blue-100"
+        data-level="A1">A1 Daraja</button>
+      <button onclick="switchLevel('A2')"
+        class="level-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all text-slate-600 hover:bg-slate-100"
+        data-level="A2">A2 Daraja</button>
+      <button onclick="switchLevel('B1')"
+        class="level-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all text-slate-600 hover:bg-slate-100"
+        data-level="B1">B1 Daraja</button>
+      <button onclick="switchLevel('B2')"
+        class="level-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all text-slate-600 hover:bg-slate-100"
+        data-level="B2">B2 Daraja</button>
+      <button onclick="switchLevel('C1')"
+        class="level-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all text-slate-600 hover:bg-slate-100"
+        data-level="C1">C1 Daraja</button>
+    </div>
+
+    <!-- Quiz Box -->
+    <div id="quiz-container"
+      class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-xl shadow-slate-200/50">
+      <!-- Progress Bar -->
+      <div class="mb-6">
+        <div class="flex justify-between items-center mb-2 text-sm font-medium text-slate-500">
+          <span>Savol <strong id="current-q-num" class="text-blue-600">1</strong> / <span
+              id="total-q-num">10</span></span>
+          <span id="level-badge"
+            class="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 text-xs font-bold">A1</span>
+        </div>
+        <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+          <div id="progress-bar" class="bg-blue-600 h-full w-[10%] transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <!-- Question Title -->
+      <h2 id="question-text" class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug">
+        Yuklanmoqda...
+      </h2>
+
+      <!-- Options -->
+      <div id="options-container" class="grid grid-cols-1 gap-3 mb-8"></div>
+
+      <!-- Actions -->
+      <div class="flex justify-between items-center border-t border-slate-100 pt-6">
+        <button id="prev-btn" onclick="prevQuestion()" disabled
+          class="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-500 font-semibold text-sm hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed">
+          &larr; Oldingisi
+        </button>
+        <button id="next-btn" onclick="nextQuestion()"
+          class="px-6 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 shadow-md shadow-blue-200 transition-all">
+          Keyingisi &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- Results Container -->
+    <div id="result-container" class="hidden bg-white rounded-3xl p-8 border border-slate-100 shadow-xl text-center">
+      <div
+        class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+        ✓</div>
+      <h2 class="text-2xl font-bold text-slate-900 mb-2">Test Yakunlandi!</h2>
+      <p class="text-slate-500 mb-6">Sizning koreys tili bo'yicha natijangiz:</p>
+
+      <div class="bg-slate-50 rounded-2xl p-6 max-w-sm mx-auto mb-6 border border-slate-100">
+        <span class="text-sm font-semibold text-slate-500 block mb-1">To'g'ri javoblar</span>
+        <div class="text-4xl font-extrabold text-blue-600"><span id="score-text">0</span> / <span
+            id="total-score-text">10</span></div>
+      </div>
+
+      <button onclick="restartQuiz()"
+        class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-md shadow-blue-200 hover:bg-blue-700 transition-all">
+        Qayta topshirish
+      </button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-slate-400 text-xs border-t border-slate-100 bg-white">
+    © NextStep Ta'lim Platformasi. Barcha huquqlar himoyalangan.
+  </footer>
+
+  <script>
     let rawTestData = null;
-    let activeQuestions = []; // Tanlangan 10 ta random savol
+    let activeQuestions = [];
     let currentLevel = 'A1';
     let currentIndex = 0;
     let userAnswers = {};
 
-    // Massivni tasodifiy aralashtirish (Fisher-Yates Shuffle)
     function shuffleArray(array) {
       const arr = [...array];
       for (let i = arr.length - 1; i > 0; i--) {
@@ -15,7 +195,6 @@
       return arr;
     }
 
-    // 30 ta testdan tasodifiy 10 tasini ajratib olish
     function getRandomQuestions(level, count = 10) {
       if (!rawTestData || !rawTestData[level]) return [];
       const allLevelQuestions = rawTestData[level];
@@ -28,8 +207,7 @@
         const res = await fetch('https://raw.githubusercontent.com/alimardon201101-coder/NextStepBazaJSON/refs/heads/main/test-kr.json');
         const data = await res.json();
         rawTestData = data.korean_proficiency_test || Object.values(data)[0];
-        
-        // Dastlabki A1 daraja uchun 10 ta random savol tanlash
+
         activeQuestions = getRandomQuestions(currentLevel, 10);
         renderQuestion();
       } catch (err) {
@@ -41,8 +219,7 @@
       currentLevel = level;
       currentIndex = 0;
       userAnswers = {};
-      
-      // Yangi darajaga o'tilganda ham 10 ta tasodifiy savol ajratiladi
+
       activeQuestions = getRandomQuestions(currentLevel, 10);
 
       document.querySelectorAll('.level-btn').forEach(btn => {
@@ -64,7 +241,7 @@
       const q = activeQuestions[currentIndex];
 
       document.getElementById('current-q-num').innerText = currentIndex + 1;
-      document.getElementById('total-q-num').innerText = activeQuestions.length; // 10 ta
+      document.getElementById('total-q-num').innerText = activeQuestions.length;
       document.getElementById('level-badge').innerText = currentLevel;
       document.getElementById('question-text').innerText = `${currentIndex + 1}. ${q.question}`;
 
@@ -78,8 +255,8 @@
         const isSelected = userAnswers[currentIndex] === opt;
         const btn = document.createElement('button');
         btn.className = `w-full text-left p-4 rounded-xl border-2 font-medium text-sm transition-all flex justify-between items-center ${isSelected
-          ? 'border-blue-600 bg-blue-50/60 text-blue-700 shadow-sm'
-          : 'border-slate-100 bg-slate-50/50 hover:border-slate-300 hover:bg-white text-slate-700'
+            ? 'border-blue-600 bg-blue-50/60 text-blue-700 shadow-sm'
+            : 'border-slate-100 bg-slate-50/50 hover:border-slate-300 hover:bg-white text-slate-700'
           }`;
         btn.innerHTML = `<span>${opt}</span> <span class="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-xs ${isSelected ? 'border-blue-600 bg-blue-600 text-white' : ''}">${isSelected ? '✓' : ''}</span>`;
         btn.onclick = () => selectOption(opt);
@@ -110,7 +287,7 @@
     }
 
     function nextQuestion() {
-      if (currentIndex < activeQuestions.length - 1) {
+      if (currentIndex < activeQuestions.name || currentIndex < activeQuestions.length - 1) {
         currentIndex++;
         renderQuestion();
       } else {
@@ -127,11 +304,10 @@
         }
       });
 
-      // LocalStorage ga saqlash
       const existingResults = JSON.parse(localStorage.getItem('test_results')) || {};
       const entry = {
         score: score,
-        total: activeQuestions.length, // 10 ta
+        total: activeQuestions.length,
         level: currentLevel,
         subject: 'korean',
         date: new Date().toISOString()
@@ -144,11 +320,9 @@
       localStorage.setItem('test_history', JSON.stringify(history));
       if (window.cloudSync) window.cloudSync();
 
-      // Foydalanuvchi ismini olish
       const userProfile = JSON.parse(localStorage.getItem('user_profile')) || {};
       const userName = userProfile.name || "Noma'lum foydalanuvchi";
 
-      // GitHub Bazasiga avtomatik sinxronlash
       if (typeof syncDataToGitHub === 'function') {
         syncDataToGitHub('test', {
           userName: userName,
@@ -162,6 +336,7 @@
       document.getElementById('quiz-container').classList.add('hidden');
       document.getElementById('result-container').classList.remove('hidden');
       document.getElementById('score-text').innerText = score;
+      document.getElementById('total-score-text').innerText = activeQuestions.length;
     }
 
     function restartQuiz() {
@@ -170,3 +345,7 @@
 
     window.onload = loadTestData;
   </script>
+  <script type="module" src="../cloud-sync.js"></script>
+</body>
+
+</html>
