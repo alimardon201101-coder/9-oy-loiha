@@ -47,7 +47,7 @@ export const googleProvider = new GoogleAuthProvider();
 //
 // SOZLASH: o'z emailingizni shu yerga va firestore.rules faylidagi isAdmin()
 // ro'yxatiga yozing — ikkisi bir xil bo'lishi shart.
-const ADMIN_EMAILS = [];
+const ADMIN_EMAILS = ["alimardon201101@gmail.com", "alimardonmirzaboyev201@gmail.com"];
 
 const COURSES = {
   english: { label: "Ingliz tili", flag: "🇬🇧", total: 180, speech: "en-US" },

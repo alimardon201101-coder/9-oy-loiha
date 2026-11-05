@@ -31,26 +31,6 @@
       }
     }
   </script>
-
-  <!-- Xavfsizlik va ruxsatni tekshirish skripti -->
-  <script>
-    (function () {
-      // Ruxsat etilgan adminlar ro'yxati
-      const allowedAdmins = [
-        "alimardon201101@gmail.com",
-        "alimardonmirzaboyev201@gmail.com"
-      ];
-
-      // Foydalanuvchi ma'lumotlarini qayerda saqlayotgan bo'lsangiz (masalan, localStorage yoki sessionStorage)
-      // Loyihangiz mantig'iga qarab kalitni o'zgartirishingiz mumkin (masalan: 'userEmail', 'currentUser' va hokazo)
-      const userEmail = localStorage.getItem('userEmail') || sessionStorage.getItem('userEmail');
-
-      // Agar email topilmasa yoki ruxsat etilganlar ro'yxatida bo'lmasa index.html ga otib yuborish
-      if (!userEmail || !allowedAdmins.includes(userEmail.trim().toLowerCase())) {
-        window.location.replace('./index.html');
-      }
-    })();
-  </script>
 </head>
 
 <body data-page="admin" class="font-sans bg-slate-100 text-slate-800 min-h-screen flex flex-col antialiased">
