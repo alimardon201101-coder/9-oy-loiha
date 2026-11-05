@@ -2550,3 +2550,14 @@ let rusdars = [
 
 
 
+
+/* ============================================================
+   app.js uchun yagona kirish nuqtasi.
+   Har bir sahifa data-page / data-course orqali o'z tilini tanlaydi.
+   ============================================================ */
+window.courseData = {
+  english: darslar,
+  korean: koreysDarslar,
+  russian: rusdars,
+  german: nemisdars
+};

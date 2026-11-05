@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uz">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NextStep - Koreys tili daraja testi</title>
+  <meta name="description" content="Koreys tili daraja testi A1–C1: 150 savol, tasodifiy 10 savollik test va xatolar tahlili.">
+  <link rel="canonical" href="https://nextstep-uz.netlify.app/kurslar/test-kr-test.html">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -52,7 +54,7 @@
   </style>
 </head>
 
-<body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
+<body data-page="quiz" data-subject="korean" class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
   <!-- Header -->
   <header
     class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
@@ -178,174 +180,7 @@
   <footer class="text-center py-6 text-slate-400 text-xs border-t border-slate-100 bg-white">
     © NextStep Ta'lim Platformasi. Barcha huquqlar himoyalangan.
   </footer>
-
-  <script>
-    let rawTestData = null;
-    let activeQuestions = [];
-    let currentLevel = 'A1';
-    let currentIndex = 0;
-    let userAnswers = {};
-
-    function shuffleArray(array) {
-      const arr = [...array];
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
-
-    function getRandomQuestions(level, count = 10) {
-      if (!rawTestData || !rawTestData[level]) return [];
-      const allLevelQuestions = rawTestData[level];
-      const shuffled = shuffleArray(allLevelQuestions);
-      return shuffled.slice(0, count);
-    }
-
-    async function loadTestData() {
-      try {
-        const res = await fetch('https://raw.githubusercontent.com/alimardon201101-coder/NextStepBazaJSON/refs/heads/main/test-kr.json');
-        const data = await res.json();
-        rawTestData = data.korean_proficiency_test || Object.values(data)[0];
-
-        activeQuestions = getRandomQuestions(currentLevel, 10);
-        renderQuestion();
-      } catch (err) {
-        document.getElementById('question-text').innerText = "JSON ma'lumotlarini yuklashda xatolik! './test-kr.json' fayli mavjudligini tekshiring.";
-      }
-    }
-
-    function switchLevel(level) {
-      currentLevel = level;
-      currentIndex = 0;
-      userAnswers = {};
-
-      activeQuestions = getRandomQuestions(currentLevel, 10);
-
-      document.querySelectorAll('.level-btn').forEach(btn => {
-        if (btn.dataset.level === level) {
-          btn.className = "level-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-blue-600 text-white shadow-md shadow-blue-100";
-        } else {
-          btn.className = "level-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all text-slate-600 hover:bg-slate-100";
-        }
-      });
-
-      document.getElementById('quiz-container').classList.remove('hidden');
-      document.getElementById('result-container').classList.add('hidden');
-      renderQuestion();
-    }
-
-    function renderQuestion() {
-      if (!activeQuestions || activeQuestions.length === 0) return;
-
-      const q = activeQuestions[currentIndex];
-
-      document.getElementById('current-q-num').innerText = currentIndex + 1;
-      document.getElementById('total-q-num').innerText = activeQuestions.length;
-      document.getElementById('level-badge').innerText = currentLevel;
-      document.getElementById('question-text').innerText = `${currentIndex + 1}. ${q.question}`;
-
-      const progressPercent = ((currentIndex + 1) / activeQuestions.length) * 100;
-      document.getElementById('progress-bar').style.width = `${progressPercent}%`;
-
-      const optionsBox = document.getElementById('options-container');
-      optionsBox.innerHTML = '';
-
-      q.options.forEach((opt) => {
-        const isSelected = userAnswers[currentIndex] === opt;
-        const btn = document.createElement('button');
-        btn.className = `w-full text-left p-4 rounded-xl border-2 font-medium text-sm transition-all flex justify-between items-center ${isSelected
-            ? 'border-blue-600 bg-blue-50/60 text-blue-700 shadow-sm'
-            : 'border-slate-100 bg-slate-50/50 hover:border-slate-300 hover:bg-white text-slate-700'
-          }`;
-        btn.innerHTML = `<span>${opt}</span> <span class="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-xs ${isSelected ? 'border-blue-600 bg-blue-600 text-white' : ''}">${isSelected ? '✓' : ''}</span>`;
-        btn.onclick = () => selectOption(opt);
-        optionsBox.appendChild(btn);
-      });
-
-      document.getElementById('prev-btn').disabled = currentIndex === 0;
-      const nextBtn = document.getElementById('next-btn');
-      if (currentIndex === activeQuestions.length - 1) {
-        nextBtn.innerText = "Natijani ko'rish";
-        nextBtn.className = "px-6 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 shadow-md shadow-emerald-200 transition-all";
-      } else {
-        nextBtn.innerText = "Keyingisi \u2192";
-        nextBtn.className = "px-6 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 shadow-md shadow-blue-200 transition-all";
-      }
-    }
-
-    function selectOption(opt) {
-      userAnswers[currentIndex] = opt;
-      renderQuestion();
-    }
-
-    function prevQuestion() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        renderQuestion();
-      }
-    }
-
-    function nextQuestion() {
-      if (currentIndex < activeQuestions.name || currentIndex < activeQuestions.length - 1) {
-        currentIndex++;
-        renderQuestion();
-      } else {
-        showResults();
-      }
-    }
-
-    function showResults() {
-      let score = 0;
-
-      activeQuestions.forEach((q, idx) => {
-        if (userAnswers[idx] === q.answer) {
-          score++;
-        }
-      });
-
-      const existingResults = JSON.parse(localStorage.getItem('test_results')) || {};
-      const entry = {
-        score: score,
-        total: activeQuestions.length,
-        level: currentLevel,
-        subject: 'korean',
-        date: new Date().toISOString()
-      };
-      existingResults['korean_' + currentLevel] = entry;
-      localStorage.setItem('test_results', JSON.stringify(existingResults));
-
-      const history = JSON.parse(localStorage.getItem('test_history') || '[]');
-      history.push(entry);
-      localStorage.setItem('test_history', JSON.stringify(history));
-      if (window.cloudSync) window.cloudSync();
-
-      const userProfile = JSON.parse(localStorage.getItem('user_profile')) || {};
-      const userName = userProfile.name || "Noma'lum foydalanuvchi";
-
-      if (typeof syncDataToGitHub === 'function') {
-        syncDataToGitHub('test', {
-          userName: userName,
-          subject: 'Koreys tili',
-          level: currentLevel,
-          score: score,
-          total: activeQuestions.length
-        });
-      }
-
-      document.getElementById('quiz-container').classList.add('hidden');
-      document.getElementById('result-container').classList.remove('hidden');
-      document.getElementById('score-text').innerText = score;
-      document.getElementById('total-score-text').innerText = activeQuestions.length;
-    }
-
-    function restartQuiz() {
-      switchLevel(currentLevel);
-    }
-
-    window.onload = loadTestData;
-  </script>
-  <script type="module" src="../cloud-sync.js"></script>
+<script type="module" src="../app.js"></script>
 </body>
 
 </html>

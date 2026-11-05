@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uz" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin bilan Muloqot va Murojaat | NextStep</title>
+  <meta name="description" content="NextStep adminiga savol, taklif yoki darslardagi xatolar haqida xabar yuboring.">
+  <link rel="canonical" href="https://nextstep-uz.netlify.app/chat.html">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -35,7 +37,7 @@
   </script>
 </head>
 
-<body class="font-sans bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+<body data-page="chat" class="font-sans bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
 
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
@@ -140,120 +142,7 @@
       <p>&copy; 2026 NextStep. Barcha huquqlar himoyalangan.</p>
     </div>
   </footer>
-  <script type="module">
-    import { auth, db } from "./main.js";
-    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-    import { doc, setDoc, getDoc, updateDoc, arrayUnion, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-    const chatMessagesBox = document.getElementById('chatMessagesBox');
-    const chatForm = document.getElementById('chatForm');
-    const chatInput = document.getElementById('chatInput');
-    const chatAuthModal = document.getElementById('chatAuthModal');
-    const authWarningBadge = document.getElementById('authWarningBadge');
-
-    let currentUser = null;
-
-    onAuthStateChanged(auth, (user) => {
-      currentUser = user;
-      if (user) {
-        authWarningBadge.classList.add('hidden');
-        loadUserMessages(user.uid);
-
-        document.querySelectorAll('.user-name-display').forEach(el => el.textContent = user.displayName || user.email.split('@')[0]);
-        document.querySelectorAll('.user-avatar-initial').forEach(el => el.textContent = (user.displayName || user.email)[0].toUpperCase());
-      } else {
-        authWarningBadge.classList.remove('hidden');
-        chatMessagesBox.innerHTML = `
-        <div class="text-center text-slate-400 py-12 text-sm">
-          <i class="fa-solid fa-lock text-3xl mb-2 text-amber-500"></i>
-          <p>Xabarlarni ko'rish va yozish uchun iltimos <a href="./profil.html" class="text-brand-600 font-bold underline">ro'yxatdan o'ting</a>.</p>
-        </div>
-      `;
-      }
-    });
-
-    chatForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (!currentUser) {
-        chatAuthModal.style.display = 'flex';
-        return;
-      }
-
-      const text = chatInput.value.trim();
-      if (!text) return;
-
-      try {
-        const userRef = doc(db, "users", currentUser.uid);
-        const newMessage = {
-          id: 'msg_' + Date.now(),
-          sender: 'user',
-          text: text,
-          timestamp: new Date().toISOString()
-        };
-
-        // Avval hujjat bor-yo'qligini tekshiramiz yoki setDoc (merge bilan) ishlatamiz
-        const docSnap = await getDoc(userRef);
-        if (!docSnap.exists()) {
-          await setDoc(userRef, {
-            name: currentUser.displayName || currentUser.email,
-            email: currentUser.email,
-            messages: [newMessage]
-          });
-        } else {
-          await updateDoc(userRef, {
-            messages: arrayUnion(newMessage)
-          });
-        }
-
-        chatInput.value = '';
-      } catch (err) {
-        console.error("Xabar yuborishda xatolik:", err);
-        alert("Xabar yuborilmadi: " + err.message);
-      }
-    });
-
-    function loadUserMessages(uid) {
-      const userRef = doc(db, "users", uid);
-      onSnapshot(userRef, (docSnap) => {
-        if (!docSnap.exists()) return;
-        const data = docSnap.data();
-        const messages = data.messages || [];
-
-        if (messages.length === 0) {
-          chatMessagesBox.innerHTML = `
-          <div class="text-center text-slate-400 py-12 text-sm">
-            <i class="fa-regular fa-comments text-3xl mb-2 text-slate-300"></i>
-            <p>Hozircha xabarlar yo'q. Savolingizni yozib yuboring!</p>
-          </div>
-        `;
-          return;
-        }
-
-        chatMessagesBox.innerHTML = messages.map(msg => {
-          const isUser = msg.sender === 'user';
-          return `
-          <div class="flex flex-col ${isUser ? 'items-end' : 'items-start'} space-y-1">
-            <span class="text-[10px] text-slate-400 px-1">${isUser ? 'Siz' : 'Admin'}</span>
-            <div class="max-w-[80%] sm:max-w-[70%] px-4 py-3 rounded-2xl text-sm font-medium ${isUser
-              ? 'bg-brand-600 text-white rounded-br-xs shadow-sm'
-              : 'bg-slate-100 text-slate-800 rounded-bl-xs border border-slate-200'
-            }">
-              ${escapeHtml(msg.text)}
-            </div>
-            <span class="text-[9px] text-slate-300 px-1">${new Date(msg.timestamp || Date.now()).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-          </div>
-        `;
-        }).join('');
-
-        chatMessagesBox.scrollTop = chatMessagesBox.scrollHeight;
-      });
-    }
-
-    function escapeHtml(text) {
-      const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-      return text.replace(/[&<>"']/g, m => map[m]);
-    }
-  </script>
+<script type="module" src="./app.js"></script>
 </body>
 
 </html>

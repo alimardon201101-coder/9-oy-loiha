@@ -1,0 +1,57 @@
+rules_version = '2';
+
+// ============================================================================
+// NextStep — Firestore xavfsizlik qoidalari
+//
+// QANDAY QO'LLASH:
+//   1. Firebase Console → Firestore Database → Rules
+//   2. Shu faylning mazmunini nusxalab, "Publish" tugmasini bosing.
+//
+// MUHIM: ADMIN_EMAILS ro'yxatini app.js faylidagi bilan BIR XIL qiling.
+// Bu yerdagi ro'yxat — haqiqiy himoya, app.js dagisi faqat interfeys uchun.
+// ============================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // Admin emaillari — app.js dagi ADMIN_EMAILS bilan bir xil bo'lishi shart.
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.email in [
+        'admin@nextstep.uz'
+      ];
+    }
+
+    // Foydalanuvchi hujjati: ism, email, progress, test tarixi, yozishmalar
+    match /users/{uid} {
+
+      // Egasi o'z hujjatini, admin esa barchasini o'qiy oladi (admin panel ro'yxati uchun).
+      allow read: if isOwner(uid) || isAdmin();
+
+      // Yangi hujjatni faqat egasi yaratadi.
+      allow create: if isOwner(uid);
+
+      // Egasi hujjatini to'liq yangilay oladi.
+      // Admin faqat "messages" maydonini o'zgartira oladi (javob yozish uchun).
+      allow update: if isOwner(uid)
+                    || (isAdmin()
+                        && request.resource.data.diff(resource.data)
+                             .affectedKeys().hasOnly(['messages']));
+
+      // O'chirish — faqat egasi (hisobni tozalash).
+      allow delete: if isOwner(uid);
+    }
+
+    // Boshqa barcha yo'llar yopiq.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uz" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rus Tili Darslari | NextStep</title>
+  <meta name="description" content="Rus tilini 0 dan o'rganish: 100 ta video dars va progress kuzatuvi.">
+  <link rel="canonical" href="https://nextstep-uz.netlify.app/kurslar/rus_tili.html">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -55,7 +57,7 @@
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+<body data-page="course" data-course="russian" class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
 
   <!-- TOP HEADER / NAVIGATION -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
@@ -186,137 +188,8 @@
 
   <!-- DATA & APP LOGIC -->
   <script src="./data.js"></script>
-  <script type="module" src="../main.js"></script>
 
-  <script>
-    let currentIndex = 0;
-    const courseType = 'russian';
-
-    const selectEl = document.getElementById('lessonSelect');
-    const iframeEl = document.getElementById('videoPlayer');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const watchedBtn = document.getElementById('watchedBtn');
-    const ytLink = document.getElementById('youtubeLink');
-    const lessonTitleEl = document.getElementById('currentLessonTitle');
-    const progressBadgeEl = document.getElementById('lessonProgressBadge');
-    const playlistContainer = document.getElementById('playlistContainer');
-
-    function getYouTubeId(url) {
-      if (!url) return '';
-      const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
-      return (match && match[2].length === 11) ? match[2] : null;
-    }
-
-    function isWatched(index) {
-      if (typeof isLessonWatched === 'function') {
-        return isLessonWatched(courseType, index);
-      }
-      return false;
-    }
-
-    function toggleWatched(index) {
-      if (typeof toggleLessonWatched === 'function') {
-        toggleLessonWatched(courseType, index);
-      }
-    }
-
-    function updateWatchedBtnUI() {
-      const watched = isWatched(currentIndex);
-      if (watched) {
-        watchedBtn.className = "inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm active:scale-95 text-white bg-emerald-600 hover:bg-emerald-700 shadow-emerald-500/20";
-        watchedBtn.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>Ko'rib bo'lindi</span>`;
-      } else {
-        watchedBtn.className = "inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm active:scale-95 text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200";
-        watchedBtn.innerHTML = `<i class="fa-regular fa-circle"></i> <span>Darsni ko'rdim deb belgilash</span>`;
-      }
-    }
-
-    // data.js ichidagi rusdars o'zgaruvchisi olinadi
-    const currentList = (typeof rusdars !== 'undefined' && Array.isArray(rusdars)) ? rusdars : [];
-
-    function renderPlaylist() {
-      if (!playlistContainer || !currentList.length) return;
-      playlistContainer.innerHTML = '';
-
-      currentList.forEach((dars, index) => {
-        const watched = isWatched(index);
-        const isActive = index === currentIndex;
-
-        const item = document.createElement('button');
-        item.type = 'button';
-        item.onclick = () => loadLesson(index);
-        
-        let baseClass = "w-full text-left p-3 rounded-xl flex items-center justify-between gap-3 transition-all duration-200 text-sm ";
-        if (isActive) {
-          baseClass += "bg-brand-50 border border-brand-200 text-brand-700 font-semibold shadow-sm";
-        } else {
-          baseClass += "hover:bg-slate-50 text-slate-700 font-medium border border-transparent";
-        }
-        item.className = baseClass;
-
-        item.innerHTML = `
-          <div class="flex items-center gap-3 overflow-hidden">
-            <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs shrink-0 ${isActive ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-500'}">
-              ${dars.dars || index + 1}
-            </span>
-            <span class="truncate">${dars.title}</span>
-          </div>
-          <span class="shrink-0 text-xs">
-            ${watched ? '<i class="fa-solid fa-circle-check text-emerald-500 text-base"></i>' : '<i class="fa-regular fa-circle text-slate-300"></i>'}
-          </span>
-        `;
-
-        playlistContainer.appendChild(item);
-      });
-    }
-
-    if (currentList.length > 0) {
-      currentList.forEach((dars, index) => {
-        const option = document.createElement('option');
-        option.value = index;
-        option.textContent = `${dars.dars || index + 1}-dars: ${dars.title}`;
-        selectEl.appendChild(option);
-      });
-
-      function loadLesson(index) {
-        if (index < 0 || index >= currentList.length) return;
-        currentIndex = index;
-        selectEl.value = currentIndex;
-        
-        const videoId = getYouTubeId(currentList[currentIndex].link);
-        iframeEl.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
-        ytLink.href = currentList[currentIndex].link;
-        
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex === currentList.length - 1;
-        
-        if (lessonTitleEl) {
-          lessonTitleEl.textContent = `${currentList[currentIndex].dars || currentIndex + 1}-dars: ${currentList[currentIndex].title}`;
-        }
-
-        if (progressBadgeEl) {
-          progressBadgeEl.textContent = `${currentIndex + 1} / ${currentList.length} Dars`;
-        }
-
-        updateWatchedBtnUI();
-        renderPlaylist();
-      }
-
-      selectEl.addEventListener('change', (e) => loadLesson(parseInt(e.target.value)));
-      prevBtn.addEventListener('click', () => { if (currentIndex > 0) loadLesson(currentIndex - 1); });
-      nextBtn.addEventListener('click', () => { if (currentIndex < currentList.length - 1) loadLesson(currentIndex + 1); });
-      
-      watchedBtn.addEventListener('click', () => {
-        toggleWatched(currentIndex);
-        updateWatchedBtnUI();
-        renderPlaylist();
-      });
-
-      loadLesson(0);
-    }
-  </script>
-
+<script type="module" src="../app.js"></script>
 </body>
 
 </html>

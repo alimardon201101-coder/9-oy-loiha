@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /profil.html
+Disallow: /chat.html
+
+Sitemap: https://nextstep-uz.netlify.app/sitemap.xml

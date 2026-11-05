@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | NextStep</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="NextStep admin paneli — foydalanuvchi murojaatlari bilan ishlash.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body data-page="admin" class="font-sans bg-slate-100 text-slate-800 min-h-screen flex flex-col antialiased">
+
+  <!-- Header -->
+  <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center font-extrabold text-white shadow-md">
+          A
+        </div>
+        <span class="text-xl font-extrabold tracking-tight">NextStep <span class="text-brand-500 font-medium text-sm">Admin Panel</span></span>
+      </div>
+      <div class="flex items-center gap-3">
+        <div id="adminEmailDisplay" class="text-xs font-semibold text-slate-400">Tekshirilmoqda...</div>
+        <a href="./index.html" class="text-xs font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg bg-white/10 transition-colors">
+          <i class="fa-solid fa-house mr-1"></i> Saytga
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Admin Layout -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 md:grid-cols-3 gap-6 md:h-[calc(100vh-4rem)]">
+
+    <!-- Users / Chats List Sidebar -->
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col overflow-hidden md:col-span-1 min-h-[280px]">
+      <div class="p-4 border-b border-slate-100 bg-slate-50 font-bold text-sm text-slate-700 flex items-center justify-between">
+        <span>Foydalanuvchilar va murojaatlar</span>
+        <i class="fa-solid fa-users text-brand-600"></i>
+      </div>
+      <div id="usersListContainer" class="flex-1 overflow-y-auto divide-y divide-slate-100 custom-scrollbar">
+        <div class="p-4 text-center text-slate-400 text-xs">Yuklanmoqda...</div>
+      </div>
+    </div>
+
+    <!-- Active Chat / Message Thread Box -->
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col overflow-hidden md:col-span-2 min-h-[420px]">
+      <div id="chatHeader" class="p-4 border-b border-slate-100 bg-slate-50 font-bold text-sm text-slate-700 flex items-center justify-between">
+        <span>Foydalanuvchi tanlang</span>
+      </div>
+
+      <div id="adminMessagesBox" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 bg-slate-50/50 flex flex-col justify-center items-center text-slate-400 text-sm custom-scrollbar">
+        <i class="fa-regular fa-comment-dots text-4xl mb-2 text-slate-300"></i>
+        <p>Chatni boshlash uchun chapdan foydalanuvchini tanlang.</p>
+      </div>
+
+      <form id="adminReplyForm" class="p-4 bg-white border-t border-slate-200 flex items-center gap-3 hidden">
+        <input type="text" id="adminReplyInput" required placeholder="Admin nomidan javob yozing..."
+          class="flex-1 px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-medium">
+        <button type="submit"
+          class="px-5 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2 shrink-0">
+          <span>Yuborish</span>
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+        </button>
+      </form>
+    </div>
+
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+
+</html>
