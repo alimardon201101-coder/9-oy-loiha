@@ -1569,7 +1569,7 @@ function initAdminPage() {
       renderThread(messages);
     }, (error) => {
       console.error("Chatni kuzatishda xatolik:", error);
-      paintEmpty("Xabarlarni o'qish uchun ruxsat yo'q (Firestore Rules).");
+      paintEmpty("Xabarlarni o'qish uchun ruxsat yo'q .");
     });
   }
 
@@ -1592,9 +1592,8 @@ function initAdminPage() {
     } catch (error) {
       console.error("Foydalanuvchilar ro'yxati yuklanmadi:", error);
       usersEl.innerHTML = `<div class="p-5 text-xs text-rose-600 space-y-2">
-        <p class="font-bold">Ro'yxatni o'qib bo'lmadi.</p>
-        <p>Firestore Rules'da admin uchun <code>users</code> kolleksiyasini o'qishga ruxsat bering
-        (<code>firestore.rules</code> fayli loyihada).</p>
+        <p class="font-bold">Ro'yxatni o'qib bo'lmadi. Siz Admin emasiz iltimos chiqib keting.</p>
+       
         <p class="text-slate-400">${escapeHtml(error.message)}</p>
       </div>`;
     }
@@ -1635,9 +1634,8 @@ function initAdminPage() {
     if (!canManage(user)) {
       usersEl.innerHTML = `<div class="p-5 text-xs text-rose-600 space-y-2">
         <p class="font-bold">Ruxsat yo'q.</p>
-        <p>Bu sahifa faqat administrator uchun. Siz ${user ? `<strong>${escapeHtml(user.email)}</strong>` : "hisobga kirmagansiz"}.</p>
-        <p class="text-slate-500">Admin emailini <code>app.js</code> faylidagi <code>ADMIN_EMAILS</code> ro'yxatiga qo'shing va
-        Firestore Rules'ni yangilang.</p>
+        <p>Bu sahifa faqat administrator uchun."}.</p>
+        <p class="text-slate-500">Admin emassiz.</p>
         <a href="./profil.html" class="inline-block mt-2 px-3 py-2 bg-brand-600 text-white rounded-lg font-bold">Profilga o'tish</a>
       </div>`;
       form?.classList.add("hidden");
