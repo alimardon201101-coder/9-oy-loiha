@@ -205,3 +205,42 @@ qoidalar hali eskicha (ehtimol test rejimida) degani.
 | Video sahifa nomlarini birlashtirish | `korean.html`, `rus_tili.html`, `nemis_tili.html` — nomuvofiq, lekin havolalar buzilmasligi uchun tegmadik |
 | Markup dublikatini kamaytirish | 4 ta mashq/lug'at sahifasi bir xil tuzilgan; SEO uchun statik qoldirildi |
 | Admin emailini sozlash | `app.js` dagi `ADMIN_EMAILS` va `firestore.rules` — sizning emailingiz kerak |
+
+## 8. Logo va Google'dagi favicon (2026-11-06)
+
+### Sayt ichidagi logo
+- Barcha **25 sahifada** sarlavha (header) qismidagi harf bilan yasalgan kvadrat (`N` / `A`) o'rniga
+  haqiqiy `LOGO.png` rasmi qo'yildi (21 joy almashtirildi + 4 hub sahifaga yangidan qo'shildi).
+- Kurs sahifalarida relativ yo'l (`../LOGO.png`), ildiz sahifalarda `LOGO.png`.
+
+### Favicon (Google qidiruvda ko'rinadigan belgi)
+| Fayl | O'lcham | Vazifa |
+|---|---|---|
+| `favicon.ico` | 16, 32, 48 | Brauzer va Google'ning standart so'rovi |
+| `assets/icons/favicon-32.png` | 32×32 | Zamonaviy brauzerlar |
+| `assets/icons/favicon-192.png` | 192×192 | Android / PWA |
+| `assets/icons/apple-touch-icon.png` | 180×180 | iOS (oq fon bilan) |
+| `assets/icons/logo-512.png` | 512×512 | Manifest va schema.org |
+| `manifest.webmanifest` | — | PWA ikonkalari, tema rangi |
+
+Barcha sahifalarda quyidagi havolalar (ildizga nisbatan, shuning uchun `kurslar/` ichida ham ishlaydi):
+
+```html
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#2563eb">
+```
+
+Qo'shimcha: bosh sahifaga `Organization` + `WebSite` JSON-LD qo'shildi (`logo` maydoni bilan) —
+Google bilimlar panelida brend logotipi uchun.
+
+### Google'da Netlify belgisi o'rniga NextStep chiqishi uchun
+1. Saytni qayta deploy qiling (favicon fayllari ildizda bo'lishi shart — `favicon.ico` ildizda).
+2. [Google Search Console](https://search.google.com/search-console) → **URL Inspection** →
+   `https://nextstep-uz.netlify.app/` → **Request indexing**.
+3. `robots.txt` `/assets/` va `/favicon.ico` ni bloklamaydi (tekshirilgan).
+4. Google favicon'ni 1 kundan bir necha haftagacha yangilaydi — bu Google tomonidagi jarayon,
+   kodga bog'liq emas. Tezlashtirish uchun 1-qadamni bir necha marta takrorlash mumkin.
