@@ -47,7 +47,7 @@ export const googleProvider = new GoogleAuthProvider();
 //
 // SOZLASH: o'z emailingizni shu yerga va firestore.rules faylidagi isAdmin()
 // ro'yxatiga yozing — ikkisi bir xil bo'lishi shart.
-const ADMIN_EMAILS = ["alimardon201101@gmail.com", "alimardonmirzaboyev201@gmail.com"];
+const ADMIN_EMAILS = ["alimardon201101@gmail.com"];
 
 const COURSES = {
   english: { label: "Ingliz tili", flag: "🇬🇧", total: 180, speech: "en-US" },
@@ -85,7 +85,10 @@ const URLS = {
   dictionary: "https://raw.githubusercontent.com/alimardon201101-coder/data/refs/heads/main/data.json",
   tests: {
     english: "https://raw.githubusercontent.com/alimardon201101-coder/NextStepBazaJSON/refs/heads/main/test-ing.json",
-    korean: "https://raw.githubusercontent.com/alimardon201101-coder/NextStepBazaJSON/refs/heads/main/test-kr.json"
+    korean: "https://raw.githubusercontent.com/alimardon201101-coder/NextStepBazaJSON/refs/heads/main/test-kr.json",
+    // Nemis va rus testlari GitHub'da yo'q — ular lokal bazadan (tools/generate-tests.js) yuklanadi.
+    german: "./test-de.json",
+    russian: "./test-ru.json"
   }
 };
 
@@ -686,8 +689,10 @@ function initCoursePage(courseId) {
     // Sahifani sakratmasdan, faqat ro'yxat ichida kerakli darsga olib boramiz.
     const activeItem = playlist.children[currentIndex];
     if (activeItem) {
-      const target = activeItem.offsetTop - playlist.clientHeight / 2 + activeItem.clientHeight / 2;
-      playlist.scrollTop = Math.max(0, target);
+      const itemRect = activeItem.getBoundingClientRect();
+      const listRect = playlist.getBoundingClientRect();
+      const delta = (itemRect.top - listRect.top) - playlist.clientHeight / 2 + itemRect.height / 2;
+      playlist.scrollTop = Math.max(0, playlist.scrollTop + delta);
     }
   }
 
@@ -1372,7 +1377,9 @@ function initDictionaryPage(lang) {
           const target = item[langKey] ?? "";
           return { uzb, target, uzbLower: String(uzb).toLowerCase(), targetLower: String(target).toLowerCase() };
         })
-        .filter((row) => row.target);
+        // Bir xil yozilgan juftliklar (masalan "a" -> "a") o'quvchi uchun foydasiz —
+        // lug'at bazasidagi shovqinni olib tashlaymiz.
+        .filter((row) => row.target && row.targetLower !== row.uzbLower);
 
       applyFilter(false);
     } catch (error) {
@@ -1420,8 +1427,8 @@ function initChatPage() {
         <div class="flex flex-col ${isUser ? "items-end" : "items-start"} space-y-1">
           <span class="text-[10px] text-slate-400 px-1">${isUser ? "Siz" : "Admin"}</span>
           <div class="max-w-[80%] sm:max-w-[70%] px-4 py-3 rounded-2xl text-sm font-medium ${isUser
-            ? "bg-brand-600 text-white rounded-br-xs shadow-sm"
-            : "bg-slate-100 text-slate-800 rounded-bl-xs border border-slate-200"}">
+          ? "bg-brand-600 text-white rounded-br-xs shadow-sm"
+          : "bg-slate-100 text-slate-800 rounded-bl-xs border border-slate-200"}">
             ${escapeHtml(message.text)}
           </div>
           <span class="text-[9px] text-slate-300 px-1">${new Date(message.timestamp || Date.now()).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
@@ -1546,8 +1553,8 @@ function initAdminPage() {
         <div class="flex flex-col ${isUser ? "items-start" : "items-end"} space-y-1 w-full">
           <span class="text-[10px] text-slate-400 px-1">${isUser ? escapeHtml(selectedName) : "Admin (siz)"}</span>
           <div class="max-w-[80%] px-4 py-3 rounded-2xl text-sm font-medium ${isUser
-            ? "bg-white text-slate-800 border border-slate-200 rounded-bl-xs"
-            : "bg-brand-600 text-white rounded-br-xs shadow-sm"}">
+          ? "bg-white text-slate-800 border border-slate-200 rounded-bl-xs"
+          : "bg-brand-600 text-white rounded-br-xs shadow-sm"}">
             ${escapeHtml(message.text)}
           </div>
           <span class="text-[9px] text-slate-400 px-1">${new Date(message.timestamp || Date.now()).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
@@ -1569,7 +1576,7 @@ function initAdminPage() {
       renderThread(messages);
     }, (error) => {
       console.error("Chatni kuzatishda xatolik:", error);
-      paintEmpty("Xabarlarni o'qish uchun ruxsat yo'q .");
+      paintEmpty("Xabarlarni o'qish uchun ruxsat yo'q (Firestore Rules).");
     });
   }
 
@@ -1592,8 +1599,9 @@ function initAdminPage() {
     } catch (error) {
       console.error("Foydalanuvchilar ro'yxati yuklanmadi:", error);
       usersEl.innerHTML = `<div class="p-5 text-xs text-rose-600 space-y-2">
-        <p class="font-bold">Ro'yxatni o'qib bo'lmadi. Siz Admin emasiz iltimos chiqib keting.</p>
-       
+        <p class="font-bold">Ro'yxatni o'qib bo'lmadi.</p>
+        <p>Firestore Rules'da admin uchun <code>users</code> kolleksiyasini o'qishga ruxsat bering
+        (<code>firestore.rules</code> fayli loyihada).</p>
         <p class="text-slate-400">${escapeHtml(error.message)}</p>
       </div>`;
     }
@@ -1634,8 +1642,9 @@ function initAdminPage() {
     if (!canManage(user)) {
       usersEl.innerHTML = `<div class="p-5 text-xs text-rose-600 space-y-2">
         <p class="font-bold">Ruxsat yo'q.</p>
-        <p>Bu sahifa faqat administrator uchun."}.</p>
-        <p class="text-slate-500">Admin emassiz.</p>
+        <p>Bu sahifa faqat administrator uchun. Siz ${user ? `<strong>${escapeHtml(user.email)}</strong>` : "hisobga kirmagansiz"}.</p>
+        <p class="text-slate-500">Admin emailini <code>app.js</code> faylidagi <code>ADMIN_EMAILS</code> ro'yxatiga qo'shing va
+        Firestore Rules'ni yangilang.</p>
         <a href="./profil.html" class="inline-block mt-2 px-3 py-2 bg-brand-600 text-white rounded-lg font-bold">Profilga o'tish</a>
       </div>`;
       form?.classList.add("hidden");
@@ -1646,7 +1655,283 @@ function initAdminPage() {
   });
 }
 
-/* ---------------------------- 14. PROFILE PAGE -------------------------- */
+/* ---------------------------- 14. SERTIFIKAT ---------------------------- */
+const MONTHS_UZ = [
+  "yanvar", "fevral", "mart", "aprel", "may", "iyun",
+  "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"
+];
+
+const COURSE_PAGES = {
+  english: "./kurslar/ing.html",
+  korean: "./kurslar/kor.html",
+  russian: "./kurslar/rus.html",
+  german: "./kurslar/nem.html"
+};
+
+function uzbekDate(date = new Date()) {
+  return `${date.getFullYear()}-yil ${date.getDate()}-${MONTHS_UZ[date.getMonth()]}`;
+}
+
+function shortCode(text) {
+  let hash = 2166136261;
+  for (let i = 0; i < String(text).length; i += 1) {
+    hash ^= String(text).charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0).toString(36).toUpperCase().padStart(7, "0").slice(0, 7);
+}
+
+function drawCertificate(canvas, { name, courseLabel, date, id, sample }) {
+  const ctx = canvas.getContext("2d");
+  const W = canvas.width;
+  const H = canvas.height;
+
+  const font = (size, weight = "600") => `${weight} ${size}px "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif`;
+
+  function roundRect(x, y, w, h, r) {
+    ctx.beginPath();
+    if (typeof ctx.roundRect === "function") {
+      ctx.roundRect(x, y, w, h, r);
+    } else {
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+  }
+
+  // Fon
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, W, H);
+
+  const glow = ctx.createRadialGradient(W * 0.15, 0, 100, W * 0.15, 0, W * 0.9);
+  glow.addColorStop(0, "#e0edff");
+  glow.addColorStop(1, "#ffffff");
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, W, H);
+
+  // Ramka
+  ctx.strokeStyle = "#2563eb";
+  ctx.lineWidth = 12;
+  ctx.strokeRect(36, 36, W - 72, H - 72);
+  ctx.strokeStyle = "#bfdbfe";
+  ctx.lineWidth = 2;
+  ctx.strokeRect(62, 62, W - 124, H - 124);
+
+  // Logo belgisi
+  ctx.fillStyle = "#2563eb";
+  roundRect(110, 108, 88, 88, 22);
+  ctx.fill();
+  ctx.fillStyle = "#ffffff";
+  ctx.font = font(52, "800");
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText("N", 154, 154);
+
+  // Brend nomi
+  ctx.textAlign = "left";
+  ctx.fillStyle = "#0f172a";
+  ctx.font = font(38, "800");
+  ctx.fillText("NextStep", 220, 136);
+  ctx.fillStyle = "#64748b";
+  ctx.font = font(20, "600");
+  ctx.fillText("Onlayn til o'rganish platformasi", 222, 172);
+
+  // Sarlavha
+  ctx.textAlign = "center";
+  ctx.fillStyle = "#1d4ed8";
+  ctx.font = font(26, "700");
+  ctx.fillText("SERTIFIKAT", W / 2, 310);
+
+  ctx.fillStyle = "#0f172a";
+  ctx.font = font(64, "800");
+  ctx.fillText("Muvaffaqiyat uchun", W / 2, 386);
+
+  ctx.fillStyle = "#64748b";
+  ctx.font = font(24, "500");
+  ctx.fillText("Ushbu sertifikat quyidagi shaxsga taqdim etiladi:", W / 2, 444);
+
+  // Ism
+  ctx.fillStyle = "#0f172a";
+  ctx.font = font(72, "800");
+  ctx.fillText(name, W / 2, 530);
+
+  // Chiziq
+  ctx.strokeStyle = "#cbd5e1";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(W / 2 - 420, 566);
+  ctx.lineTo(W / 2 + 420, 566);
+  ctx.stroke();
+
+  // Matn
+  ctx.fillStyle = "#334155";
+  ctx.font = font(28, "500");
+  ctx.fillText(`${courseLabel} kursining barcha video darslarini`, W / 2, 622);
+  ctx.fillText("muvaffaqiyatli yakunlaganligi uchun berilgan.", W / 2, 664);
+
+  // Pastki qism
+  ctx.textAlign = "left";
+  ctx.fillStyle = "#94a3b8";
+  ctx.font = font(20, "600");
+  ctx.fillText("BERILGAN SANA", 130, 880);
+  ctx.fillStyle = "#0f172a";
+  ctx.font = font(30, "700");
+  ctx.fillText(date, 130, 920);
+
+  ctx.textAlign = "right";
+  ctx.fillStyle = "#94a3b8";
+  ctx.font = font(20, "600");
+  ctx.fillText("SERTIFIKAT ID", W - 130, 880);
+  ctx.fillStyle = "#0f172a";
+  ctx.font = font(30, "700");
+  ctx.fillText(id, W - 130, 920);
+
+  ctx.textAlign = "center";
+  ctx.strokeStyle = "#cbd5e1";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(W / 2 - 190, 900);
+  ctx.lineTo(W / 2 + 190, 900);
+  ctx.stroke();
+  ctx.fillStyle = "#64748b";
+  ctx.font = font(22, "600");
+  ctx.fillText("NextStep jamoasi", W / 2, 938);
+
+  // Namuna (watermark)
+  if (sample) {
+    ctx.save();
+    ctx.translate(W / 2, H / 2);
+    ctx.rotate(-Math.PI / 7);
+    ctx.textAlign = "center";
+    ctx.fillStyle = "rgba(37, 99, 235, 0.10)";
+    ctx.font = font(150, "800");
+    ctx.fillText("NAMUNA", 0, 0);
+    ctx.restore();
+  }
+
+  // Pastdagi nozik chiziq
+  ctx.fillStyle = "#2563eb";
+  ctx.fillRect(36, H - 60, W - 72, 6);
+}
+
+function initCertificatePage() {
+  const grid = $("certificate-grid");
+  const notice = $("certAuthNotice");
+  const previewBox = $("certPreviewBox");
+  const previewImg = $("certPreviewImg");
+  const downloadLink = $("certDownloadLink");
+  const canvas = $("certificate-canvas");
+  if (!grid || !canvas) return;
+
+  const watched = getWatchedLessons();
+
+  function renderCards(user) {
+    if (notice) notice.classList.toggle("hidden", !!user);
+
+    grid.innerHTML = Object.keys(COURSES).map((course) => {
+      const info = COURSES[course];
+      const done = Array.isArray(watched[course]) ? watched[course].length : 0;
+      const percent = Math.min(100, Math.round((done / info.total) * 100));
+      const ready = percent >= 100;
+
+      const action = ready
+        ? `<button type="button" data-cert="${course}"
+             class="w-full mt-4 px-4 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+             <i class="fa-solid fa-award"></i> Sertifikatni olish
+           </button>`
+        : `<div class="mt-4 flex items-center justify-between gap-3">
+             <a href="${COURSE_PAGES[course]}" class="text-sm font-bold text-brand-600 hover:text-brand-700">Davom ettirish →</a>
+             <span class="text-xs text-slate-400 font-semibold">yana ${info.total - done} dars</span>
+           </div>`;
+
+      return `
+        <div class="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 space-y-4">
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">${info.flag}</span>
+              <div>
+                <h3 class="font-bold text-slate-900">${info.label}</h3>
+                <span class="text-xs font-semibold text-slate-500">${done} / ${info.total} dars</span>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold ${ready ? "bg-emerald-50 text-emerald-600 border border-emerald-100" : "bg-slate-50 text-slate-500 border border-slate-200"}">
+              ${ready ? "Tayyor" : percent + "%"}
+            </span>
+          </div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div class="h-full rounded-full bg-gradient-to-r from-brand-600 to-blue-500" style="width:${percent}%"></div>
+          </div>
+          ${action}
+          <button type="button" data-sample="${course}" class="w-full text-xs font-semibold text-slate-400 hover:text-brand-600 transition-colors">
+            Namunani ko'rish
+          </button>
+        </div>`;
+    }).join("");
+  }
+
+  function showCertificate(course, sample) {
+    const user = auth.currentUser;
+    const userName = sample ? "Ismingiz" : (user ? currentName(user) : (readJSON("user_profile", {})?.name || "Foydalanuvchi"));
+    const date = uzbekDate();
+    const id = "NS-" + shortCode(`${user?.uid || "guest"}-${course}-${sample ? "sample" : "real"}`);
+
+    drawCertificate(canvas, {
+      name: userName,
+      courseLabel: COURSES[course].label,
+      date,
+      id,
+      sample
+    });
+
+    const dataUrl = canvas.toDataURL("image/png");
+    if (previewImg) previewImg.src = dataUrl;
+    if (downloadLink) {
+      downloadLink.href = dataUrl;
+      downloadLink.download = `NextStep-sertifikat-${course}${sample ? "-namuna" : ""}.png`;
+      downloadLink.innerHTML = sample
+        ? '<i class="fa-solid fa-download"></i> Namunani yuklab olish'
+        : '<i class="fa-solid fa-download"></i> Yuklab olish (PNG)';
+    }
+    previewBox?.classList.remove("hidden");
+    previewBox?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  grid.addEventListener("click", (event) => {
+    const certBtn = event.target.closest("[data-cert]");
+    if (certBtn) {
+      showCertificate(certBtn.dataset.cert, false);
+      return;
+    }
+    const sampleBtn = event.target.closest("[data-sample]");
+    if (sampleBtn) showCertificate(sampleBtn.dataset.sample, true);
+  });
+
+  $("certCloseBtn")?.addEventListener("click", () => previewBox?.classList.add("hidden"));
+
+  renderCards(auth.currentUser);
+
+  // Sertifikat namunasini to'g'ridan-to'g'ri ochish: sertifikat.html?course=english&sample=1
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get("course");
+  if (requested && COURSES[requested]) {
+    showCertificate(requested, params.get("sample") === "1");
+  }
+
+  onAuthStateChanged(auth, (user) => {
+    paintUser(user);
+    renderCards(user);
+  });
+
+  // Shriftlar yuklangach qayta chizish uchun tayyorlov
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => { /* keyingi chizishlar to'g'ri shrift bilan bo'ladi */ });
+  }
+}
+
+/* ---------------------------- 15. PROFILE PAGE -------------------------- */
 function initProfilePage() {
   paintUser(auth.currentUser);
   updateProgressUI();
@@ -1707,6 +1992,7 @@ Object.assign(window, {
 function detectPage() {
   const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
   if (file.includes("admin")) return "admin";
+  if (file.includes("sertifikat")) return "certificate";
   if (file.includes("chat")) return "chat";
   if (file.includes("profil")) return "profile";
   if (file.includes("test-")) return "quiz";
@@ -1734,6 +2020,8 @@ function boot() {
     initChatPage();
   } else if (page === "admin") {
     initAdminPage();
+  } else if (page === "certificate") {
+    initCertificatePage();
   } else {
     paintUser(auth.currentUser);
   }

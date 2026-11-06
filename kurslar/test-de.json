@@ -1,0 +1,1814 @@
+{
+  "german_proficiency_test": {
+    "A1": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «kitob» qanday aytiladi?",
+        "options": [
+          "Buch",
+          "Hallo",
+          "nein",
+          "Tag"
+        ],
+        "answer": "Buch"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «uy» qanday aytiladi?",
+        "options": [
+          "Tag",
+          "Haus",
+          "Vater",
+          "Auto"
+        ],
+        "answer": "Haus"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «maktab» qanday aytiladi?",
+        "options": [
+          "schlecht",
+          "Tschüss",
+          "Freund",
+          "Schule"
+        ],
+        "answer": "Schule"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «suv» qanday aytiladi?",
+        "options": [
+          "Wasser",
+          "Auto",
+          "Schule",
+          "Tschüss"
+        ],
+        "answer": "Wasser"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «non» qanday aytiladi?",
+        "options": [
+          "Danke",
+          "Brot",
+          "Schule",
+          "Tschüss"
+        ],
+        "answer": "Brot"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «do'st» qanday aytiladi?",
+        "options": [
+          "Straße",
+          "Freund",
+          "Auto",
+          "Buch"
+        ],
+        "answer": "Freund"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ota» qanday aytiladi?",
+        "options": [
+          "Haus",
+          "Auto",
+          "Vater",
+          "Buch"
+        ],
+        "answer": "Vater"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ona» qanday aytiladi?",
+        "options": [
+          "gut",
+          "Schule",
+          "Mutter",
+          "Name"
+        ],
+        "answer": "Mutter"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «bola» qanday aytiladi?",
+        "options": [
+          "Kind",
+          "Name",
+          "neu",
+          "Wasser"
+        ],
+        "answer": "Kind"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ism» qanday aytiladi?",
+        "options": [
+          "Straße",
+          "Name",
+          "Vater",
+          "Tschüss"
+        ],
+        "answer": "Name"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «shahar» qanday aytiladi?",
+        "options": [
+          "Vater",
+          "nein",
+          "Tag",
+          "Stadt"
+        ],
+        "answer": "Stadt"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «mashina» qanday aytiladi?",
+        "options": [
+          "Auto",
+          "schlecht",
+          "Wasser",
+          "Vater"
+        ],
+        "answer": "Auto"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «yo'l» qanday aytiladi?",
+        "options": [
+          "Vater",
+          "Straße",
+          "Kind",
+          "Wasser"
+        ],
+        "answer": "Straße"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «kun» qanday aytiladi?",
+        "options": [
+          "schlecht",
+          "Haus",
+          "neu",
+          "Tag"
+        ],
+        "answer": "Tag"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tun» qanday aytiladi?",
+        "options": [
+          "Nacht",
+          "Mutter",
+          "Stadt",
+          "klein"
+        ],
+        "answer": "Nacht"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «salom» qanday aytiladi?",
+        "options": [
+          "Stadt",
+          "Wasser",
+          "Hallo",
+          "ja"
+        ],
+        "answer": "Hallo"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «rahmat» qanday aytiladi?",
+        "options": [
+          "schlecht",
+          "Tag",
+          "Danke",
+          "klein"
+        ],
+        "answer": "Danke"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «xayr» qanday aytiladi?",
+        "options": [
+          "Mutter",
+          "Haus",
+          "Tschüss",
+          "Kind"
+        ],
+        "answer": "Tschüss"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ha» qanday aytiladi?",
+        "options": [
+          "ja",
+          "klein",
+          "schlecht",
+          "gut"
+        ],
+        "answer": "ja"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «yo'q» qanday aytiladi?",
+        "options": [
+          "neu",
+          "Brot",
+          "Tag",
+          "nein"
+        ],
+        "answer": "nein"
+      },
+      {
+        "id": 21,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «katta» qanday aytiladi?",
+        "options": [
+          "groß",
+          "Straße",
+          "Tag",
+          "Freund"
+        ],
+        "answer": "groß"
+      },
+      {
+        "id": 22,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «kichik» qanday aytiladi?",
+        "options": [
+          "Hallo",
+          "Danke",
+          "klein",
+          "Name"
+        ],
+        "answer": "klein"
+      },
+      {
+        "id": 23,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «yaxshi» qanday aytiladi?",
+        "options": [
+          "gut",
+          "neu",
+          "Wasser",
+          "Schule"
+        ],
+        "answer": "gut"
+      },
+      {
+        "id": 24,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «yomon» qanday aytiladi?",
+        "options": [
+          "schlecht",
+          "Tschüss",
+          "Schule",
+          "Tag"
+        ],
+        "answer": "schlecht"
+      },
+      {
+        "id": 25,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «yangi» qanday aytiladi?",
+        "options": [
+          "Kind",
+          "neu",
+          "Mutter",
+          "Brot"
+        ],
+        "answer": "neu"
+      },
+      {
+        "id": 26,
+        "type": "multiple_choice",
+        "question": "Ich ___ aus Usbekistan.",
+        "options": [
+          "komme",
+          "kommst",
+          "kommt",
+          "kommen"
+        ],
+        "answer": "komme"
+      },
+      {
+        "id": 27,
+        "type": "multiple_choice",
+        "question": "___ heißt du?",
+        "options": [
+          "Wo",
+          "Wie",
+          "Was",
+          "Wer"
+        ],
+        "answer": "Wie"
+      },
+      {
+        "id": 28,
+        "type": "multiple_choice",
+        "question": "Das ist ___ Buch.",
+        "options": [
+          "ein",
+          "eine",
+          "einen",
+          "einem"
+        ],
+        "answer": "ein"
+      },
+      {
+        "id": 29,
+        "type": "multiple_choice",
+        "question": "Wir ___ Deutsch.",
+        "options": [
+          "lerne",
+          "lernst",
+          "lernt",
+          "lernen"
+        ],
+        "answer": "lernen"
+      },
+      {
+        "id": 30,
+        "type": "multiple_choice",
+        "question": "Ich habe ___ Bruder.",
+        "options": [
+          "ein",
+          "eine",
+          "einen",
+          "einem"
+        ],
+        "answer": "einen"
+      }
+    ],
+    "A2": [
+      {
+        "id": 31,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ovqat» qanday aytiladi?",
+        "options": [
+          "nie",
+          "Essen",
+          "kalt",
+          "Laden"
+        ],
+        "answer": "Essen"
+      },
+      {
+        "id": 32,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «nonushta» qanday aytiladi?",
+        "options": [
+          "manchmal",
+          "schwierig",
+          "gesund",
+          "Frühstück"
+        ],
+        "answer": "Frühstück"
+      },
+      {
+        "id": 33,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ish» qanday aytiladi?",
+        "options": [
+          "kalt",
+          "Arbeit",
+          "schnell",
+          "Jahr"
+        ],
+        "answer": "Arbeit"
+      },
+      {
+        "id": 34,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «pul» qanday aytiladi?",
+        "options": [
+          "Woche",
+          "schwierig",
+          "Geld",
+          "nie"
+        ],
+        "answer": "Geld"
+      },
+      {
+        "id": 35,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «vaqt» qanday aytiladi?",
+        "options": [
+          "Zeit",
+          "gestern",
+          "schwierig",
+          "schnell"
+        ],
+        "answer": "Zeit"
+      },
+      {
+        "id": 36,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «hafta» qanday aytiladi?",
+        "options": [
+          "Arbeit",
+          "Woche",
+          "gestern",
+          "Laden"
+        ],
+        "answer": "Woche"
+      },
+      {
+        "id": 37,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «oy» qanday aytiladi?",
+        "options": [
+          "warm",
+          "gestern",
+          "nie",
+          "Monat"
+        ],
+        "answer": "Monat"
+      },
+      {
+        "id": 38,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «yil» qanday aytiladi?",
+        "options": [
+          "kalt",
+          "Frühstück",
+          "Jahr",
+          "schwierig"
+        ],
+        "answer": "Jahr"
+      },
+      {
+        "id": 39,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «do'kon» qanday aytiladi?",
+        "options": [
+          "Laden",
+          "schwierig",
+          "kalt",
+          "Woche"
+        ],
+        "answer": "Laden"
+      },
+      {
+        "id": 40,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «shifokor» qanday aytiladi?",
+        "options": [
+          "Laden",
+          "Arzt",
+          "manchmal",
+          "langsam"
+        ],
+        "answer": "Arzt"
+      },
+      {
+        "id": 41,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «kasal» qanday aytiladi?",
+        "options": [
+          "Monat",
+          "krank",
+          "schwierig",
+          "gestern"
+        ],
+        "answer": "krank"
+      },
+      {
+        "id": 42,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «sog'lom» qanday aytiladi?",
+        "options": [
+          "Woche",
+          "gesund",
+          "Essen",
+          "Zeit"
+        ],
+        "answer": "gesund"
+      },
+      {
+        "id": 43,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «issiq» qanday aytiladi?",
+        "options": [
+          "warm",
+          "gestern",
+          "kalt",
+          "langsam"
+        ],
+        "answer": "warm"
+      },
+      {
+        "id": 44,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «sovuq» qanday aytiladi?",
+        "options": [
+          "immer",
+          "kalt",
+          "Frühstück",
+          "Monat"
+        ],
+        "answer": "kalt"
+      },
+      {
+        "id": 45,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tez» qanday aytiladi?",
+        "options": [
+          "Geld",
+          "Woche",
+          "kalt",
+          "schnell"
+        ],
+        "answer": "schnell"
+      },
+      {
+        "id": 46,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «sekin» qanday aytiladi?",
+        "options": [
+          "Arbeit",
+          "langsam",
+          "immer",
+          "Essen"
+        ],
+        "answer": "langsam"
+      },
+      {
+        "id": 47,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «oson» qanday aytiladi?",
+        "options": [
+          "langsam",
+          "einfach",
+          "morgen",
+          "gesund"
+        ],
+        "answer": "einfach"
+      },
+      {
+        "id": 48,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «qiyin» qanday aytiladi?",
+        "options": [
+          "schwierig",
+          "Jahr",
+          "morgen",
+          "Essen"
+        ],
+        "answer": "schwierig"
+      },
+      {
+        "id": 49,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «har doim» qanday aytiladi?",
+        "options": [
+          "Arzt",
+          "heute",
+          "Geld",
+          "immer"
+        ],
+        "answer": "immer"
+      },
+      {
+        "id": 50,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «hech qachon» qanday aytiladi?",
+        "options": [
+          "nie",
+          "krank",
+          "einfach",
+          "gestern"
+        ],
+        "answer": "nie"
+      },
+      {
+        "id": 51,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ba'zan» qanday aytiladi?",
+        "options": [
+          "heute",
+          "Geld",
+          "kalt",
+          "manchmal"
+        ],
+        "answer": "manchmal"
+      },
+      {
+        "id": 52,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «kecha» qanday aytiladi?",
+        "options": [
+          "Arzt",
+          "Zeit",
+          "gestern",
+          "schwierig"
+        ],
+        "answer": "gestern"
+      },
+      {
+        "id": 53,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «bugun» qanday aytiladi?",
+        "options": [
+          "gestern",
+          "schwierig",
+          "heute",
+          "Essen"
+        ],
+        "answer": "heute"
+      },
+      {
+        "id": 54,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ertaga» qanday aytiladi?",
+        "options": [
+          "Zeit",
+          "Arzt",
+          "morgen",
+          "Frühstück"
+        ],
+        "answer": "morgen"
+      },
+      {
+        "id": 55,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «sayohat» qanday aytiladi?",
+        "options": [
+          "Zeit",
+          "Reise",
+          "nie",
+          "Jahr"
+        ],
+        "answer": "Reise"
+      },
+      {
+        "id": 56,
+        "type": "multiple_choice",
+        "question": "Ich ___ gestern ins Kino gegangen.",
+        "options": [
+          "habe",
+          "bin",
+          "ist",
+          "war"
+        ],
+        "answer": "bin"
+      },
+      {
+        "id": 57,
+        "type": "multiple_choice",
+        "question": "Wir warten ___ den Bus.",
+        "options": [
+          "auf",
+          "für",
+          "an",
+          "mit"
+        ],
+        "answer": "auf"
+      },
+      {
+        "id": 58,
+        "type": "multiple_choice",
+        "question": "Berlin ist ___ als Bonn.",
+        "options": [
+          "groß",
+          "größer",
+          "am größten",
+          "große"
+        ],
+        "answer": "größer"
+      },
+      {
+        "id": 59,
+        "type": "multiple_choice",
+        "question": "Ich habe ___ Zeit.",
+        "options": [
+          "kein",
+          "keine",
+          "keinen",
+          "nicht"
+        ],
+        "answer": "keine"
+      },
+      {
+        "id": 60,
+        "type": "multiple_choice",
+        "question": "Gestern ___ ich keine Zeit.",
+        "options": [
+          "habe",
+          "hatte",
+          "hätte",
+          "hab"
+        ],
+        "answer": "hatte"
+      }
+    ],
+    "B1": [
+      {
+        "id": 61,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tajriba» qanday aytiladi?",
+        "options": [
+          "Umwelt",
+          "Respekt",
+          "Erfahrung",
+          "Grund"
+        ],
+        "answer": "Erfahrung"
+      },
+      {
+        "id": 62,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «muvaffaqiyat» qanday aytiladi?",
+        "options": [
+          "Erfolg",
+          "Grund",
+          "Aufmerksamkeit",
+          "Recht"
+        ],
+        "answer": "Erfolg"
+      },
+      {
+        "id": 63,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «maqsad» qanday aytiladi?",
+        "options": [
+          "Ziel",
+          "Grund",
+          "Vertrauen",
+          "Respekt"
+        ],
+        "answer": "Ziel"
+      },
+      {
+        "id": 64,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «qaror» qanday aytiladi?",
+        "options": [
+          "Entscheidung",
+          "Respekt",
+          "Umwelt",
+          "Ereignis"
+        ],
+        "answer": "Entscheidung"
+      },
+      {
+        "id": 65,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «imkoniyat» qanday aytiladi?",
+        "options": [
+          "Lösung",
+          "Ereignis",
+          "Vorschlag",
+          "Möglichkeit"
+        ],
+        "answer": "Möglichkeit"
+      },
+      {
+        "id": 66,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «mas'uliyat» qanday aytiladi?",
+        "options": [
+          "Verantwortung",
+          "Vorschlag",
+          "Möglichkeit",
+          "Aufmerksamkeit"
+        ],
+        "answer": "Verantwortung"
+      },
+      {
+        "id": 67,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «muhit» qanday aytiladi?",
+        "options": [
+          "Erfolg",
+          "Grund",
+          "Ziel",
+          "Umwelt"
+        ],
+        "answer": "Umwelt"
+      },
+      {
+        "id": 68,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «jamiyat» qanday aytiladi?",
+        "options": [
+          "Gesellschaft",
+          "Respekt",
+          "Vorschlag",
+          "Ziel"
+        ],
+        "answer": "Gesellschaft"
+      },
+      {
+        "id": 69,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «hukumat» qanday aytiladi?",
+        "options": [
+          "Gesellschaft",
+          "Möglichkeit",
+          "Recht",
+          "Regierung"
+        ],
+        "answer": "Regierung"
+      },
+      {
+        "id": 70,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «qonun» qanday aytiladi?",
+        "options": [
+          "Nachricht",
+          "Fehler",
+          "Respekt",
+          "Gesetz"
+        ],
+        "answer": "Gesetz"
+      },
+      {
+        "id": 71,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «huquq» qanday aytiladi?",
+        "options": [
+          "Recht",
+          "Nachricht",
+          "Respekt",
+          "Problem"
+        ],
+        "answer": "Recht"
+      },
+      {
+        "id": 72,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «xabar» qanday aytiladi?",
+        "options": [
+          "Nachricht",
+          "Meinung",
+          "Vorschlag",
+          "Aufmerksamkeit"
+        ],
+        "answer": "Nachricht"
+      },
+      {
+        "id": 73,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «voqea» qanday aytiladi?",
+        "options": [
+          "Erfolg",
+          "Vorschlag",
+          "Ereignis",
+          "Lösung"
+        ],
+        "answer": "Ereignis"
+      },
+      {
+        "id": 74,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «xato» qanday aytiladi?",
+        "options": [
+          "Grund",
+          "Fehler",
+          "Respekt",
+          "Vertrauen"
+        ],
+        "answer": "Fehler"
+      },
+      {
+        "id": 75,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «yechim» qanday aytiladi?",
+        "options": [
+          "Ergebnis",
+          "Ziel",
+          "Lösung",
+          "Erfolg"
+        ],
+        "answer": "Lösung"
+      },
+      {
+        "id": 76,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «muammo» qanday aytiladi?",
+        "options": [
+          "Gesellschaft",
+          "Gesetz",
+          "Problem",
+          "Nachricht"
+        ],
+        "answer": "Problem"
+      },
+      {
+        "id": 77,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «sabab» qanday aytiladi?",
+        "options": [
+          "Umwelt",
+          "Grund",
+          "Sorge",
+          "Ergebnis"
+        ],
+        "answer": "Grund"
+      },
+      {
+        "id": 78,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «natija» qanday aytiladi?",
+        "options": [
+          "Vereinbarung",
+          "Sorge",
+          "Verantwortung",
+          "Ergebnis"
+        ],
+        "answer": "Ergebnis"
+      },
+      {
+        "id": 79,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «fikr» qanday aytiladi?",
+        "options": [
+          "Meinung",
+          "Vorschlag",
+          "Ergebnis",
+          "Verantwortung"
+        ],
+        "answer": "Meinung"
+      },
+      {
+        "id": 80,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «taklif» qanday aytiladi?",
+        "options": [
+          "Vorschlag",
+          "Gesetz",
+          "Vertrauen",
+          "Erfolg"
+        ],
+        "answer": "Vorschlag"
+      },
+      {
+        "id": 81,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «kelishuv» qanday aytiladi?",
+        "options": [
+          "Gesetz",
+          "Respekt",
+          "Erfolg",
+          "Vereinbarung"
+        ],
+        "answer": "Vereinbarung"
+      },
+      {
+        "id": 82,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ishonch» qanday aytiladi?",
+        "options": [
+          "Vertrauen",
+          "Respekt",
+          "Erfahrung",
+          "Ziel"
+        ],
+        "answer": "Vertrauen"
+      },
+      {
+        "id": 83,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «hurmat» qanday aytiladi?",
+        "options": [
+          "Möglichkeit",
+          "Ergebnis",
+          "Respekt",
+          "Fehler"
+        ],
+        "answer": "Respekt"
+      },
+      {
+        "id": 84,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «e'tibor» qanday aytiladi?",
+        "options": [
+          "Vorschlag",
+          "Erfolg",
+          "Gesetz",
+          "Aufmerksamkeit"
+        ],
+        "answer": "Aufmerksamkeit"
+      },
+      {
+        "id": 85,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tashvish» qanday aytiladi?",
+        "options": [
+          "Sorge",
+          "Möglichkeit",
+          "Gesellschaft",
+          "Nachricht"
+        ],
+        "answer": "Sorge"
+      },
+      {
+        "id": 86,
+        "type": "multiple_choice",
+        "question": "Ich weiß nicht, ___ er kommt.",
+        "options": [
+          "dass",
+          "ob",
+          "wenn",
+          "weil"
+        ],
+        "answer": "ob"
+      },
+      {
+        "id": 87,
+        "type": "multiple_choice",
+        "question": "Das ist der Mann, ___ neben mir wohnt.",
+        "options": [
+          "der",
+          "den",
+          "dem",
+          "die"
+        ],
+        "answer": "der"
+      },
+      {
+        "id": 88,
+        "type": "multiple_choice",
+        "question": "Das Haus wurde 1990 ___.",
+        "options": [
+          "bauen",
+          "gebaut",
+          "baut",
+          "baute"
+        ],
+        "answer": "gebaut"
+      },
+      {
+        "id": 89,
+        "type": "multiple_choice",
+        "question": "___ ich Zeit habe, gehe ich schwimmen.",
+        "options": [
+          "Wenn",
+          "Als",
+          "Ob",
+          "Dass"
+        ],
+        "answer": "Wenn"
+      },
+      {
+        "id": 90,
+        "type": "multiple_choice",
+        "question": "Er hat sich ___ die Prüfung vorbereitet.",
+        "options": [
+          "auf",
+          "für",
+          "an",
+          "über"
+        ],
+        "answer": "auf"
+      }
+    ],
+    "B2": [
+      {
+        "id": 91,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «samaradorlik» qanday aytiladi?",
+        "options": [
+          "Steuer",
+          "Effizienz",
+          "Budget",
+          "Markt"
+        ],
+        "answer": "Effizienz"
+      },
+      {
+        "id": 92,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «strategiya» qanday aytiladi?",
+        "options": [
+          "Steuer",
+          "Einkommen",
+          "Wettbewerb",
+          "Strategie"
+        ],
+        "answer": "Strategie"
+      },
+      {
+        "id": 93,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «innovatsiya» qanday aytiladi?",
+        "options": [
+          "Nachfrage",
+          "Innovation",
+          "Wettbewerb",
+          "Wachstum"
+        ],
+        "answer": "Innovation"
+      },
+      {
+        "id": 94,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ta'sir» qanday aytiladi?",
+        "options": [
+          "Markt",
+          "Forschung",
+          "Budget",
+          "Einfluss"
+        ],
+        "answer": "Einfluss"
+      },
+      {
+        "id": 95,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tahlil» qanday aytiladi?",
+        "options": [
+          "Bedingung",
+          "Forschung",
+          "Bericht",
+          "Analyse"
+        ],
+        "answer": "Analyse"
+      },
+      {
+        "id": 96,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tadqiqot» qanday aytiladi?",
+        "options": [
+          "Menge",
+          "Budget",
+          "Wachstum",
+          "Forschung"
+        ],
+        "answer": "Forschung"
+      },
+      {
+        "id": 97,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «hisobot» qanday aytiladi?",
+        "options": [
+          "Kosten",
+          "Investition",
+          "Risiko",
+          "Bericht"
+        ],
+        "answer": "Bericht"
+      },
+      {
+        "id": 98,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «loyiha» qanday aytiladi?",
+        "options": [
+          "Bericht",
+          "Wachstum",
+          "Forschung",
+          "Projekt"
+        ],
+        "answer": "Projekt"
+      },
+      {
+        "id": 99,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «byudjet» qanday aytiladi?",
+        "options": [
+          "Budget",
+          "Entwicklung",
+          "Menge",
+          "Projekt"
+        ],
+        "answer": "Budget"
+      },
+      {
+        "id": 100,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «xarajat» qanday aytiladi?",
+        "options": [
+          "Entwicklung",
+          "Kosten",
+          "Investition",
+          "Rückgang"
+        ],
+        "answer": "Kosten"
+      },
+      {
+        "id": 101,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «daromad» qanday aytiladi?",
+        "options": [
+          "Bericht",
+          "Standard",
+          "Menge",
+          "Einkommen"
+        ],
+        "answer": "Einkommen"
+      },
+      {
+        "id": 102,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «soliq» qanday aytiladi?",
+        "options": [
+          "Rückgang",
+          "Einkommen",
+          "Entwicklung",
+          "Steuer"
+        ],
+        "answer": "Steuer"
+      },
+      {
+        "id": 103,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «bozor» qanday aytiladi?",
+        "options": [
+          "Standard",
+          "Markt",
+          "Innovation",
+          "Analyse"
+        ],
+        "answer": "Markt"
+      },
+      {
+        "id": 104,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «talab» qanday aytiladi?",
+        "options": [
+          "Risiko",
+          "Bedingung",
+          "Innovation",
+          "Nachfrage"
+        ],
+        "answer": "Nachfrage"
+      },
+      {
+        "id": 105,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «raqobat» qanday aytiladi?",
+        "options": [
+          "Markt",
+          "Bedingung",
+          "Budget",
+          "Wettbewerb"
+        ],
+        "answer": "Wettbewerb"
+      },
+      {
+        "id": 106,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «investitsiya» qanday aytiladi?",
+        "options": [
+          "Entwicklung",
+          "Investition",
+          "Planung",
+          "Analyse"
+        ],
+        "answer": "Investition"
+      },
+      {
+        "id": 107,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «rivojlanish» qanday aytiladi?",
+        "options": [
+          "Standard",
+          "Entwicklung",
+          "Bericht",
+          "Strategie"
+        ],
+        "answer": "Entwicklung"
+      },
+      {
+        "id": 108,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «o'sish» qanday aytiladi?",
+        "options": [
+          "Entwicklung",
+          "Wachstum",
+          "Qualität",
+          "Bericht"
+        ],
+        "answer": "Wachstum"
+      },
+      {
+        "id": 109,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «pasayish» qanday aytiladi?",
+        "options": [
+          "Rückgang",
+          "Investition",
+          "Markt",
+          "Budget"
+        ],
+        "answer": "Rückgang"
+      },
+      {
+        "id": 110,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «xavf» qanday aytiladi?",
+        "options": [
+          "Einkommen",
+          "Risiko",
+          "Steuer",
+          "Forschung"
+        ],
+        "answer": "Risiko"
+      },
+      {
+        "id": 111,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «shart» qanday aytiladi?",
+        "options": [
+          "Investition",
+          "Rückgang",
+          "Bedingung",
+          "Einfluss"
+        ],
+        "answer": "Bedingung"
+      },
+      {
+        "id": 112,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «standart» qanday aytiladi?",
+        "options": [
+          "Standard",
+          "Planung",
+          "Effizienz",
+          "Menge"
+        ],
+        "answer": "Standard"
+      },
+      {
+        "id": 113,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «sifat» qanday aytiladi?",
+        "options": [
+          "Steuer",
+          "Kosten",
+          "Qualität",
+          "Budget"
+        ],
+        "answer": "Qualität"
+      },
+      {
+        "id": 114,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «miqdor» qanday aytiladi?",
+        "options": [
+          "Menge",
+          "Projekt",
+          "Planung",
+          "Einfluss"
+        ],
+        "answer": "Menge"
+      },
+      {
+        "id": 115,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «rejalashtirish» qanday aytiladi?",
+        "options": [
+          "Bericht",
+          "Planung",
+          "Steuer",
+          "Investition"
+        ],
+        "answer": "Planung"
+      },
+      {
+        "id": 116,
+        "type": "multiple_choice",
+        "question": "Die Ergebnisse müssen bis morgen ___ werden.",
+        "options": [
+          "veröffentlichen",
+          "veröffentlicht",
+          "veröffentliche",
+          "Veröffentlichung"
+        ],
+        "answer": "veröffentlicht"
+      },
+      {
+        "id": 117,
+        "type": "multiple_choice",
+        "question": "Hätte ich das gewusst, ___ ich anders gehandelt.",
+        "options": [
+          "habe",
+          "hatte",
+          "hätte",
+          "würde"
+        ],
+        "answer": "hätte"
+      },
+      {
+        "id": 118,
+        "type": "multiple_choice",
+        "question": "Der Autor, ___ Bücher weltweit gelesen werden, lebt in Berlin.",
+        "options": [
+          "dessen",
+          "deren",
+          "den",
+          "dem"
+        ],
+        "answer": "dessen"
+      },
+      {
+        "id": 119,
+        "type": "multiple_choice",
+        "question": "Trotz ___ Regens fand das Fest statt.",
+        "options": [
+          "der",
+          "des",
+          "dem",
+          "den"
+        ],
+        "answer": "des"
+      },
+      {
+        "id": 120,
+        "type": "multiple_choice",
+        "question": "Es handelt sich ___ ein ernstes Problem.",
+        "options": [
+          "um",
+          "auf",
+          "für",
+          "über"
+        ],
+        "answer": "um"
+      }
+    ],
+    "C1": [
+      {
+        "id": 121,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «mohiyat» qanday aytiladi?",
+        "options": [
+          "Prinzip",
+          "Initiative",
+          "Wesen",
+          "Hindernis"
+        ],
+        "answer": "Wesen"
+      },
+      {
+        "id": 122,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tamoyil» qanday aytiladi?",
+        "options": [
+          "Prinzip",
+          "Verpflichtung",
+          "Schlussfolgerung",
+          "Wesen"
+        ],
+        "answer": "Prinzip"
+      },
+      {
+        "id": 123,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «mezon» qanday aytiladi?",
+        "options": [
+          "Notwendigkeit",
+          "Beweis",
+          "Potenzial",
+          "Kriterium"
+        ],
+        "answer": "Kriterium"
+      },
+      {
+        "id": 124,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «dalil» qanday aytiladi?",
+        "options": [
+          "Perspektive",
+          "Prinzip",
+          "Beweis",
+          "Fortschritt"
+        ],
+        "answer": "Beweis"
+      },
+      {
+        "id": 125,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «xulosa» qanday aytiladi?",
+        "options": [
+          "Hindernis",
+          "Weltanschauung",
+          "Initiative",
+          "Schlussfolgerung"
+        ],
+        "answer": "Schlussfolgerung"
+      },
+      {
+        "id": 126,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «taxmin» qanday aytiladi?",
+        "options": [
+          "Schlussfolgerung",
+          "Grenze",
+          "Vermutung",
+          "Wesen"
+        ],
+        "answer": "Vermutung"
+      },
+      {
+        "id": 127,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «ehtimol» qanday aytiladi?",
+        "options": [
+          "Wert",
+          "Notwendigkeit",
+          "Wahrscheinlichkeit",
+          "Fortschritt"
+        ],
+        "answer": "Wahrscheinlichkeit"
+      },
+      {
+        "id": 128,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «zarurat» qanday aytiladi?",
+        "options": [
+          "Schlussfolgerung",
+          "Notwendigkeit",
+          "Potenzial",
+          "Wert"
+        ],
+        "answer": "Notwendigkeit"
+      },
+      {
+        "id": 129,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «to'siq» qanday aytiladi?",
+        "options": [
+          "Wert",
+          "Potenzial",
+          "Transparenz",
+          "Hindernis"
+        ],
+        "answer": "Hindernis"
+      },
+      {
+        "id": 130,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «chegara» qanday aytiladi?",
+        "options": [
+          "Gleichgewicht",
+          "Prinzip",
+          "Unterschied",
+          "Grenze"
+        ],
+        "answer": "Grenze"
+      },
+      {
+        "id": 131,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «meros» qanday aytiladi?",
+        "options": [
+          "Unterschied",
+          "Erbe",
+          "Tradition",
+          "Vermutung"
+        ],
+        "answer": "Erbe"
+      },
+      {
+        "id": 132,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «an'ana» qanday aytiladi?",
+        "options": [
+          "Kriterium",
+          "Tradition",
+          "Unterschied",
+          "Schlussfolgerung"
+        ],
+        "answer": "Tradition"
+      },
+      {
+        "id": 133,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «qadriyat» qanday aytiladi?",
+        "options": [
+          "Grenze",
+          "Wert",
+          "Gleichgewicht",
+          "Potenzial"
+        ],
+        "answer": "Wert"
+      },
+      {
+        "id": 134,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «dunyoqarash» qanday aytiladi?",
+        "options": [
+          "Weltanschauung",
+          "Wesen",
+          "Tradition",
+          "Beweis"
+        ],
+        "answer": "Weltanschauung"
+      },
+      {
+        "id": 135,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tafovut» qanday aytiladi?",
+        "options": [
+          "Unterschied",
+          "Vermutung",
+          "Transparenz",
+          "Wahrscheinlichkeit"
+        ],
+        "answer": "Unterschied"
+      },
+      {
+        "id": 136,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «muvozanat» qanday aytiladi?",
+        "options": [
+          "Kriterium",
+          "Initiative",
+          "Gleichgewicht",
+          "Unterschied"
+        ],
+        "answer": "Gleichgewicht"
+      },
+      {
+        "id": 137,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «barqarorlik» qanday aytiladi?",
+        "options": [
+          "Weltanschauung",
+          "Wert",
+          "Stabilität",
+          "Wahrscheinlichkeit"
+        ],
+        "answer": "Stabilität"
+      },
+      {
+        "id": 138,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «shaffoflik» qanday aytiladi?",
+        "options": [
+          "Gleichgewicht",
+          "Reform",
+          "Verpflichtung",
+          "Transparenz"
+        ],
+        "answer": "Transparenz"
+      },
+      {
+        "id": 139,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «taraqqiyot» qanday aytiladi?",
+        "options": [
+          "Notwendigkeit",
+          "Fortschritt",
+          "Schlussfolgerung",
+          "Beweis"
+        ],
+        "answer": "Fortschritt"
+      },
+      {
+        "id": 140,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tanqid» qanday aytiladi?",
+        "options": [
+          "Kritik",
+          "Gleichgewicht",
+          "Initiative",
+          "Wert"
+        ],
+        "answer": "Kritik"
+      },
+      {
+        "id": 141,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «islohot» qanday aytiladi?",
+        "options": [
+          "Unterschied",
+          "Wahrscheinlichkeit",
+          "Reform",
+          "Notwendigkeit"
+        ],
+        "answer": "Reform"
+      },
+      {
+        "id": 142,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «tashabbus» qanday aytiladi?",
+        "options": [
+          "Wahrscheinlichkeit",
+          "Initiative",
+          "Grenze",
+          "Hindernis"
+        ],
+        "answer": "Initiative"
+      },
+      {
+        "id": 143,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «majburiyat» qanday aytiladi?",
+        "options": [
+          "Verpflichtung",
+          "Potenzial",
+          "Kriterium",
+          "Wesen"
+        ],
+        "answer": "Verpflichtung"
+      },
+      {
+        "id": 144,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «istiqbol» qanday aytiladi?",
+        "options": [
+          "Kritik",
+          "Potenzial",
+          "Verpflichtung",
+          "Perspektive"
+        ],
+        "answer": "Perspektive"
+      },
+      {
+        "id": 145,
+        "type": "multiple_choice",
+        "question": "Nemis tilida «salohiyat» qanday aytiladi?",
+        "options": [
+          "Gleichgewicht",
+          "Grenze",
+          "Potenzial",
+          "Wesen"
+        ],
+        "answer": "Potenzial"
+      },
+      {
+        "id": 146,
+        "type": "multiple_choice",
+        "question": "Der Vorschlag stieß auf ___ Ablehnung.",
+        "options": [
+          "breite",
+          "breiter",
+          "breiten",
+          "breitem"
+        ],
+        "answer": "breite"
+      },
+      {
+        "id": 147,
+        "type": "multiple_choice",
+        "question": "Die Verhandlungen sind ins Stocken ___.",
+        "options": [
+          "geraten",
+          "geratet",
+          "geriet",
+          "geratend"
+        ],
+        "answer": "geraten"
+      },
+      {
+        "id": 148,
+        "type": "multiple_choice",
+        "question": "Er wurde ___ Verdachts der Unterschlagung verhaftet.",
+        "options": [
+          "des",
+          "dem",
+          "den",
+          "der"
+        ],
+        "answer": "des"
+      },
+      {
+        "id": 149,
+        "type": "multiple_choice",
+        "question": "Diese Argumentation ___ jeder Grundlage.",
+        "options": [
+          "entbehrt",
+          "entbehren",
+          "entbehrte",
+          "entbehrend"
+        ],
+        "answer": "entbehrt"
+      },
+      {
+        "id": 150,
+        "type": "multiple_choice",
+        "question": "Die Maßnahmen ___ darauf ab, die Inflation zu senken.",
+        "options": [
+          "zielen",
+          "zielt",
+          "zielte",
+          "zielend"
+        ],
+        "answer": "zielen"
+      }
+    ]
+  }
+}

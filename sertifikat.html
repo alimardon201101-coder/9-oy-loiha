@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sertifikatlar | NextStep</title>
+  <meta name="description" content="NextStep kursini yakunlab, raqamli sertifikat oling: ismingiz, kurs nomi va sana bilan PNG sertifikat.">
+  <link rel="canonical" href="https://nextstep-uz.netlify.app/sertifikat.html">
+  <link rel="stylesheet" href="./assets/tailwind.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .cert-canvas { width: 100%; height: auto; border-radius: 1rem; }
+  </style>
+</head>
+
+<body data-page="certificate" class="font-sans bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-blue-400 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform duration-300">
+            N
+          </div>
+          <span class="text-2xl font-extrabold text-slate-900 tracking-tight">Next<span class="text-brand-600">Step</span></span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="./index.html#kurslar" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Kurslar</a>
+          <a href="./profil.html" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Profil</a>
+          <a href="./sertifikat.html" class="text-sm font-semibold text-brand-600">Sertifikat</a>
+        </nav>
+
+        <a href="./profil.html" class="flex items-center gap-2.5 px-3 py-1.5 rounded-full hover:bg-slate-100 transition-colors border border-slate-200/60 sm:border-transparent">
+          <div class="user-avatar-initial w-9 h-9 rounded-full bg-gradient-to-tr from-brand-600 to-blue-500 text-white font-bold flex items-center justify-center text-sm shadow-md shadow-brand-500/20 ring-2 ring-white">
+            M
+          </div>
+          <span class="user-name-display text-sm font-semibold text-slate-700 hidden sm:inline-block">Mehmon</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 space-y-8">
+
+    <div class="text-center space-y-3">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-xs font-bold uppercase tracking-wider">
+        <i class="fa-solid fa-award"></i> Yakuniy natija
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Raqamli sertifikatingiz</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+        Kursning barcha video darslarini ko'rib bo'lgach, ismingiz yozilgan sertifikatni PNG formatida yuklab olishingiz mumkin.
+      </p>
+    </div>
+
+    <!-- Login talabi -->
+    <div id="certAuthNotice" class="hidden bg-amber-50 border border-amber-200 rounded-2xl p-5 flex items-start gap-4">
+      <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-user-lock"></i>
+      </div>
+      <div class="text-sm">
+        <p class="font-bold text-amber-800">Sertifikat uchun hisobga kirish kerak</p>
+        <p class="text-amber-700 mt-1">Sertifikatga ismingiz yozilishi uchun Google yoki email orqali kiring.</p>
+        <a href="./profil.html" class="inline-block mt-3 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-bold text-xs">Profilga o'tish</a>
+      </div>
+    </div>
+
+    <!-- Kurslar bo'yicha sertifikat kartalari -->
+    <div id="certificate-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="md:col-span-2 text-center text-slate-400 text-sm py-10">Yuklanmoqda...</div>
+    </div>
+
+    <!-- Natija (preview) -->
+    <div id="certPreviewBox" class="hidden bg-white rounded-3xl border border-slate-200 shadow-sm p-5 sm:p-7 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h2 class="text-lg font-extrabold text-slate-900">Sertifikat tayyor</h2>
+        <div class="flex items-center gap-2">
+          <a id="certDownloadLink" href="#" download="nextstep-sertifikat.png"
+            class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition-all flex items-center gap-2">
+            <i class="fa-solid fa-download"></i> Yuklab olish (PNG)
+          </a>
+          <button id="certCloseBtn" type="button" class="px-3 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold text-sm transition-all">
+            Yopish
+          </button>
+        </div>
+      </div>
+      <img id="certPreviewImg" alt="NextStep sertifikati" class="cert-canvas shadow-lg ring-1 ring-slate-200">
+      <p class="text-xs text-slate-400">Sertifikat identifikatori rasmning pastki o'ng burchagida ko'rsatilgan.</p>
+    </div>
+
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 py-8 border-t border-slate-800 mt-10">
+    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
+      <p>&copy; 2026 NextStep. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <!-- Sertifikat rasmi shu canvas'da chiziladi -->
+  <canvas id="certificate-canvas" width="1600" height="1130" class="hidden"></canvas>
+
+  <script type="module" src="./app.js"></script>
+</body>
+
+</html>

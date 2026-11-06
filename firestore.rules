@@ -25,7 +25,7 @@ service cloud.firestore {
     // Admin emaillari — app.js dagi ADMIN_EMAILS bilan bir xil bo'lishi shart.
     function isAdmin() {
       return isSignedIn() && request.auth.token.email in [
-        'admin@nextstep.uz'
+        'alimardon201101@gmail.com'
       ];
     }
 

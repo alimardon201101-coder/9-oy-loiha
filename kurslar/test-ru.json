@@ -1,0 +1,1814 @@
+{
+  "russian_proficiency_test": {
+    "A1": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "Rus tilida «kitob» qanday aytiladi?",
+        "options": [
+          "пока",
+          "день",
+          "книга",
+          "новый"
+        ],
+        "answer": "книга"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "Rus tilida «uy» qanday aytiladi?",
+        "options": [
+          "дом",
+          "отец",
+          "большой",
+          "друг"
+        ],
+        "answer": "дом"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "Rus tilida «maktab» qanday aytiladi?",
+        "options": [
+          "дорога",
+          "маленький",
+          "школа",
+          "город"
+        ],
+        "answer": "школа"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "Rus tilida «suv» qanday aytiladi?",
+        "options": [
+          "вода",
+          "большой",
+          "спасибо",
+          "день"
+        ],
+        "answer": "вода"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "Rus tilida «non» qanday aytiladi?",
+        "options": [
+          "город",
+          "друг",
+          "привет",
+          "хлеб"
+        ],
+        "answer": "хлеб"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "Rus tilida «do'st» qanday aytiladi?",
+        "options": [
+          "школа",
+          "дорога",
+          "друг",
+          "да"
+        ],
+        "answer": "друг"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ota» qanday aytiladi?",
+        "options": [
+          "отец",
+          "привет",
+          "имя",
+          "друг"
+        ],
+        "answer": "отец"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ona» qanday aytiladi?",
+        "options": [
+          "ночь",
+          "плохой",
+          "мать",
+          "дорога"
+        ],
+        "answer": "мать"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "Rus tilida «bola» qanday aytiladi?",
+        "options": [
+          "ребёнок",
+          "плохой",
+          "имя",
+          "пока"
+        ],
+        "answer": "ребёнок"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ism» qanday aytiladi?",
+        "options": [
+          "школа",
+          "имя",
+          "хлеб",
+          "книга"
+        ],
+        "answer": "имя"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "Rus tilida «shahar» qanday aytiladi?",
+        "options": [
+          "друг",
+          "день",
+          "город",
+          "новый"
+        ],
+        "answer": "город"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "Rus tilida «mashina» qanday aytiladi?",
+        "options": [
+          "машина",
+          "спасибо",
+          "большой",
+          "хороший"
+        ],
+        "answer": "машина"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "Rus tilida «yo'l» qanday aytiladi?",
+        "options": [
+          "имя",
+          "друг",
+          "книга",
+          "дорога"
+        ],
+        "answer": "дорога"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "Rus tilida «kun» qanday aytiladi?",
+        "options": [
+          "день",
+          "мать",
+          "ночь",
+          "имя"
+        ],
+        "answer": "день"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tun» qanday aytiladi?",
+        "options": [
+          "ночь",
+          "книга",
+          "ребёнок",
+          "нет"
+        ],
+        "answer": "ночь"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "Rus tilida «salom» qanday aytiladi?",
+        "options": [
+          "нет",
+          "привет",
+          "пока",
+          "отец"
+        ],
+        "answer": "привет"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "Rus tilida «rahmat» qanday aytiladi?",
+        "options": [
+          "отец",
+          "друг",
+          "спасибо",
+          "большой"
+        ],
+        "answer": "спасибо"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "Rus tilida «xayr» qanday aytiladi?",
+        "options": [
+          "новый",
+          "мать",
+          "пока",
+          "привет"
+        ],
+        "answer": "пока"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ha» qanday aytiladi?",
+        "options": [
+          "да",
+          "хороший",
+          "хлеб",
+          "друг"
+        ],
+        "answer": "да"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "Rus tilida «yo'q» qanday aytiladi?",
+        "options": [
+          "маленький",
+          "нет",
+          "хлеб",
+          "да"
+        ],
+        "answer": "нет"
+      },
+      {
+        "id": 21,
+        "type": "multiple_choice",
+        "question": "Rus tilida «katta» qanday aytiladi?",
+        "options": [
+          "нет",
+          "имя",
+          "город",
+          "большой"
+        ],
+        "answer": "большой"
+      },
+      {
+        "id": 22,
+        "type": "multiple_choice",
+        "question": "Rus tilida «kichik» qanday aytiladi?",
+        "options": [
+          "привет",
+          "маленький",
+          "плохой",
+          "ребёнок"
+        ],
+        "answer": "маленький"
+      },
+      {
+        "id": 23,
+        "type": "multiple_choice",
+        "question": "Rus tilida «yaxshi» qanday aytiladi?",
+        "options": [
+          "имя",
+          "дорога",
+          "нет",
+          "хороший"
+        ],
+        "answer": "хороший"
+      },
+      {
+        "id": 24,
+        "type": "multiple_choice",
+        "question": "Rus tilida «yomon» qanday aytiladi?",
+        "options": [
+          "школа",
+          "плохой",
+          "ночь",
+          "привет"
+        ],
+        "answer": "плохой"
+      },
+      {
+        "id": 25,
+        "type": "multiple_choice",
+        "question": "Rus tilida «yangi» qanday aytiladi?",
+        "options": [
+          "да",
+          "новый",
+          "пока",
+          "хороший"
+        ],
+        "answer": "новый"
+      },
+      {
+        "id": 26,
+        "type": "multiple_choice",
+        "question": "Это ___ книга.",
+        "options": [
+          "мой",
+          "моя",
+          "моё",
+          "мои"
+        ],
+        "answer": "моя"
+      },
+      {
+        "id": 27,
+        "type": "multiple_choice",
+        "question": "Я ___ по-русски.",
+        "options": [
+          "говорю",
+          "говоришь",
+          "говорит",
+          "говорим"
+        ],
+        "answer": "говорю"
+      },
+      {
+        "id": 28,
+        "type": "multiple_choice",
+        "question": "Он ___ в Москве.",
+        "options": [
+          "живу",
+          "живёшь",
+          "живёт",
+          "живут"
+        ],
+        "answer": "живёт"
+      },
+      {
+        "id": 29,
+        "type": "multiple_choice",
+        "question": "___ тебя зовут?",
+        "options": [
+          "Как",
+          "Кто",
+          "Что",
+          "Где"
+        ],
+        "answer": "Как"
+      },
+      {
+        "id": 30,
+        "type": "multiple_choice",
+        "question": "У меня ___ брат.",
+        "options": [
+          "есть",
+          "был",
+          "буду",
+          "нет"
+        ],
+        "answer": "есть"
+      }
+    ],
+    "A2": [
+      {
+        "id": 31,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ovqat» qanday aytiladi?",
+        "options": [
+          "деньги",
+          "больной",
+          "завтрак",
+          "еда"
+        ],
+        "answer": "еда"
+      },
+      {
+        "id": 32,
+        "type": "multiple_choice",
+        "question": "Rus tilida «nonushta» qanday aytiladi?",
+        "options": [
+          "месяц",
+          "завтрак",
+          "здоровый",
+          "трудный"
+        ],
+        "answer": "завтрак"
+      },
+      {
+        "id": 33,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ish» qanday aytiladi?",
+        "options": [
+          "врач",
+          "неделя",
+          "месяц",
+          "работа"
+        ],
+        "answer": "работа"
+      },
+      {
+        "id": 34,
+        "type": "multiple_choice",
+        "question": "Rus tilida «pul» qanday aytiladi?",
+        "options": [
+          "завтра",
+          "лёгкий",
+          "деньги",
+          "медленный"
+        ],
+        "answer": "деньги"
+      },
+      {
+        "id": 35,
+        "type": "multiple_choice",
+        "question": "Rus tilida «vaqt» qanday aytiladi?",
+        "options": [
+          "трудный",
+          "тёплый",
+          "время",
+          "здоровый"
+        ],
+        "answer": "время"
+      },
+      {
+        "id": 36,
+        "type": "multiple_choice",
+        "question": "Rus tilida «hafta» qanday aytiladi?",
+        "options": [
+          "тёплый",
+          "год",
+          "неделя",
+          "холодный"
+        ],
+        "answer": "неделя"
+      },
+      {
+        "id": 37,
+        "type": "multiple_choice",
+        "question": "Rus tilida «oy» qanday aytiladi?",
+        "options": [
+          "медленный",
+          "неделя",
+          "месяц",
+          "год"
+        ],
+        "answer": "месяц"
+      },
+      {
+        "id": 38,
+        "type": "multiple_choice",
+        "question": "Rus tilida «yil» qanday aytiladi?",
+        "options": [
+          "год",
+          "тёплый",
+          "еда",
+          "холодный"
+        ],
+        "answer": "год"
+      },
+      {
+        "id": 39,
+        "type": "multiple_choice",
+        "question": "Rus tilida «do'kon» qanday aytiladi?",
+        "options": [
+          "магазин",
+          "вчера",
+          "сегодня",
+          "иногда"
+        ],
+        "answer": "магазин"
+      },
+      {
+        "id": 40,
+        "type": "multiple_choice",
+        "question": "Rus tilida «shifokor» qanday aytiladi?",
+        "options": [
+          "год",
+          "врач",
+          "тёплый",
+          "магазин"
+        ],
+        "answer": "врач"
+      },
+      {
+        "id": 41,
+        "type": "multiple_choice",
+        "question": "Rus tilida «kasal» qanday aytiladi?",
+        "options": [
+          "время",
+          "деньги",
+          "больной",
+          "всегда"
+        ],
+        "answer": "больной"
+      },
+      {
+        "id": 42,
+        "type": "multiple_choice",
+        "question": "Rus tilida «sog'lom» qanday aytiladi?",
+        "options": [
+          "завтра",
+          "трудный",
+          "здоровый",
+          "никогда"
+        ],
+        "answer": "здоровый"
+      },
+      {
+        "id": 43,
+        "type": "multiple_choice",
+        "question": "Rus tilida «issiq» qanday aytiladi?",
+        "options": [
+          "никогда",
+          "холодный",
+          "быстрый",
+          "тёплый"
+        ],
+        "answer": "тёплый"
+      },
+      {
+        "id": 44,
+        "type": "multiple_choice",
+        "question": "Rus tilida «sovuq» qanday aytiladi?",
+        "options": [
+          "деньги",
+          "время",
+          "холодный",
+          "работа"
+        ],
+        "answer": "холодный"
+      },
+      {
+        "id": 45,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tez» qanday aytiladi?",
+        "options": [
+          "холодный",
+          "медленный",
+          "еда",
+          "быстрый"
+        ],
+        "answer": "быстрый"
+      },
+      {
+        "id": 46,
+        "type": "multiple_choice",
+        "question": "Rus tilida «sekin» qanday aytiladi?",
+        "options": [
+          "медленный",
+          "холодный",
+          "деньги",
+          "месяц"
+        ],
+        "answer": "медленный"
+      },
+      {
+        "id": 47,
+        "type": "multiple_choice",
+        "question": "Rus tilida «oson» qanday aytiladi?",
+        "options": [
+          "лёгкий",
+          "всегда",
+          "магазин",
+          "трудный"
+        ],
+        "answer": "лёгкий"
+      },
+      {
+        "id": 48,
+        "type": "multiple_choice",
+        "question": "Rus tilida «qiyin» qanday aytiladi?",
+        "options": [
+          "врач",
+          "больной",
+          "лёгкий",
+          "трудный"
+        ],
+        "answer": "трудный"
+      },
+      {
+        "id": 49,
+        "type": "multiple_choice",
+        "question": "Rus tilida «har doim» qanday aytiladi?",
+        "options": [
+          "завтра",
+          "больной",
+          "магазин",
+          "всегда"
+        ],
+        "answer": "всегда"
+      },
+      {
+        "id": 50,
+        "type": "multiple_choice",
+        "question": "Rus tilida «hech qachon» qanday aytiladi?",
+        "options": [
+          "работа",
+          "сегодня",
+          "иногда",
+          "никогда"
+        ],
+        "answer": "никогда"
+      },
+      {
+        "id": 51,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ba'zan» qanday aytiladi?",
+        "options": [
+          "здоровый",
+          "завтрак",
+          "сегодня",
+          "иногда"
+        ],
+        "answer": "иногда"
+      },
+      {
+        "id": 52,
+        "type": "multiple_choice",
+        "question": "Rus tilida «kecha» qanday aytiladi?",
+        "options": [
+          "деньги",
+          "завтра",
+          "сегодня",
+          "вчера"
+        ],
+        "answer": "вчера"
+      },
+      {
+        "id": 53,
+        "type": "multiple_choice",
+        "question": "Rus tilida «bugun» qanday aytiladi?",
+        "options": [
+          "быстрый",
+          "сегодня",
+          "тёплый",
+          "работа"
+        ],
+        "answer": "сегодня"
+      },
+      {
+        "id": 54,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ertaga» qanday aytiladi?",
+        "options": [
+          "завтрак",
+          "поездка",
+          "неделя",
+          "завтра"
+        ],
+        "answer": "завтра"
+      },
+      {
+        "id": 55,
+        "type": "multiple_choice",
+        "question": "Rus tilida «sayohat» qanday aytiladi?",
+        "options": [
+          "время",
+          "холодный",
+          "неделя",
+          "поездка"
+        ],
+        "answer": "поездка"
+      },
+      {
+        "id": 56,
+        "type": "multiple_choice",
+        "question": "Вчера я ___ в кино.",
+        "options": [
+          "был",
+          "буду",
+          "есть",
+          "быть"
+        ],
+        "answer": "был"
+      },
+      {
+        "id": 57,
+        "type": "multiple_choice",
+        "question": "Мы ждём ___.",
+        "options": [
+          "автобус",
+          "автобуса",
+          "автобусу",
+          "автобусом"
+        ],
+        "answer": "автобус"
+      },
+      {
+        "id": 58,
+        "type": "multiple_choice",
+        "question": "Москва ___ , чем Казань.",
+        "options": [
+          "большой",
+          "больше",
+          "самый большой",
+          "большая"
+        ],
+        "answer": "больше"
+      },
+      {
+        "id": 59,
+        "type": "multiple_choice",
+        "question": "У меня ___ времени.",
+        "options": [
+          "нет",
+          "не",
+          "ни",
+          "был"
+        ],
+        "answer": "нет"
+      },
+      {
+        "id": 60,
+        "type": "multiple_choice",
+        "question": "Она ___ врачом.",
+        "options": [
+          "работает",
+          "работают",
+          "работаю",
+          "работать"
+        ],
+        "answer": "работает"
+      }
+    ],
+    "B1": [
+      {
+        "id": 61,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tajriba» qanday aytiladi?",
+        "options": [
+          "мнение",
+          "общество",
+          "опыт",
+          "правительство"
+        ],
+        "answer": "опыт"
+      },
+      {
+        "id": 62,
+        "type": "multiple_choice",
+        "question": "Rus tilida «muvaffaqiyat» qanday aytiladi?",
+        "options": [
+          "успех",
+          "событие",
+          "тревога",
+          "право"
+        ],
+        "answer": "успех"
+      },
+      {
+        "id": 63,
+        "type": "multiple_choice",
+        "question": "Rus tilida «maqsad» qanday aytiladi?",
+        "options": [
+          "уважение",
+          "сообщение",
+          "мнение",
+          "цель"
+        ],
+        "answer": "цель"
+      },
+      {
+        "id": 64,
+        "type": "multiple_choice",
+        "question": "Rus tilida «qaror» qanday aytiladi?",
+        "options": [
+          "результат",
+          "общество",
+          "тревога",
+          "решение"
+        ],
+        "answer": "решение"
+      },
+      {
+        "id": 65,
+        "type": "multiple_choice",
+        "question": "Rus tilida «imkoniyat» qanday aytiladi?",
+        "options": [
+          "предложение",
+          "тревога",
+          "правительство",
+          "возможность"
+        ],
+        "answer": "возможность"
+      },
+      {
+        "id": 66,
+        "type": "multiple_choice",
+        "question": "Rus tilida «mas'uliyat» qanday aytiladi?",
+        "options": [
+          "ответственность",
+          "среда",
+          "внимание",
+          "цель"
+        ],
+        "answer": "ответственность"
+      },
+      {
+        "id": 67,
+        "type": "multiple_choice",
+        "question": "Rus tilida «muhit» qanday aytiladi?",
+        "options": [
+          "общество",
+          "право",
+          "тревога",
+          "среда"
+        ],
+        "answer": "среда"
+      },
+      {
+        "id": 68,
+        "type": "multiple_choice",
+        "question": "Rus tilida «jamiyat» qanday aytiladi?",
+        "options": [
+          "правительство",
+          "мнение",
+          "общество",
+          "закон"
+        ],
+        "answer": "общество"
+      },
+      {
+        "id": 69,
+        "type": "multiple_choice",
+        "question": "Rus tilida «hukumat» qanday aytiladi?",
+        "options": [
+          "причина",
+          "правительство",
+          "цель",
+          "тревога"
+        ],
+        "answer": "правительство"
+      },
+      {
+        "id": 70,
+        "type": "multiple_choice",
+        "question": "Rus tilida «qonun» qanday aytiladi?",
+        "options": [
+          "закон",
+          "результат",
+          "возможность",
+          "проблема"
+        ],
+        "answer": "закон"
+      },
+      {
+        "id": 71,
+        "type": "multiple_choice",
+        "question": "Rus tilida «huquq» qanday aytiladi?",
+        "options": [
+          "результат",
+          "право",
+          "общество",
+          "событие"
+        ],
+        "answer": "право"
+      },
+      {
+        "id": 72,
+        "type": "multiple_choice",
+        "question": "Rus tilida «xabar» qanday aytiladi?",
+        "options": [
+          "ошибка",
+          "решение",
+          "сообщение",
+          "мнение"
+        ],
+        "answer": "сообщение"
+      },
+      {
+        "id": 73,
+        "type": "multiple_choice",
+        "question": "Rus tilida «voqea» qanday aytiladi?",
+        "options": [
+          "событие",
+          "возможность",
+          "право",
+          "опыт"
+        ],
+        "answer": "событие"
+      },
+      {
+        "id": 74,
+        "type": "multiple_choice",
+        "question": "Rus tilida «xato» qanday aytiladi?",
+        "options": [
+          "закон",
+          "ошибка",
+          "опыт",
+          "проблема"
+        ],
+        "answer": "ошибка"
+      },
+      {
+        "id": 75,
+        "type": "multiple_choice",
+        "question": "Rus tilida «yechim» qanday aytiladi?",
+        "options": [
+          "успех",
+          "общество",
+          "выход",
+          "возможность"
+        ],
+        "answer": "выход"
+      },
+      {
+        "id": 76,
+        "type": "multiple_choice",
+        "question": "Rus tilida «muammo» qanday aytiladi?",
+        "options": [
+          "цель",
+          "ошибка",
+          "проблема",
+          "выход"
+        ],
+        "answer": "проблема"
+      },
+      {
+        "id": 77,
+        "type": "multiple_choice",
+        "question": "Rus tilida «sabab» qanday aytiladi?",
+        "options": [
+          "право",
+          "опыт",
+          "ответственность",
+          "причина"
+        ],
+        "answer": "причина"
+      },
+      {
+        "id": 78,
+        "type": "multiple_choice",
+        "question": "Rus tilida «natija» qanday aytiladi?",
+        "options": [
+          "цель",
+          "возможность",
+          "результат",
+          "доверие"
+        ],
+        "answer": "результат"
+      },
+      {
+        "id": 79,
+        "type": "multiple_choice",
+        "question": "Rus tilida «fikr» qanday aytiladi?",
+        "options": [
+          "правительство",
+          "причина",
+          "проблема",
+          "мнение"
+        ],
+        "answer": "мнение"
+      },
+      {
+        "id": 80,
+        "type": "multiple_choice",
+        "question": "Rus tilida «taklif» qanday aytiladi?",
+        "options": [
+          "закон",
+          "тревога",
+          "цель",
+          "предложение"
+        ],
+        "answer": "предложение"
+      },
+      {
+        "id": 81,
+        "type": "multiple_choice",
+        "question": "Rus tilida «kelishuv» qanday aytiladi?",
+        "options": [
+          "результат",
+          "выход",
+          "закон",
+          "соглашение"
+        ],
+        "answer": "соглашение"
+      },
+      {
+        "id": 82,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ishonch» qanday aytiladi?",
+        "options": [
+          "соглашение",
+          "сообщение",
+          "общество",
+          "доверие"
+        ],
+        "answer": "доверие"
+      },
+      {
+        "id": 83,
+        "type": "multiple_choice",
+        "question": "Rus tilida «hurmat» qanday aytiladi?",
+        "options": [
+          "право",
+          "уважение",
+          "решение",
+          "результат"
+        ],
+        "answer": "уважение"
+      },
+      {
+        "id": 84,
+        "type": "multiple_choice",
+        "question": "Rus tilida «e'tibor» qanday aytiladi?",
+        "options": [
+          "право",
+          "общество",
+          "цель",
+          "внимание"
+        ],
+        "answer": "внимание"
+      },
+      {
+        "id": 85,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tashvish» qanday aytiladi?",
+        "options": [
+          "внимание",
+          "опыт",
+          "тревога",
+          "причина"
+        ],
+        "answer": "тревога"
+      },
+      {
+        "id": 86,
+        "type": "multiple_choice",
+        "question": "Если ___ время, я приду.",
+        "options": [
+          "будет",
+          "есть",
+          "был",
+          "буду"
+        ],
+        "answer": "будет"
+      },
+      {
+        "id": 87,
+        "type": "multiple_choice",
+        "question": "Я живу в доме, ___ стоит у реки.",
+        "options": [
+          "который",
+          "которая",
+          "которое",
+          "которые"
+        ],
+        "answer": "который"
+      },
+      {
+        "id": 88,
+        "type": "multiple_choice",
+        "question": "Книга ___ на столе.",
+        "options": [
+          "лежит",
+          "лежат",
+          "лежу",
+          "лежишь"
+        ],
+        "answer": "лежит"
+      },
+      {
+        "id": 89,
+        "type": "multiple_choice",
+        "question": "Он сказал, ___ придёт позже.",
+        "options": [
+          "что",
+          "чтобы",
+          "ли",
+          "если"
+        ],
+        "answer": "что"
+      },
+      {
+        "id": 90,
+        "type": "multiple_choice",
+        "question": "Мы поедем ___ Москву.",
+        "options": [
+          "в",
+          "на",
+          "к",
+          "из"
+        ],
+        "answer": "в"
+      }
+    ],
+    "B2": [
+      {
+        "id": 91,
+        "type": "multiple_choice",
+        "question": "Rus tilida «samaradorlik» qanday aytiladi?",
+        "options": [
+          "доход",
+          "развитие",
+          "эффективность",
+          "количество"
+        ],
+        "answer": "эффективность"
+      },
+      {
+        "id": 92,
+        "type": "multiple_choice",
+        "question": "Rus tilida «strategiya» qanday aytiladi?",
+        "options": [
+          "спрос",
+          "отчёт",
+          "риск",
+          "стратегия"
+        ],
+        "answer": "стратегия"
+      },
+      {
+        "id": 93,
+        "type": "multiple_choice",
+        "question": "Rus tilida «innovatsiya» qanday aytiladi?",
+        "options": [
+          "инвестиция",
+          "конкуренция",
+          "спад",
+          "инновация"
+        ],
+        "answer": "инновация"
+      },
+      {
+        "id": 94,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ta'sir» qanday aytiladi?",
+        "options": [
+          "стандарт",
+          "влияние",
+          "развитие",
+          "рост"
+        ],
+        "answer": "влияние"
+      },
+      {
+        "id": 95,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tahlil» qanday aytiladi?",
+        "options": [
+          "конкуренция",
+          "инвестиция",
+          "анализ",
+          "отчёт"
+        ],
+        "answer": "анализ"
+      },
+      {
+        "id": 96,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tadqiqot» qanday aytiladi?",
+        "options": [
+          "исследование",
+          "количество",
+          "стандарт",
+          "рынок"
+        ],
+        "answer": "исследование"
+      },
+      {
+        "id": 97,
+        "type": "multiple_choice",
+        "question": "Rus tilida «hisobot» qanday aytiladi?",
+        "options": [
+          "количество",
+          "анализ",
+          "отчёт",
+          "риск"
+        ],
+        "answer": "отчёт"
+      },
+      {
+        "id": 98,
+        "type": "multiple_choice",
+        "question": "Rus tilida «loyiha» qanday aytiladi?",
+        "options": [
+          "развитие",
+          "планирование",
+          "рост",
+          "проект"
+        ],
+        "answer": "проект"
+      },
+      {
+        "id": 99,
+        "type": "multiple_choice",
+        "question": "Rus tilida «byudjet» qanday aytiladi?",
+        "options": [
+          "отчёт",
+          "исследование",
+          "бюджет",
+          "развитие"
+        ],
+        "answer": "бюджет"
+      },
+      {
+        "id": 100,
+        "type": "multiple_choice",
+        "question": "Rus tilida «xarajat» qanday aytiladi?",
+        "options": [
+          "стандарт",
+          "качество",
+          "расходы",
+          "рынок"
+        ],
+        "answer": "расходы"
+      },
+      {
+        "id": 101,
+        "type": "multiple_choice",
+        "question": "Rus tilida «daromad» qanday aytiladi?",
+        "options": [
+          "доход",
+          "анализ",
+          "эффективность",
+          "количество"
+        ],
+        "answer": "доход"
+      },
+      {
+        "id": 102,
+        "type": "multiple_choice",
+        "question": "Rus tilida «soliq» qanday aytiladi?",
+        "options": [
+          "спрос",
+          "налог",
+          "рынок",
+          "стандарт"
+        ],
+        "answer": "налог"
+      },
+      {
+        "id": 103,
+        "type": "multiple_choice",
+        "question": "Rus tilida «bozor» qanday aytiladi?",
+        "options": [
+          "стратегия",
+          "расходы",
+          "конкуренция",
+          "рынок"
+        ],
+        "answer": "рынок"
+      },
+      {
+        "id": 104,
+        "type": "multiple_choice",
+        "question": "Rus tilida «talab» qanday aytiladi?",
+        "options": [
+          "спрос",
+          "налог",
+          "расходы",
+          "проект"
+        ],
+        "answer": "спрос"
+      },
+      {
+        "id": 105,
+        "type": "multiple_choice",
+        "question": "Rus tilida «raqobat» qanday aytiladi?",
+        "options": [
+          "рынок",
+          "доход",
+          "проект",
+          "конкуренция"
+        ],
+        "answer": "конкуренция"
+      },
+      {
+        "id": 106,
+        "type": "multiple_choice",
+        "question": "Rus tilida «investitsiya» qanday aytiladi?",
+        "options": [
+          "стандарт",
+          "расходы",
+          "рост",
+          "инвестиция"
+        ],
+        "answer": "инвестиция"
+      },
+      {
+        "id": 107,
+        "type": "multiple_choice",
+        "question": "Rus tilida «rivojlanish» qanday aytiladi?",
+        "options": [
+          "качество",
+          "спад",
+          "условие",
+          "развитие"
+        ],
+        "answer": "развитие"
+      },
+      {
+        "id": 108,
+        "type": "multiple_choice",
+        "question": "Rus tilida «o'sish» qanday aytiladi?",
+        "options": [
+          "рост",
+          "эффективность",
+          "инновация",
+          "качество"
+        ],
+        "answer": "рост"
+      },
+      {
+        "id": 109,
+        "type": "multiple_choice",
+        "question": "Rus tilida «pasayish» qanday aytiladi?",
+        "options": [
+          "спад",
+          "анализ",
+          "исследование",
+          "налог"
+        ],
+        "answer": "спад"
+      },
+      {
+        "id": 110,
+        "type": "multiple_choice",
+        "question": "Rus tilida «xavf» qanday aytiladi?",
+        "options": [
+          "развитие",
+          "риск",
+          "расходы",
+          "исследование"
+        ],
+        "answer": "риск"
+      },
+      {
+        "id": 111,
+        "type": "multiple_choice",
+        "question": "Rus tilida «shart» qanday aytiladi?",
+        "options": [
+          "условие",
+          "стратегия",
+          "доход",
+          "рост"
+        ],
+        "answer": "условие"
+      },
+      {
+        "id": 112,
+        "type": "multiple_choice",
+        "question": "Rus tilida «standart» qanday aytiladi?",
+        "options": [
+          "риск",
+          "стандарт",
+          "планирование",
+          "конкуренция"
+        ],
+        "answer": "стандарт"
+      },
+      {
+        "id": 113,
+        "type": "multiple_choice",
+        "question": "Rus tilida «sifat» qanday aytiladi?",
+        "options": [
+          "проект",
+          "риск",
+          "налог",
+          "качество"
+        ],
+        "answer": "качество"
+      },
+      {
+        "id": 114,
+        "type": "multiple_choice",
+        "question": "Rus tilida «miqdor» qanday aytiladi?",
+        "options": [
+          "бюджет",
+          "риск",
+          "качество",
+          "количество"
+        ],
+        "answer": "количество"
+      },
+      {
+        "id": 115,
+        "type": "multiple_choice",
+        "question": "Rus tilida «rejalashtirish» qanday aytiladi?",
+        "options": [
+          "планирование",
+          "риск",
+          "рост",
+          "анализ"
+        ],
+        "answer": "планирование"
+      },
+      {
+        "id": 116,
+        "type": "multiple_choice",
+        "question": "Дом ___ в 1990 году.",
+        "options": [
+          "был построен",
+          "построил",
+          "строил",
+          "построен"
+        ],
+        "answer": "был построен"
+      },
+      {
+        "id": 117,
+        "type": "multiple_choice",
+        "question": "Если бы я знал, я ___ иначе.",
+        "options": [
+          "поступил",
+          "поступаю",
+          "поступлю",
+          "поступал"
+        ],
+        "answer": "поступил"
+      },
+      {
+        "id": 118,
+        "type": "multiple_choice",
+        "question": "Это человек, ___ я хорошо знаю.",
+        "options": [
+          "которого",
+          "который",
+          "которым",
+          "котором"
+        ],
+        "answer": "которого"
+      },
+      {
+        "id": 119,
+        "type": "multiple_choice",
+        "question": "Несмотря ___ дождь, мы пошли гулять.",
+        "options": [
+          "на",
+          "в",
+          "за",
+          "из"
+        ],
+        "answer": "на"
+      },
+      {
+        "id": 120,
+        "type": "multiple_choice",
+        "question": "Речь идёт ___ новом проекте.",
+        "options": [
+          "о",
+          "в",
+          "на",
+          "за"
+        ],
+        "answer": "о"
+      }
+    ],
+    "C1": [
+      {
+        "id": 121,
+        "type": "multiple_choice",
+        "question": "Rus tilida «mohiyat» qanday aytiladi?",
+        "options": [
+          "обязательство",
+          "мировоззрение",
+          "суть",
+          "необходимость"
+        ],
+        "answer": "суть"
+      },
+      {
+        "id": 122,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tamoyil» qanday aytiladi?",
+        "options": [
+          "потенциал",
+          "принцип",
+          "суть",
+          "прозрачность"
+        ],
+        "answer": "принцип"
+      },
+      {
+        "id": 123,
+        "type": "multiple_choice",
+        "question": "Rus tilida «mezon» qanday aytiladi?",
+        "options": [
+          "мировоззрение",
+          "необходимость",
+          "критерий",
+          "принцип"
+        ],
+        "answer": "критерий"
+      },
+      {
+        "id": 124,
+        "type": "multiple_choice",
+        "question": "Rus tilida «dalil» qanday aytiladi?",
+        "options": [
+          "обязательство",
+          "стабильность",
+          "реформа",
+          "доказательство"
+        ],
+        "answer": "доказательство"
+      },
+      {
+        "id": 125,
+        "type": "multiple_choice",
+        "question": "Rus tilida «xulosa» qanday aytiladi?",
+        "options": [
+          "инициатива",
+          "вывод",
+          "граница",
+          "стабильность"
+        ],
+        "answer": "вывод"
+      },
+      {
+        "id": 126,
+        "type": "multiple_choice",
+        "question": "Rus tilida «taxmin» qanday aytiladi?",
+        "options": [
+          "суть",
+          "предположение",
+          "потенциал",
+          "мировоззрение"
+        ],
+        "answer": "предположение"
+      },
+      {
+        "id": 127,
+        "type": "multiple_choice",
+        "question": "Rus tilida «ehtimol» qanday aytiladi?",
+        "options": [
+          "вероятность",
+          "инициатива",
+          "обязательство",
+          "прогресс"
+        ],
+        "answer": "вероятность"
+      },
+      {
+        "id": 128,
+        "type": "multiple_choice",
+        "question": "Rus tilida «zarurat» qanday aytiladi?",
+        "options": [
+          "вывод",
+          "доказательство",
+          "прозрачность",
+          "необходимость"
+        ],
+        "answer": "необходимость"
+      },
+      {
+        "id": 129,
+        "type": "multiple_choice",
+        "question": "Rus tilida «to'siq» qanday aytiladi?",
+        "options": [
+          "препятствие",
+          "обязательство",
+          "равновесие",
+          "необходимость"
+        ],
+        "answer": "препятствие"
+      },
+      {
+        "id": 130,
+        "type": "multiple_choice",
+        "question": "Rus tilida «chegara» qanday aytiladi?",
+        "options": [
+          "доказательство",
+          "традиция",
+          "принцип",
+          "граница"
+        ],
+        "answer": "граница"
+      },
+      {
+        "id": 131,
+        "type": "multiple_choice",
+        "question": "Rus tilida «meros» qanday aytiladi?",
+        "options": [
+          "реформа",
+          "наследие",
+          "обязательство",
+          "стабильность"
+        ],
+        "answer": "наследие"
+      },
+      {
+        "id": 132,
+        "type": "multiple_choice",
+        "question": "Rus tilida «an'ana» qanday aytiladi?",
+        "options": [
+          "доказательство",
+          "традиция",
+          "предположение",
+          "препятствие"
+        ],
+        "answer": "традиция"
+      },
+      {
+        "id": 133,
+        "type": "multiple_choice",
+        "question": "Rus tilida «qadriyat» qanday aytiladi?",
+        "options": [
+          "необходимость",
+          "критика",
+          "ценность",
+          "перспектива"
+        ],
+        "answer": "ценность"
+      },
+      {
+        "id": 134,
+        "type": "multiple_choice",
+        "question": "Rus tilida «dunyoqarash» qanday aytiladi?",
+        "options": [
+          "равновесие",
+          "обязательство",
+          "мировоззрение",
+          "прогресс"
+        ],
+        "answer": "мировоззрение"
+      },
+      {
+        "id": 135,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tafovut» qanday aytiladi?",
+        "options": [
+          "перспектива",
+          "различие",
+          "вероятность",
+          "критерий"
+        ],
+        "answer": "различие"
+      },
+      {
+        "id": 136,
+        "type": "multiple_choice",
+        "question": "Rus tilida «muvozanat» qanday aytiladi?",
+        "options": [
+          "вероятность",
+          "предположение",
+          "прогресс",
+          "равновесие"
+        ],
+        "answer": "равновесие"
+      },
+      {
+        "id": 137,
+        "type": "multiple_choice",
+        "question": "Rus tilida «barqarorlik» qanday aytiladi?",
+        "options": [
+          "перспектива",
+          "вывод",
+          "критерий",
+          "стабильность"
+        ],
+        "answer": "стабильность"
+      },
+      {
+        "id": 138,
+        "type": "multiple_choice",
+        "question": "Rus tilida «shaffoflik» qanday aytiladi?",
+        "options": [
+          "равновесие",
+          "различие",
+          "критерий",
+          "прозрачность"
+        ],
+        "answer": "прозрачность"
+      },
+      {
+        "id": 139,
+        "type": "multiple_choice",
+        "question": "Rus tilida «taraqqiyot» qanday aytiladi?",
+        "options": [
+          "прогресс",
+          "реформа",
+          "граница",
+          "вероятность"
+        ],
+        "answer": "прогресс"
+      },
+      {
+        "id": 140,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tanqid» qanday aytiladi?",
+        "options": [
+          "критика",
+          "инициатива",
+          "различие",
+          "обязательство"
+        ],
+        "answer": "критика"
+      },
+      {
+        "id": 141,
+        "type": "multiple_choice",
+        "question": "Rus tilida «islohot» qanday aytiladi?",
+        "options": [
+          "реформа",
+          "инициатива",
+          "прогресс",
+          "традиция"
+        ],
+        "answer": "реформа"
+      },
+      {
+        "id": 142,
+        "type": "multiple_choice",
+        "question": "Rus tilida «tashabbus» qanday aytiladi?",
+        "options": [
+          "инициатива",
+          "потенциал",
+          "мировоззрение",
+          "вывод"
+        ],
+        "answer": "инициатива"
+      },
+      {
+        "id": 143,
+        "type": "multiple_choice",
+        "question": "Rus tilida «majburiyat» qanday aytiladi?",
+        "options": [
+          "принцип",
+          "традиция",
+          "граница",
+          "обязательство"
+        ],
+        "answer": "обязательство"
+      },
+      {
+        "id": 144,
+        "type": "multiple_choice",
+        "question": "Rus tilida «istiqbol» qanday aytiladi?",
+        "options": [
+          "перспектива",
+          "прогресс",
+          "обязательство",
+          "необходимость"
+        ],
+        "answer": "перспектива"
+      },
+      {
+        "id": 145,
+        "type": "multiple_choice",
+        "question": "Rus tilida «salohiyat» qanday aytiladi?",
+        "options": [
+          "критерий",
+          "потенциал",
+          "препятствие",
+          "суть"
+        ],
+        "answer": "потенциал"
+      },
+      {
+        "id": 146,
+        "type": "multiple_choice",
+        "question": "Это решение ___ критику.",
+        "options": [
+          "вызывает",
+          "вызовет",
+          "вызывают",
+          "вызывал"
+        ],
+        "answer": "вызывает"
+      },
+      {
+        "id": 147,
+        "type": "multiple_choice",
+        "question": "Вопрос ___ обсуждения.",
+        "options": [
+          "требует",
+          "требуют",
+          "требовал",
+          "требовать"
+        ],
+        "answer": "требует"
+      },
+      {
+        "id": 148,
+        "type": "multiple_choice",
+        "question": "Он ___ видный учёный.",
+        "options": [
+          "является",
+          "являться",
+          "являются",
+          "являлся"
+        ],
+        "answer": "является"
+      },
+      {
+        "id": 149,
+        "type": "multiple_choice",
+        "question": "В ___ случае мы продолжим.",
+        "options": [
+          "противном",
+          "противный",
+          "противная",
+          "противным"
+        ],
+        "answer": "противном"
+      },
+      {
+        "id": 150,
+        "type": "multiple_choice",
+        "question": "Данные ___ о том, что ситуация улучшается.",
+        "options": [
+          "свидетельствуют",
+          "свидетельствует",
+          "свидетельствовал",
+          "свидетельствовать"
+        ],
+        "answer": "свидетельствуют"
+      }
+    ]
+  }
+}

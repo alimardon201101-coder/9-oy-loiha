@@ -164,13 +164,44 @@ qoidalar hali eskicha (ehtimol test rejimida) degani.
 
 ---
 
-## 6. Hali qilinmagan (keyingi bosqich)
+## 6. v2.1 (2026-11-06) — qolgan ishlar ham bajarildi
+
+### Tailwind CDN olib tashlandi
+- `assets/tailwind.css` — 43.5 KB minify qilingan CSS, barcha 25 sahifa shu faylni ishlatadi.
+- `tailwind.config.js` (brand ranglar, shriftlar) + `src/input.css` (v4 nomidagi `shadow-xs`,
+  `rounded-br-xs` kabi klasslar uchun qo'lda utility).
+- CDN versiyasi ~110 KB JS + brauzerda kompilyatsiya qilardi — endi 43 KB tayyor CSS.
+- Qayta build: `npm run build:css`.
+
+### Nemis va rus testlari
+- `tools/test-bank.json` — 125 ta tushuncha (uz/de/ru) + 50 ta grammatika savoli.
+- `tools/generate-tests.js` — har bir til uchun 150 savol (5 daraja × 30) generatsiya qiladi.
+- `kurslar/test-de.json`, `kurslar/test-ru.json` — tayyor bazalar.
+- `kurslar/test-de-test.html`, `kurslar/test-ru-test.html` — test sahifalari.
+- `nem.html` va `rus.html` dagi "TEZ KUNDA" o'rniga haqiqiy test kartasi qo'yildi.
+- Qayta generatsiya: `npm run build:tests`.
+
+### Sertifikat
+- `sertifikat.html` — 4 kurs bo'yicha progress, 100% bo'lganda "Sertifikatni olish".
+- Sertifikat Canvas'da 1600×1130 px qilib chiziladi va PNG bo'lib yuklanadi
+  (ism, kurs, sana, ID, NextStep ramkasi).
+- Har doim mavjud "Namunani ko'rish" — suv belgisi bilan.
+- Havolalar: profil banneridagi "Sertifikat" tugmasi, bosh sahifa footer'i.
+- Tez ko'rish: `sertifikat.html?course=english&sample=1`.
+
+### Boshqa tuzatishlar
+- Video pleyerdagi ro'yxat endi 1-darsdan boshlab ko'rsatiladi (scroll hisobi tuzatildi).
+- Lug'atda bir xil yozilgan ma'nosiz juftliklar (`"a" → "a"`, `"aa" → "aa"`) filtrlanadi:
+  5850 → 5076 ta yozuv.
+- Koreys testining orqaga havolasi `korean.html` emas, `kor.html` (hub) ga.
+- `robots.txt`, `sitemap.xml` yangilandi (22 URL).
+- `package.json` + `.gitignore` qo'shildi.
+
+## 7. Hali qolgan (ixtiyoriy)
 
 | Ish | Sabab |
 |---|---|
-| Sertifikat generatori | Marketingda bor, lekin kod yo'q — alohida feature |
-| Nemis/rus testlari | 150+150 savol yozish kerak (hozir faqat ingliz/koreys) |
-| Tailwind'ni build qilish | CDN production uchun sekin; build pipeline kerak |
 | Rasmlarni o'z serveriga ko'chirish | Unsplash/gstatic hotlink — beqaror va litsenziya noaniq |
-| Nemis/rus uchun video sahifa nomlarini birlashtirish | `korean.html`, `rus_tili.html`, `nemis_tili.html` — nomuvofiq nomlar |
+| Video sahifa nomlarini birlashtirish | `korean.html`, `rus_tili.html`, `nemis_tili.html` — nomuvofiq, lekin havolalar buzilmasligi uchun tegmadik |
 | Markup dublikatini kamaytirish | 4 ta mashq/lug'at sahifasi bir xil tuzilgan; SEO uchun statik qoldirildi |
+| Admin emailini sozlash | `app.js` dagi `ADMIN_EMAILS` va `firestore.rules` — sizning emailingiz kerak |

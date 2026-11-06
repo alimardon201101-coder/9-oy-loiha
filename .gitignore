@@ -1,0 +1,17 @@
+# Bog'liqliklar (Tailwind build uchun)
+node_modules/
+
+# Tizim fayllari
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Muharrir
+.vscode/
+.idea/
+
+# Netlify
+.netlify/
+
+# Vaqtinchalik
+*.log

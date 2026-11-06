@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uz" class="scroll-smooth">
 
 <head>
@@ -8,34 +8,13 @@
   <meta name="description" content="NextStep shaxsiy kabineti: o'zlashtirish statistikasi, test natijalari, talaffuz mashqlari tarixi va kurslar progressi.">
   <link rel="canonical" href="https://nextstep-uz.netlify.app/profil.html">
   <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/tailwind.css">
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-            }
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
     .glass-card {
@@ -108,6 +87,11 @@
           <i class="fa-solid fa-user-pen"></i>
           <span>Ro'yxatdan o'tish / Tahrirlash</span>
         </button>
+
+        <a href="./sertifikat.html" class="px-4 py-3 rounded-xl font-bold text-xs sm:text-sm bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md shadow transition-all duration-200 active:scale-95 flex items-center gap-2" title="Sertifikatlar">
+          <i class="fa-solid fa-award"></i>
+          <span class="hidden sm:inline">Sertifikat</span>
+        </a>
 
         <button id="logoutBtn" class="px-4 py-3 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 hover:bg-slate-900 text-white shadow hover:shadow-lg transition-all duration-200 active:scale-95 flex items-center gap-2" title="Hisobdan chiqish">
           <i class="fa-solid fa-right-from-bracket"></i>
