@@ -108,6 +108,68 @@
       </div>
     </div>
 
+    <!-- Men haqimda -->
+    <section class="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 sm:p-7">
+      <div class="flex items-start justify-between gap-4 mb-4">
+        <div>
+          <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+            <i class="fa-solid fa-id-card text-brand-600"></i> Men haqimda
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Profilingizni to'ldiring — natijalar va sertifikat shu ismga chiqadi.</p>
+        </div>
+        <button type="button" id="aboutEditBtn" class="shrink-0 px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-colors">
+          <i class="fa-solid fa-pen mr-1"></i> Tahrirlash
+        </button>
+      </div>
+
+      <div id="aboutView" class="space-y-4">
+        <p id="aboutBio" class="text-sm text-slate-600 leading-relaxed">Hozircha ma'lumot kiritilmagan. «Tahrirlash» tugmasi orqali o'zingiz haqingizda qisqacha yozing.</p>
+        <div class="flex flex-wrap gap-2">
+          <span id="aboutGoalChip" class="px-3 py-1.5 rounded-lg bg-brand-50 text-brand-700 border border-brand-100 text-xs font-semibold">Maqsad: ko'rsatilmagan</span>
+          <span id="aboutDailyChip" class="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-600 border border-slate-200 text-xs font-semibold">Kunlik maqsad: 3 ta mashg'ulot</span>
+          <span id="aboutJoinedChip" class="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-600 border border-slate-200 text-xs font-semibold">Qo'shilgan: —</span>
+        </div>
+      </div>
+
+      <form id="aboutForm" class="hidden space-y-4">
+        <div>
+          <label for="aboutBioInput" class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">O'zingiz haqingizda</label>
+          <textarea id="aboutBioInput" rows="3" maxlength="300" placeholder="Masalan: IELTS 7.0 ga tayyorlanyapman, kuniga 30 daqiqa o'qiyman."
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 text-sm"></textarea>
+          <p class="text-[11px] text-slate-400 mt-1 text-right"><span id="aboutBioCount">0</span>/300</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="aboutGoalInput" class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Maqsad</label>
+            <select id="aboutGoalInput" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500 text-sm font-semibold bg-white">
+              <option value="">Tanlanmagan</option>
+              <option value="IELTS / TOPIK">IELTS / TOPIK</option>
+              <option value="Ish uchun">Ish uchun</option>
+              <option value="Sayohat">Sayohat</option>
+              <option value="O'qish">O'qish</option>
+              <option value="Kontent (film, musiqa)">Kontent (film, musiqa)</option>
+              <option value="Boshqa">Boshqa</option>
+            </select>
+          </div>
+          <div>
+            <label for="aboutDailyInput" class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Kunlik maqsad</label>
+            <select id="aboutDailyInput" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500 text-sm font-semibold bg-white">
+              <option value="1">1 ta mashg'ulot</option>
+              <option value="3" selected>3 ta mashg'ulot</option>
+              <option value="5">5 ta mashg'ulot</option>
+              <option value="10">10 ta mashg'ulot</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button type="submit" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold shadow-md transition-all">Saqlash</button>
+          <button type="button" id="aboutCancelBtn" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold transition-all">Bekor qilish</button>
+          <span id="aboutSaved" class="hidden text-xs font-semibold text-emerald-600 ml-auto">Saqlandi ✓</span>
+        </div>
+      </form>
+    </section>
     <!-- Test va Talaffuz natijalari -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
       <!-- Test Results Section -->
@@ -241,55 +303,79 @@
 
   </main>
 
-  <!-- Register Modal -->
+  <!-- Auth Modal: kirish / ro'yxatdan o'tish -->
   <div id="registerModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-    <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative border border-slate-100">
-      <div class="flex items-center justify-between">
-        <h3 class="text-xl font-bold text-slate-900">Ro'yxatdan o'tish</h3>
-        <button onclick="closeRegisterModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition-colors">
+    <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl border border-slate-100 max-h-[92vh] overflow-y-auto custom-scrollbar">
+
+      <div class="px-6 pt-6 flex items-start justify-between gap-4">
+        <div>
+          <h3 id="authTitle" class="text-xl font-bold text-slate-900">Xush kelibsiz</h3>
+          <p id="authSubtitle" class="text-xs text-slate-500 mt-1">Hisobingizga kiring yoki yangisini yarating.</p>
+        </div>
+        <button type="button" onclick="closeRegisterModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition-colors shrink-0" aria-label="Yopish">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
-      <form id="registerForm" class="space-y-4">
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Ismingiz</label>
-          <input type="text" id="userNameInput" placeholder="Masalan: Alimardon"
-            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-semibold">
+      <div class="px-6 pt-5">
+        <div class="grid grid-cols-2 gap-1 p-1 bg-slate-100 rounded-xl">
+          <button type="button" id="tabLogin" class="py-2.5 rounded-lg text-sm font-bold transition-all bg-white text-slate-900 shadow-sm">Kirish</button>
+          <button type="button" id="tabRegister" class="py-2.5 rounded-lg text-sm font-bold transition-all text-slate-500 hover:text-slate-800">Ro'yxatdan o'tish</button>
+        </div>
+      </div>
+
+      <form id="registerForm" class="p-6 space-y-4" novalidate>
+        <div id="nameField" class="hidden">
+          <label for="userNameInput" class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Ismingiz</label>
+          <input type="text" id="userNameInput" placeholder="Masalan: Alimardon" autocomplete="name"
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 text-sm font-semibold">
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Email manzilingiz</label>
-          <input type="email" id="userEmailInput" required placeholder="example@gmail.com"
-            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-semibold">
+          <label for="userEmailInput" class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Email</label>
+          <input type="email" id="userEmailInput" required placeholder="example@gmail.com" autocomplete="email"
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 text-sm font-semibold">
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Parol (Password)</label>
-          <input type="password" id="userPasswordInput" required placeholder="********"
-            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm font-semibold">
+          <label for="userPasswordInput" class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Parol</label>
+          <div class="relative">
+            <input type="password" id="userPasswordInput" required placeholder="Kamida 6 belgi" autocomplete="current-password"
+              class="w-full px-4 py-3 pr-12 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 text-sm font-semibold">
+            <button type="button" id="togglePassword" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" aria-label="Parolni ko'rsatish">
+              <i class="fa-regular fa-eye" id="togglePasswordIcon"></i>
+            </button>
+          </div>
+          <p id="passwordStrength" class="hidden text-[11px] font-semibold mt-1.5"></p>
         </div>
 
-        <div class="pt-2 flex flex-col gap-3">
-          <button type="submit"
-            class="w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm bg-brand-600 text-white hover:bg-brand-700 shadow-md transition-all">
-            Kirish / Ro'yxatdan o'tish
-          </button>
+        <label id="termsField" class="hidden items-start gap-2 text-xs text-slate-500 cursor-pointer">
+          <input type="checkbox" id="termsCheckbox" class="mt-0.5 accent-brand-600">
+          <span>Ma'lumotlarim faqat o'quv progressini saqlash uchun ishlatilishiga roziman.</span>
+        </label>
 
-          <button type="button" onclick="registerWithGoogle()"
-            class="w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center justify-center gap-2 transition-all">
-            <i class="fa-brands fa-google text-red-500"></i> Google orqali kirish
-          </button>
+        <div id="authError" class="hidden text-xs font-semibold text-rose-600 bg-rose-50 border border-rose-200 rounded-xl px-3 py-2"></div>
 
-          <button type="button" id="resetPasswordBtn"
-            class="w-full py-2 text-xs font-semibold text-slate-500 hover:text-brand-600 transition-colors">
-            Parolni tiklash (emailga havola yuborish)
-          </button>
+        <button type="submit" id="authSubmit"
+          class="w-full py-3.5 rounded-xl font-bold text-sm bg-brand-600 text-white hover:bg-brand-700 shadow-md transition-all disabled:opacity-60 disabled:cursor-not-allowed">
+          Kirish
+        </button>
+
+        <div class="flex items-center gap-3 text-[10px] text-slate-400 font-bold tracking-widest">
+          <span class="flex-1 h-px bg-slate-200"></span> YOKI <span class="flex-1 h-px bg-slate-200"></span>
         </div>
+
+        <button type="button" onclick="registerWithGoogle()"
+          class="w-full py-3.5 rounded-xl font-bold text-sm bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center justify-center gap-2 transition-all">
+          <i class="fa-brands fa-google text-red-500"></i> Google orqali davom etish
+        </button>
+
+        <button type="button" id="resetPasswordBtn" class="w-full py-1 text-xs font-semibold text-slate-500 hover:text-brand-600 transition-colors">
+          Parolni tiklash
+        </button>
       </form>
     </div>
   </div>
-
   <!-- Footer -->
   <footer class="bg-slate-950 text-slate-300 py-8 border-t border-slate-800 mt-12">
     <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">

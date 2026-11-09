@@ -244,3 +244,44 @@ Google bilimlar panelida brend logotipi uchun.
 3. `robots.txt` `/assets/` va `/favicon.ico` ni bloklamaydi (tekshirilgan).
 4. Google favicon'ni 1 kundan bir necha haftagacha yangilaydi — bu Google tomonidagi jarayon,
    kodga bog'liq emas. Tezlashtirish uchun 1-qadamni bir necha marta takrorlash mumkin.
+
+## 10. Shaxsiy kabinet: dashboard, yangi kirish oynasi va "Men haqimda" (2026-11-09)
+
+### Bosh sahifa (C varianti)
+Tizimga kirgan o'quvchi `index.html` ga kirganda marketing bloklari o'rniga shaxsiy dashboard ko'radi:
+
+| Blok | Ma'lumot manbasi |
+|---|---|
+| Kunlik seriya (🔥) | `activity_log` — ketma-ket faol kunlar |
+| Bugungi maqsad (x/y) | shu kungi harakatlar / `about.dailyGoal` (standart 3) |
+| Jami o'zlashtirilgan | `watched_lessons` bo'yicha 4 til yig'indisi |
+| "Davom ettirish" | eng faol kurs + birinchi ko'rilmagan dars |
+| Oxirgi test | `test_history` ning eng yangi yozuvi |
+
+- Mehmon uchun hammasi avvalgidek (hero + afzalliklar + FAQ).
+- Kirgan foydalanuvchida hero, afzalliklar, FAQ va ularga olib boruvchi nav havolalar yashiriladi.
+- Miltillashning oldini olish: `localStorage.user_profile` bo'lsa, inline skript `<html>`ga `ns-session`
+  klassini darhol qo'yadi; `app.js` sessiyani tasdiqlasa qoldiradi, aks holda olib tashlaydi.
+  3 soniyalik zaxira: agar `app.js` yuklanmasa, klass avtomatik o'chadi (sahifa bo'sh qolmaydi).
+- "Davom ettirish" havolasi `...?dars=N` bilan ochiladi — kurs sahifasi shu darsdan boshlaydi.
+
+### Kirish / ro'yxatdan o'tish oynasi
+- Ikki rejim: **Kirish** va **Ro'yxatdan o'tish** (tab).
+- Parolni ko'rsatish/yashirish, parol kuchi indikatori.
+- Xatolar `alert()` o'rniga oyna ichida (qizil blok) ko'rsatiladi.
+- Ro'yxatdan o'tishda: ism, email, parol (≥6), rozilik belgisi.
+- "Bu email allaqachon ro'yxatdan o'tgan" holati alohida xabar bilan.
+- Google bilan kirish va "Parolni tiklash" saqlangan.
+
+### "Men haqimda"
+Profil sahifasida yangi karta: qisqa bio (300 belgi), maqsad (IELTS/ish/sayohat...),
+kunlik maqsad (1/3/5/10 mashg'ulot), qo'shilgan sana. Saqlash `localStorage` + Firestore
+(`users/{uid}.about`) ga yoziladi.
+
+### Faollik hisobi
+- `activity_log`: `{ "2026-11-09": 4 }` ko'rinishida kunlik harakatlar soni.
+- Harakatlar: dars "ko'rdim" belgisi, test yakunlanishi, talaffuz mashqi.
+- Seriya: bugundan (yoki kechadan) orqaga qarab ketma-ket kunlar.
+- Bulutda `activity` va `about` maydonlari birlashtirilib saqlanadi (kun bo'yicha maksimum).
+
+> Eslatma: seriya va kunlik maqsad **bugundan** hisoblanadi — eski harakatlar sanasi saqlanmagan.

@@ -155,6 +155,53 @@ function notify(message, type = "info") {
   toastTimer = setTimeout(() => { box.style.opacity = "0"; }, 3500);
 }
 
+/* ------------- 3.1 Kunlik faollik, seriya va profil ma'lumotlari ------------- */
+function dayKey(date = new Date()) {
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+}
+
+function getActivity() {
+  const log = readJSON("activity_log", {});
+  return log && typeof log === "object" && !Array.isArray(log) ? log : {};
+}
+
+function mergeActivity(a, b) {
+  const out = {};
+  const keys = new Set([...Object.keys(a || {}), ...Object.keys(b || {})]);
+  keys.forEach((key) => { out[key] = Math.max(Number(a?.[key]) || 0, Number(b?.[key]) || 0); });
+  return out;
+}
+
+function getStreak(log = getActivity()) {
+  let streak = 0;
+  const cursor = new Date();
+  if (!log[dayKey(cursor)]) cursor.setDate(cursor.getDate() - 1);
+  while (log[dayKey(cursor)]) {
+    streak += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  return streak;
+}
+
+function getAbout() {
+  const about = readJSON("user_about", {});
+  return about && typeof about === "object" && !Array.isArray(about) ? about : {};
+}
+
+function bumpActivity(amount = 1) {
+  const log = getActivity();
+  const key = dayKey();
+  log[key] = (log[key] || 0) + amount;
+  writeJSON("activity_log", log);
+
+  const user = auth.currentUser;
+  if (user) {
+    setDoc(doc(db, "users", user.uid), { activity: log }, { merge: true }).catch(() => {});
+  }
+  return log;
+}
+
 /* ------------------------------ 4. PROGRESS ------------------------------ */
 function getWatchedLessons() {
   const watched = readJSON("watched_lessons", {});
@@ -197,11 +244,13 @@ async function toggleLessonWatched(course, index) {
   const watched = getWatchedLessons();
   const list = Array.isArray(watched[course]) ? [...watched[course]] : [];
   const at = list.indexOf(index);
+  const adding = at === -1;
   if (at > -1) list.splice(at, 1);
   else list.push(index);
   list.sort((a, b) => a - b);
   watched[course] = list;
   writeJSON("watched_lessons", watched);
+  if (adding) bumpActivity(1);
   updateProgressUI();
 
   const user = auth.currentUser;
@@ -390,8 +439,13 @@ export async function mergeAndSync(user) {
       if (best) pron[lang] = best;
     });
 
+    const activity = mergeActivity(readJSON("activity_log", {}), cloud.activity);
+    const about = { ...(cloud.about || {}), ...getAbout() };
+
     writeJSON("watched_lessons", watched);
     writeJSON("test_history", history);
+    writeJSON("activity_log", activity);
+    writeJSON("user_about", about);
     Object.keys(pron).forEach((lang) => writeJSON(PRON_KEYS[lang], pron[lang]));
 
     await setDoc(ref, {
@@ -399,10 +453,14 @@ export async function mergeAndSync(user) {
       email: activeUser.email,
       watched_lessons: watched,
       test_history: history,
-      pronunciation: pron
+      pronunciation: pron,
+      activity,
+      about
     }, { merge: true });
 
     if (document.body?.dataset.page === "profile") renderProfilePage();
+    if (typeof window.__nsHomePaint === "function") window.__nsHomePaint(activeUser);
+    if (typeof window.__nsAboutPaint === "function") window.__nsAboutPaint();
   } catch (error) {
     console.error("Bulut sinxronizatsiyasida xatolik:", error);
   } finally {
@@ -732,7 +790,9 @@ function initCoursePage(courseId) {
     renderPlaylist();
   });
 
-  loadLesson(0);
+  const requested = Number(new URLSearchParams(window.location.search).get("dars"));
+  const startIndex = Number.isInteger(requested) && requested >= 0 && requested < lessons.length ? requested : 0;
+  loadLesson(startIndex);
 }
 
 /* -------------------------------- 9. TEST ------------------------------- */
@@ -853,6 +913,7 @@ function initQuizPage(subject) {
       writeJSON("test_history", [entry]);
     }
     cloudSync();
+    bumpActivity(1);
 
     quizBox?.classList.add("hidden");
     resultBox?.classList.remove("hidden");
@@ -1100,6 +1161,7 @@ function initPracticePage(lang) {
 
     stats.totalPracticed += 1;
     stats.totalAccuracySum += score;
+    bumpActivity(1);
     saveStats();
   }
 
@@ -1932,23 +1994,20 @@ function initCertificatePage() {
 }
 
 /* ---------------------------- 15. PROFILE PAGE -------------------------- */
+function paintSessionButtons(user) {
+  $("logoutBtn")?.classList.toggle("hidden", !user);
+}
+
 function initProfilePage() {
   paintUser(auth.currentUser);
+  paintSessionButtons(auth.currentUser);
+  onAuthStateChanged(auth, (user) => paintSessionButtons(user));
   updateProgressUI();
   displayTestResults();
   displayPronunciationResults();
 
-  $("registerForm")?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const name = $("userNameInput")?.value.trim() || "";
-    const email = $("userEmailInput")?.value.trim() || "";
-    const password = $("userPasswordInput")?.value || "";
-    if (!email || !password) {
-      notify("Email va parolni kiriting.", "error");
-      return;
-    }
-    registerOrLoginWithEmail(email, password, name);
-  });
+  setupAuthModal();
+  initAboutCard();
 
   $("clearDataBtn")?.addEventListener("click", clearAllData);
   $("logoutBtn")?.addEventListener("click", doLogout);
@@ -1959,6 +2018,312 @@ function renderProfilePage() {
   updateProgressUI();
   displayTestResults();
   displayPronunciationResults();
+}
+
+/* ------------------ 14.6 BOSH SAHIFA: SHAXSIY DASHBOARD ------------------ */
+function initHomePage() {
+  const dashboard = $("homeDashboard");
+  const hero = $("homeHero");
+
+  function paint(user) {
+    const signedIn = !!user;
+    document.documentElement.dataset.nsReady = "1";
+    document.documentElement.classList.toggle("ns-session", signedIn);
+    dashboard?.classList.toggle("hidden", !signedIn);
+    hero?.classList.toggle("hidden", signedIn);
+    if (!signedIn || !dashboard) return;
+
+    const about = getAbout();
+    const watched = getWatchedLessons();
+    const log = getActivity();
+    const goal = Number(about.dailyGoal) || 3;
+    const today = Number(log[dayKey()]) || 0;
+
+    const totalLessons = Object.keys(COURSES)
+      .reduce((sum, id) => sum + (Array.isArray(watched[id]) ? watched[id].length : 0), 0);
+
+    if ($("dashName")) $("dashName").textContent = currentName(user).split(" ")[0];
+    if ($("dashStreak")) $("dashStreak").textContent = String(getStreak(log));
+    if ($("dashGoalNow")) $("dashGoalNow").textContent = String(Math.min(today, goal));
+    if ($("dashGoalTarget")) $("dashGoalTarget").textContent = String(goal);
+    if ($("dashGoalBar")) $("dashGoalBar").style.width = Math.min(100, Math.round((today / goal) * 100)) + "%";
+    if ($("dashGoalHint")) {
+      $("dashGoalHint").textContent = today >= goal
+        ? "Bugungi maqsad bajarildi 🎉"
+        : `Yana ${goal - today} ta mashg'ulot qoldi`;
+    }
+    if ($("dashTotalLessons")) $("dashTotalLessons").textContent = String(totalLessons);
+
+    const courses = Object.keys(COURSES).map((id) => {
+      const done = Array.isArray(watched[id]) ? watched[id].length : 0;
+      return { id, done, total: COURSES[id].total, percent: Math.round((done / COURSES[id].total) * 100) };
+    });
+    const active = courses.filter((c) => c.done > 0 && c.percent < 100)
+      .sort((a, b) => b.percent - a.percent)[0]
+      || courses.slice().sort((a, b) => a.percent - b.percent)[0]
+      || courses[0];
+
+    if ($("dashCourseFlag")) $("dashCourseFlag").textContent = COURSES[active.id].flag;
+    if ($("dashCourseTitle")) $("dashCourseTitle").textContent = COURSES[active.id].label;
+    if ($("dashCourseBar")) $("dashCourseBar").style.width = active.percent + "%";
+    if ($("dashCourseMeta")) $("dashCourseMeta").textContent = `${active.done} / ${active.total} dars · ${active.percent}%`;
+
+    const nextIndex = Math.min(active.done, active.total - 1);
+    const link = $("dashContinueBtn");
+    if (link) {
+      link.href = `${COURSE_PAGES[active.id]}?dars=${nextIndex}`;
+      link.innerHTML = active.done === 0
+        ? 'Boshlash <i class="fa-solid fa-arrow-right"></i>'
+        : `${nextIndex + 1}-darsdan davom etish <i class="fa-solid fa-arrow-right"></i>`;
+    }
+
+    const last = getTestHistory()[0];
+    const testBox = $("dashLastTest");
+    if (last && testBox) {
+      testBox.classList.remove("hidden");
+      const info = SUBJECTS[last.subject] || { flag: "📝", title: last.subject || "Test" };
+      if ($("dashTestFlag")) $("dashTestFlag").textContent = info.flag;
+      if ($("dashTestText")) $("dashTestText").textContent = `${info.title} · ${last.level || ""} daraja · ${last.score}/${last.total}`;
+    } else {
+      testBox?.classList.add("hidden");
+    }
+  }
+
+  paint(auth.currentUser);
+  window.__nsHomePaint = paint;
+  onAuthStateChanged(auth, paint);
+}
+
+/* ---------------- 14.7 KIRISH / RO'YXATDAN O'TISH MODALI ---------------- */
+let authMode = "login";
+
+function showAuthError(message) {
+  const box = $("authError");
+  if (!box) return;
+  box.textContent = message;
+  box.classList.remove("hidden");
+}
+
+function clearAuthError() {
+  $("authError")?.classList.add("hidden");
+}
+
+function setAuthMode(mode) {
+  authMode = mode === "register" ? "register" : "login";
+  const register = authMode === "register";
+
+  if ($("authTitle")) $("authTitle").textContent = register ? "Hisob yarating" : "Xush kelibsiz";
+  if ($("authSubtitle")) {
+    $("authSubtitle").textContent = register
+      ? "Bir daqiqada ro'yxatdan o'ting — progress bulutda saqlanadi."
+      : "Hisobingizga kiring va progressni davom ettiring.";
+  }
+
+  $("nameField")?.classList.toggle("hidden", !register);
+  $("termsField")?.classList.toggle("hidden", !register);
+  $("termsField")?.classList.toggle("flex", register);
+  if ($("authSubmit")) $("authSubmit").textContent = register ? "Ro'yxatdan o'tish" : "Kirish";
+
+  const tabLogin = $("tabLogin");
+  const tabRegister = $("tabRegister");
+  if (tabLogin && tabRegister) {
+    tabLogin.className = register
+      ? "py-2.5 rounded-lg text-sm font-bold transition-all text-slate-500 hover:text-slate-800"
+      : "py-2.5 rounded-lg text-sm font-bold transition-all bg-white text-slate-900 shadow-sm";
+    tabRegister.className = register
+      ? "py-2.5 rounded-lg text-sm font-bold transition-all bg-white text-slate-900 shadow-sm"
+      : "py-2.5 rounded-lg text-sm font-bold transition-all text-slate-500 hover:text-slate-800";
+  }
+  clearAuthError();
+}
+
+function passwordScore(value) {
+  let score = 0;
+  if (value.length >= 6) score += 1;
+  if (value.length >= 10) score += 1;
+  if (/[A-Z]/.test(value) && /[a-z]/.test(value)) score += 1;
+  if (/\d/.test(value) || /[^A-Za-z0-9]/.test(value)) score += 1;
+  return score;
+}
+
+function setAuthLoading(loading) {
+  const button = $("authSubmit");
+  if (!button) return;
+  button.disabled = loading;
+  button.textContent = loading ? "Kuting..." : (authMode === "register" ? "Ro'yxatdan o'tish" : "Kirish");
+}
+
+async function signUpWithEmail(name, email, password) {
+  setAuthLoading(true);
+  try {
+    const credential = await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(credential.user, { displayName: name });
+    notify(`Xush kelibsiz, ${name}!`, "success");
+    closeRegisterModal();
+  } catch (error) {
+    if (error.code === "auth/email-already-in-use") {
+      showAuthError("Bu email allaqachon ro'yxatdan o'tgan. «Kirish» bo'limiga o'ting.");
+    } else {
+      showAuthError(AUTH_ERRORS[error.code] || ("Xatolik: " + error.message));
+    }
+  } finally {
+    setAuthLoading(false);
+  }
+}
+
+async function signInWithEmail(email, password) {
+  setAuthLoading(true);
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    notify("Muvaffaqiyatli kirdingiz!", "success");
+    closeRegisterModal();
+  } catch (error) {
+    showAuthError(AUTH_ERRORS[error.code] || ("Xatolik: " + error.message));
+  } finally {
+    setAuthLoading(false);
+  }
+}
+
+async function handleAuthSubmit(event) {
+  event.preventDefault();
+  clearAuthError();
+
+  const name = ($("userNameInput")?.value || "").trim();
+  const email = ($("userEmailInput")?.value || "").trim();
+  const password = $("userPasswordInput")?.value || "";
+
+  if (!email || !password) {
+    showAuthError("Email va parolni kiriting.");
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showAuthError("Email manzil noto'g'ri kiritilgan.");
+    return;
+  }
+
+  if (authMode === "register") {
+    if (!name) { showAuthError("Ismingizni kiriting."); return; }
+    if (password.length < 6) { showAuthError("Parol kamida 6 belgidan iborat bo'lishi kerak."); return; }
+    if (!$("termsCheckbox")?.checked) { showAuthError("Davom etish uchun rozilikni belgilang."); return; }
+    await signUpWithEmail(name, email, password);
+  } else {
+    await signInWithEmail(email, password);
+  }
+}
+
+function setupAuthModal() {
+  setAuthMode("login");
+
+  $("tabLogin")?.addEventListener("click", () => setAuthMode("login"));
+  $("tabRegister")?.addEventListener("click", () => setAuthMode("register"));
+
+  $("togglePassword")?.addEventListener("click", () => {
+    const input = $("userPasswordInput");
+    const icon = $("togglePasswordIcon");
+    if (!input) return;
+    const show = input.type === "password";
+    input.type = show ? "text" : "password";
+    if (icon) icon.className = show ? "fa-regular fa-eye-slash" : "fa-regular fa-eye";
+  });
+
+  $("userPasswordInput")?.addEventListener("input", (event) => {
+    const hint = $("passwordStrength");
+    if (!hint) return;
+    const value = event.target.value;
+    if (!value) {
+      hint.className = "hidden";
+      return;
+    }
+    const score = Math.min(passwordScore(value), 3);
+    const labels = ["Juda qisqa", "O'rtacha", "Yaxshi", "Kuchli"];
+    const colors = ["text-rose-500", "text-amber-500", "text-emerald-600", "text-emerald-700"];
+    hint.className = `text-[11px] font-semibold mt-1.5 ${colors[score]}`;
+    hint.textContent = `Parol kuchi: ${labels[score]}`;
+  });
+
+  $("registerForm")?.addEventListener("submit", handleAuthSubmit);
+}
+
+/* --------------------------- 14.8 "MEN HAQIMDA" -------------------------- */
+function initAboutCard() {
+  const view = $("aboutView");
+  const form = $("aboutForm");
+  if (!view || !form) return;
+
+  let about = getAbout();
+
+  function paint() {
+    const bio = String(about.bio || "").trim();
+    if ($("aboutBio")) {
+      $("aboutBio").textContent = bio || "Hozircha ma'lumot kiritilmagan. «Tahrirlash» tugmasi orqali o'zingiz haqingizda qisqacha yozing.";
+      $("aboutBio").className = bio
+        ? "text-sm text-slate-600 leading-relaxed whitespace-pre-line"
+        : "text-sm text-slate-400 leading-relaxed";
+    }
+    if ($("aboutGoalChip")) $("aboutGoalChip").textContent = `Maqsad: ${about.goal || "ko'rsatilmagan"}`;
+    if ($("aboutDailyChip")) $("aboutDailyChip").textContent = `Kunlik maqsad: ${about.dailyGoal || 3} ta mashg'ulot`;
+
+    const registeredAt = readJSON("user_profile", {})?.registeredAt;
+    if ($("aboutJoinedChip")) {
+      $("aboutJoinedChip").textContent = registeredAt
+        ? `Qo'shilgan: ${formatDate(registeredAt).split(",")[0]}`
+        : "Qo'shilgan: —";
+    }
+  }
+
+  function updateCount() {
+    if ($("aboutBioCount")) $("aboutBioCount").textContent = String(($("aboutBioInput")?.value || "").length);
+  }
+
+  function openEdit() {
+    if ($("aboutBioInput")) $("aboutBioInput").value = about.bio || "";
+    if ($("aboutGoalInput")) $("aboutGoalInput").value = about.goal || "";
+    if ($("aboutDailyInput")) $("aboutDailyInput").value = String(about.dailyGoal || 3);
+    updateCount();
+    view.classList.add("hidden");
+    form.classList.remove("hidden");
+    $("aboutEditBtn")?.classList.add("hidden");
+    $("aboutBioInput")?.focus();
+  }
+
+  function closeEdit() {
+    view.classList.remove("hidden");
+    form.classList.add("hidden");
+    $("aboutEditBtn")?.classList.remove("hidden");
+  }
+
+  async function save() {
+    about = {
+      ...about,
+      bio: ($("aboutBioInput")?.value || "").trim(),
+      goal: $("aboutGoalInput")?.value || "",
+      dailyGoal: Number($("aboutDailyInput")?.value) || 3
+    };
+    writeJSON("user_about", about);
+    paint();
+    closeEdit();
+
+    if ($("aboutSaved")) {
+      $("aboutSaved").classList.remove("hidden");
+      setTimeout(() => $("aboutSaved")?.classList.add("hidden"), 2500);
+    }
+
+    const user = auth.currentUser;
+    if (!user) return;
+    try {
+      await setDoc(doc(db, "users", user.uid), { about }, { merge: true });
+    } catch (error) {
+      console.warn("Profil ma'lumotlari bulutga saqlanmadi:", error);
+    }
+  }
+
+  $("aboutEditBtn")?.addEventListener("click", openEdit);
+  $("aboutCancelBtn")?.addEventListener("click", closeEdit);
+  $("aboutBioInput")?.addEventListener("input", updateCount);
+  form.addEventListener("submit", (event) => { event.preventDefault(); save(); });
+
+  paint();
+  window.__nsAboutPaint = paint;
 }
 
 /* --------------------------- 15. UMUMIY SOZLASH -------------------------- */
@@ -2022,6 +2387,8 @@ function boot() {
     initAdminPage();
   } else if (page === "certificate") {
     initCertificatePage();
+  } else if (page === "home") {
+    initHomePage();
   } else {
     paintUser(auth.currentUser);
   }

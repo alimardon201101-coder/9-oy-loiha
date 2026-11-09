@@ -8,6 +8,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Ro'yxatdan o'tgan o'quvchi uchun marketing bloklarini miltillashsiz yashirish -->
+  <style>
+    html.ns-session #homeHero,
+    html.ns-session #haqimizda { display: none !important; }
+    /* Yashirilgan bo'limlarga olib boruvchi havolalar ham keraksiz */
+    html.ns-session a[href="#haqimizda"],
+    html.ns-session a[href="#faq"] { display: none !important; }
+  </style>
+  <script>
+    try {
+      if (localStorage.getItem('user_profile')) document.documentElement.classList.add('ns-session');
+    } catch (e) { /* localStorage yopiq bo'lsa — muhim emas */ }
+
+    // Agar app.js yuklanmasa (internet uzilishi), sahifa bo'sh qolmasin
+    setTimeout(function () {
+      if (!document.documentElement.dataset.nsReady) {
+        document.documentElement.classList.remove('ns-session');
+      }
+    }, 3000);
+  </script>
+
   <!-- Google Search Console tasdiqlash kodi -->
   <meta name="google-site-verification" content="Sblb6nZQ90ndbDXZ3gff9P_Qmvpr-jpQN1RYXYEov44" />
 
@@ -178,8 +199,90 @@
     </div>
   </header>
 
+  <!-- Shaxsiy dashboard: faqat tizimga kirgan o'quvchiga ko'rinadi -->
+  <section id="homeDashboard" class="hidden bg-slate-50 border-b border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div class="space-y-1">
+          <p class="text-xs font-bold uppercase tracking-widest text-brand-600">Shaxsiy kabinet</p>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Salom, <span id="dashName" class="text-brand-600">o'quvchi</span>!
+          </h1>
+          <p id="dashSubtitle" class="text-slate-600 text-sm">Bugun ham bir qadam oldinga.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="./profil.html" class="px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 font-bold text-xs hover:border-brand-300 transition-colors">
+            <i class="fa-solid fa-user mr-1.5 text-brand-600"></i> Profil
+          </a>
+          <a href="./sertifikat.html" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-brand-500/20 transition-colors">
+            <i class="fa-solid fa-award mr-1.5"></i> Sertifikat
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-5">
+          <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Kunlik seriya</p>
+          <p class="text-3xl font-black text-slate-900 mt-1"><span id="dashStreak">0</span> <span class="text-lg">🔥</span></p>
+          <p class="text-xs text-slate-400 mt-1">Ketma-ket faol kunlar</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-5">
+          <div class="flex items-baseline justify-between">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Bugungi maqsad</p>
+            <p class="text-xs font-bold text-slate-500"><span id="dashGoalNow">0</span>/<span id="dashGoalTarget">3</span></p>
+          </div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden mt-3">
+            <div id="dashGoalBar" class="bg-gradient-to-r from-brand-600 to-blue-500 h-full rounded-full transition-all duration-500 w-0"></div>
+          </div>
+          <p id="dashGoalHint" class="text-xs text-slate-400 mt-2">Har kuni 3 ta mashg'ulot</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-5">
+          <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Jami o'zlashtirilgan</p>
+          <p class="text-3xl font-black text-slate-900 mt-1"><span id="dashTotalLessons">0</span></p>
+          <p class="text-xs text-slate-400 mt-1">4 til bo'yicha ko'rilgan darslar</p>
+        </div>
+      </div>
+
+      <div id="dashCourseCard" class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-7">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-6">
+          <div class="flex-1 min-w-0 space-y-3">
+            <div class="flex items-center gap-3">
+              <span id="dashCourseFlag" class="text-3xl">🇬🇧</span>
+              <div class="min-w-0">
+                <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Davom ettirish</p>
+                <h2 id="dashCourseTitle" class="text-xl font-extrabold text-slate-900 truncate">Ingliz tili</h2>
+              </div>
+            </div>
+            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+              <div id="dashCourseBar" class="bg-gradient-to-r from-brand-600 to-blue-500 h-full rounded-full transition-all duration-500 w-0"></div>
+            </div>
+            <p id="dashCourseMeta" class="text-xs font-semibold text-slate-500">0 / 180 dars</p>
+          </div>
+          <div class="shrink-0">
+            <a id="dashContinueBtn" href="./kurslar/ing.html"
+               class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/20 transition-all">
+              Darsni boshlash <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="dashLastTest" class="hidden bg-white rounded-2xl border border-slate-200/80 p-5 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3 min-w-0">
+          <span id="dashTestFlag" class="text-2xl">📝</span>
+          <div class="min-w-0">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Oxirgi test</p>
+            <p id="dashTestText" class="text-sm font-bold text-slate-800 truncate">—</p>
+          </div>
+        </div>
+        <a href="./profil.html" class="text-xs font-bold text-brand-600 hover:text-brand-700 shrink-0">Batafsil →</a>
+      </div>
+
+    </div>
+  </section>
   <!-- Hero Section -->
-  <section class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-white">
+  <section id="homeHero" class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-white">
     <div
       class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none">
     </div>
